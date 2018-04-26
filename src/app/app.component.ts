@@ -7,6 +7,11 @@ import { Storage } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
 import { AccueilPage } from '../pages/accueil/accueil';
+import { LocalisationPage } from '../pages/localisation/localisation';
+import { ActivitiesPage } from '../pages/activities/activities';
+import { RealMapPage } from '../pages/real-map/real-map';
+import { ChangeEventPage } from '../pages/change-event/change-event';
+import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { MapPage } from '../pages/map/map';
@@ -59,7 +64,7 @@ export class ConferenceApp {
     { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
     { title: 'Signup', name: 'SignupPage', component: SignupPage, icon: 'person-add' }
   ];
-  rootPage: any;
+rootPage: any;
 
   constructor(
     public events: Events,
@@ -72,7 +77,7 @@ export class ConferenceApp {
   ) {
 
     // Check if the user has already seen the tutorial
-    this.storage.get('hasSeenTutorial')
+   /* this.storage.get('hasSeenTutorial')
       .then((hasSeenTutorial) => {
         if (hasSeenTutorial) {
           this.rootPage = TabsPage;
@@ -80,7 +85,8 @@ export class ConferenceApp {
           this.rootPage = TutorialPage;
         }
         this.platformReady()
-      });
+      }); */
+      this.rootPage = AccueilPage;
 
     // load the conference data
     confData.load();
@@ -120,6 +126,30 @@ export class ConferenceApp {
       // Give the menu time to close before changing to logged out
       this.userData.logout();
     }
+  }
+
+  openAccueil() {
+    this.nav.setRoot(AccueilPage);
+  }
+  
+  openLocalisation() {
+    this.nav.setRoot(LocalisationPage);
+  }
+  
+  openActivities() {
+    this.nav.setRoot(ActivitiesPage);
+  }
+  
+  openRealMap() {
+    this.nav.setRoot(RealMapPage);
+  }
+  
+  openChangeEvent() {
+    this.nav.setRoot(ChangeEventPage);
+  }
+  
+  openSettings() {
+    this.nav.setRoot(SettingsPage);
   }
 
   openTutorial() {

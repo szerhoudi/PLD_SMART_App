@@ -14,6 +14,11 @@ import { ConferenceApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { PopoverPage } from '../pages/about-popover/about-popover';
 import { AccueilPage } from '../pages/accueil/accueil';
+import { LocalisationPage } from '../pages/localisation/localisation';
+import { ActivitiesPage } from '../pages/activities/activities';
+import { RealMapPage } from '../pages/real-map/real-map';
+import { ChangeEventPage } from '../pages/change-event/change-event';
+import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { MapPage } from '../pages/map/map';
@@ -36,6 +41,11 @@ import { UserData } from '../providers/user-data';
     ConferenceApp,
     AboutPage,
     AccueilPage,
+    LocalisationPage,
+    ActivitiesPage,
+    RealMapPage,
+    ChangeEventPage,
+    SettingsPage,
     AccountPage,
     LoginPage,
     MapPage,
@@ -63,6 +73,11 @@ import { UserData } from '../providers/user-data';
         { component: SpeakerDetailPage, name: 'SpeakerDetail', segment: 'speakerDetail/:speakerId' },
         { component: MapPage, name: 'Map', segment: 'map' },
         { component: AccueilPage, name: 'Accueil', segment: 'accueil' },
+        { component: LocalisationPage, name: 'Localisation', segment: 'localisation' },
+        { component: ActivitiesPage, name: 'Activities', segment: 'activities' },
+        { component: RealMapPage, name: 'RealMap', segment: 'realMap' },
+        { component: ChangeEventPage, name: 'ChangeEvent', segment: 'changeEvent' },
+        { component: SettingsPage, name: 'Settings', segment: 'settings' },
         { component: AboutPage, name: 'About', segment: 'about' },
         { component: TutorialPage, name: 'Tutorial', segment: 'tutorial' },
         { component: SupportPage, name: 'SupportPage', segment: 'support' },
@@ -78,6 +93,11 @@ import { UserData } from '../providers/user-data';
     ConferenceApp,
     AboutPage,
     AccueilPage,
+    LocalisationPage,
+    ActivitiesPage,
+    RealMapPage,
+    ChangeEventPage,
+    SettingsPage,
     AccountPage,
     LoginPage,
     MapPage,

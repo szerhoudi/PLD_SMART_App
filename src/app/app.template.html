@@ -11,7 +11,7 @@
 
     <ion-content class="outer-content">
 
-      <ion-list>
+     <!-- <ion-list>
         <ion-list-header>
           Navigate
         </ion-list-header>
@@ -29,9 +29,51 @@
           <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
           {{p.title}}
         </button>
+      </ion-list> -->
+        
+     <ion-list>
+        <ion-list-header>
+          RIF
+        </ion-list-header>
+        <button ion-item menuClose (click)="openAccueil()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Home
+        </button>
+        <button ion-item menuClose (click)="openLocalisation()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Localisation
+        </button>
+        <button ion-item menuClose (click)="openActivities()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Activities
+        </button>
+        <button ion-item menuClose (click)="openRealMap()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Map
+        </button>
       </ion-list>
-
+        
       <ion-list>
+        <ion-list-header>
+          Others Events
+        </ion-list-header>
+        <button ion-item menuClose (click)="openChangeEvent()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Change Event
+        </button>
+      </ion-list>
+        
+    <ion-list>
+        <ion-list-header>
+          Settings
+        </ion-list-header>
+        <button ion-item menuClose (click)="openSettings()">
+          <ion-icon item-start name="hammer"></ion-icon>
+          Settings
+        </button>
+      </ion-list>
+        
+      <!--<ion-list>
         <ion-list-header>
           Tutorial
         </ion-list-header>
@@ -39,8 +81,8 @@
           <ion-icon item-start name="hammer"></ion-icon>
           Show Tutorial
         </button>
-      </ion-list>
-    </ion-content>
+      </ion-list>-->
+    </ion-content> 
 
   </ion-menu>
 
