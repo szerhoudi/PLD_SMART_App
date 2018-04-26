@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the ChangeEventPage page.
@@ -15,11 +15,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChangeEventPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public alerCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChangeEventPage');
+  }
+  
+  doConfirm() {
+    let confirm = this.alerCtrl.create({
+      title: 'Choose this event ?',
+      message: 'Do you really change to this event ?',
+      buttons: [
+        {
+          text: 'No',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present()
   }
 
 }
