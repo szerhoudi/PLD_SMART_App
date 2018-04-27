@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { File } from '@ionic-native/file';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the AccueilPage page.
@@ -17,16 +18,12 @@ import { File } from '@ionic-native/file';
 
 export class AccueilPage {
 
-  fichier;
+  posts: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public file: File) {
-  this.file.readAsText(this.file.applicationDirectory + "src/assets/data","rif.json")
-  .then(data => {
-        var fichier = JSON.parse(data);
-        console.log(fichier);
-      }).catch((error) => {
-        console.log(error);
-      });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+    this.http.get('https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json').map(res => res.json()).subscribe(data => {
+        this.posts = data.children;
+    })
   }
 
   ionViewDidLoad() {
