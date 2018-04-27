@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { File } from '@ionic-native/file';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -115,6 +116,7 @@ import { UserData } from '../providers/user-data';
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ConferenceData,
+    File,
     UserData,
     InAppBrowser,
     SplashScreen

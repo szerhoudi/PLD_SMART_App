@@ -15,6 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ActivitiesPage {
 
+ item;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
