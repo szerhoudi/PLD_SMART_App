@@ -9,22 +9,19 @@
 
 
 <ion-content padding>
-    <h3></h3>
-
-  <ion-list>
-    <ion-item *ngFor="let post of posts">
-        {{post.title}}
-    </ion-item>
-  </ion-list>
+    <h3 *ngIf="posts">{{posts.title}}</h3>
     
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
+  <p *ngIf="posts">
+      Description of the event : {{posts.description}}
   </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
+  <p *ngIf="posts">
+      Date : {{posts.DateDebut}}  Horraire (à traduire, j'ai pas trouvé de trad satisfaisante) : {{posts.HeureDebut}} - {{posts.HeureFin}}
   </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
+  <p *ngIf="posts">
+      Place : {{posts.Lieu}}
+  </p>
+  <p *ngIf="posts">
+      Organiser : {{posts.Organisateur}}
   </p>
 
 </ion-content>

@@ -1,40 +1,36 @@
 {
-		“id”:"1",
-		“title”:"RIF",
-		“Organisateur”:"AEDI",
-		“Lieu”:"Batiment Blaise Pascal",
-        "DateDébut":"Jeudi 9 novembre",
-		“HeureDébut”:"9h",
-		“HeureFin”:"17h",
-		“description”:"Rencontre avec des entreprises pour les étudiants du département informatique de l'INSA de Lyon",
-		“activitésBalise”: [{
-            “nom”:"Fiducial",
-            “lieu”:"Salle 202",
-            “heureDébut”:"9h30",
-            “heureFin”:"15h30",
-            “nextActivity”:"Aucune",
-            “description”:"Stand du parrain de promo 4IF",
-            “intervenants”: [
-                {
-                    "nombre":"3",
-                    "nom1":"Intervenant1",
-                    "nom2":"Intervenant2",
-                    "nom3":"Intervenant3"
-                }
-            ]
-        },{
-            “nom”:"Sopra Steria",
-            “lieu”:"Salle 208",
-            “heureDébut”:"10h",
-            “heureFin”:"16h30",
-            “nextActivity”:"Aucune",
-            “description”:"Stand du parrain de promo 5IF",
-            “intervenants”: [
-                {
-                    nombre:"2",
-                    "nom1":"Intervenant1",
-                    "nom2":"Intervenant2"
-                }
-            ]    
+    "id":"1",
+    "title":"RIF",
+    "Organisateur":"AEDI",
+    "Lieu":"Batiment Blaise Pascal",
+    "DateDebut":"Jeudi 9 novembre",
+    "HeureDebut":"9h",
+    "HeureFin":"17h",
+    "description":"Rencontre avec des entreprises pour les étudiants du département informatique de l'INSA de Lyon",
+    "activitesBalise": [{
+        "nom":"Fiducial",
+        "lieu":"Salle 202",
+        "heureDebut":"9h30",
+        "heureFin":"15h30",
+        "nextActivity":"Aucune",
+        "description":"Stand du parrain de promo 4IF",
+        "intervenants": [{
+            "nombre":"3",
+            "nom1":"Intervenant1",
+            "nom2":"Intervenant2",
+            "nom3":"Intervenant3"
         }]
+    },{
+        "nom":"Sopra Steria",
+        "lieu":"Salle 208",
+        "heureDebut":"10h",
+        "heureFin":"16h30",
+        "nextActivity":"Aucune",
+        "description":"Stand du parrain de promo 5IF",
+        "intervenants": [{
+                "nombre":"2",
+                "nom1":"Intervenant1",
+                "nom2":"Intervenant2"
+            }]    
+    }]
 }

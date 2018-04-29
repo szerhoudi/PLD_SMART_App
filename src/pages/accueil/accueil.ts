@@ -18,18 +18,20 @@ import 'rxjs/add/operator/map';
 
 export class AccueilPage {
 
-  posts: any;
+  public posts: any = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    this.http.get('https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json').map(res => res.json()).subscribe(data => {
-        this.posts = data.children;
+    this.http.get('https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json').map(res => res.json()).subscribe(data => {
+        this.posts = data;
+        console.log(this.posts);
+        console.log(this.posts.title);
     })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccueilPage');
   }
-  
+
   
 
 }
