@@ -1,93 +1,47 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Activities</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Activities</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-      <ion-card-header>
-        Your RIF's favorite activities
-      </ion-card-header>
 
-      <ion-list>
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          AEDI's openning remarks
-        </button>
+    <div padding>
+        <ion-segment [(ngModel)]="list">
+            <ion-segment-button class="segment-title" value="all">
+                All
+            </ion-segment-button>
+            <ion-segment-button class="segment-title" value="favorite">
+                Favorites
+            </ion-segment-button>
+        </ion-segment>
+    </div>
 
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          FIDUCIAL stand
-        </button>
+    <div [ngSwitch]="list">
+        <ion-list *ngSwitchCase="'all'">
+            <ion-item class="buttonList" detail-push *ngFor="let activity of activities">
+                <ion-icon name="briefcase" item-start></ion-icon>
+                {{activity.title}}
+                <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>
+                <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
+            </ion-item>
+        </ion-list>
+    </div>
 
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          SOPRA STERIA stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          Lunch Break
-        </button>
-
-      </ion-list>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        All RIF's Activities
-      </ion-card-header>
-
-      <ion-list>
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          CGI stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          WAVESTONE stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          INFORMATIONS
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          JP Morgan stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          ESKER stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          WORLDLINE stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          AVANADE stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          AMARIS stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          AMADEUS stand
-        </button>
-
-      </ion-list>
-    </ion-card>
+    <div [ngSwitch]="list">
+        <ion-list *ngSwitchCase="'favorite'">
+            <div *ngFor="let activity of activities">
+                <ion-item class="buttonList" detail-push *ngIf="activity.favorite">
+                    <ion-icon name="briefcase" item-start></ion-icon>
+                    {{activity.title}}
+                    <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>
+                    <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
+                </ion-item>
+            </div>
+        </ion-list>
+    </div>
 
 </ion-content>
