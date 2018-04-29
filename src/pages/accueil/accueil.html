@@ -1,30 +1,45 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="card-background-page" padding>
     <h3></h3>
 
-  <ion-list>
-    <ion-item *ngFor="let post of posts">
-        {{post.title}}
-    </ion-item>
-  </ion-list>
-    
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+    <ion-list>
+        <ion-item *ngFor="let post of posts">
+            {{post.title}}
+        </ion-item>
+    </ion-list>
 
+    <ion-card>
+        <img src="assets/img/24h.png"/>
+        <div class="card-title">24h de l'INSA</div>
+        <div class="card-subtitle">du 29 au 31 mai</div>
+    </ion-card>
+
+    <div class="description">
+        <div class="title">DESCRIPTION</div>
+        <div class="paragraphe">Les 24 heures sont  la plus grande manifestation étudiante en Rhône Alpes et l’une des plus grandes de France : 50 000 spectateurs attendus sur le week-end ! Un rendez-vous exceptionnel avec plus de 80 animations culturelles et sportives (courses, concerts, démonstrations, initiations).</div>
+    </div>
+
+    <ion-list class="event-details" no-lines>
+        <ion-item>
+            <ion-icon name="md-compass" item-start></ion-icon>
+            Campus de La Doua
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-calendar" item-start></ion-icon>
+            Du 29 au 31 mai
+        </ion-item>
+        <ion-item>
+            <ion-icon name="logo-euro" item-start></ion-icon>
+            15€ la soirée
+        </ion-item>
+    </ion-list>
 </ion-content>
