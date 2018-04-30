@@ -93,8 +93,9 @@ export class ActivitiesPage {
   }
 
   showDetailPage(activity) {
+      console.log(activity.id);
       this.navCtrl.push(ActivitiesDetailPage, {
-          //id: activity.id
+          id: activity.id
       });
   }
 
