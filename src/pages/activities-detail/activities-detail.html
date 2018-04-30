@@ -23,7 +23,7 @@
 
     <div class="description" *ngIf="posts">
         <div class="title">DESCRIPTION</div>
-        <div class="paragraphe">{{posts.description}}</div>
+        <div class="paragraphe">{{posts.activitesBalise[0].description}}</div>
     </div>
     <ion-list *ngIf="posts">
         <ion-item *ngFor = "let item of posts.activitesBalise[0].intervenants;">

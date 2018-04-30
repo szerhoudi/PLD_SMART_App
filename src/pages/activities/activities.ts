@@ -88,7 +88,7 @@ export class ActivitiesPage {
                         this.posts.activitesBalise[id].favorite = true;
                     });
                 });
-            }        
+            }
         });
 
         console.log("posts load : ", this.posts);

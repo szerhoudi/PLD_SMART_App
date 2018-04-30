@@ -1,0 +1,33 @@
+{
+    "Event": [{
+        "id":"0",
+        "nom":"RIF",
+        "date":"9 novembre",
+        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
+    },{
+        "id":"1",
+        "nom":"Forum rhone alpes",
+        "date":"Salle 202",
+        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
+    },{
+        "id":"2",
+        "nom":"24h de l'INSA",
+        "date":"INSA",
+        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
+    },{
+        "id":"3",
+        "nom":"Test",
+        "date":"Salle 213",
+        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
+    },{
+       "id":"4",
+        "nom":"Test",
+        "date":"Salle 202",
+        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
+    }]
+}
