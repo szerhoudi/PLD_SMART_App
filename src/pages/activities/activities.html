@@ -8,15 +8,6 @@
 </ion-header>
 
 <ion-content padding>
-
-  <ion-card>
-    <ion-card-content>
-      <button ion-button [navPush]="activitiesDetailPage">Go To About</button>
-
-    </ion-card-content>
-    </ion-card>
-
-
     <div padding>
         <ion-segment [(ngModel)]="list">
             <ion-segment-button class="segment-title" value="all">
@@ -30,9 +21,10 @@
 
     <div [ngSwitch]="list">
         <ion-list *ngSwitchCase="'all'">
-            <ion-item class="buttonList" detail-push *ngFor="let activity of activities">
-                <ion-icon name="briefcase" item-start></ion-icon>
-                {{activity.title}}
+            <ion-item *ngFor="let activity of activities" >
+              <button class ="detailButton" [navPush]="activitiesDetailPage">
+                  <ion-icon name="briefcase" item-start></ion-icon>
+                  {{activity.title}}</button>              
                 <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>
                 <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
             </ion-item>
@@ -42,7 +34,7 @@
     <div [ngSwitch]="list">
         <ion-list *ngSwitchCase="'favorite'">
             <div *ngFor="let activity of activities">
-                <ion-item class="buttonList" detail-push *ngIf="activity.favorite">
+                <ion-item class="buttonList" detail-push *ngIf="activity.favorite" [navPush]="activitiesDetailPage">
                     <ion-icon name="briefcase" item-start></ion-icon>
                     {{activity.title}}
                     <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>
