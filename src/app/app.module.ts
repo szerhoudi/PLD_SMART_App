@@ -36,7 +36,6 @@ import { SupportPage } from '../pages/support/support';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
-
 @NgModule({
   declarations: [
     ConferenceApp,
