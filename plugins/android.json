@@ -35,7 +35,14 @@
     },
     "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "io.ionic.conferenceapp"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "io.ionic.conferenceapp"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "io.ionic.conferenceapp"
+    }
+  }
 }

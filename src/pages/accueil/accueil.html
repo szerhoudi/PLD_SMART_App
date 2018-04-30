@@ -1,28 +1,52 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-    <h3>Welcome to your first Ionic app!</h3>
+<ion-content class="card-background-page" padding>
+    <!--<h3 *ngIf="posts">{{posts.title}}</h3>
 
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
+  <p *ngIf="posts">
+      Description of the event : {{posts.description}}
   </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
+  <p *ngIf="posts">
+      Date : {{posts.DateDebut}}  Horraire (à traduire, j'ai pas trouvé de trad satisfaisante) : {{posts.HeureDebut}} - {{posts.HeureFin}}
   </p>
-    <ion-card-content>
-      Hello World<br />
+  <p *ngIf="posts">
+      Place : {{posts.Lieu}}
+  </p>
+  <p *ngIf="posts">
+      Organiser : {{posts.Organisateur}}
+  </p>-->
 
-      <button [navPush]="localisationPage">Go To About</button>
-    </ion-card-content>
+    <ion-card *ngIf="posts">
+        <img [src]="posts.image"/>
+        <div class="card-title" >{{posts.title}}</div>
+        <div class="card-subtitle"> Le {{posts.DateDebut}}</div>
+    </ion-card>
 
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
+    <div class="description" *ngIf="posts">
+        <div class="title">DESCRIPTION</div>
+        <div class="paragraphe">{{posts.description}}</div>
+    </div>
 
+    <ion-list class="event-details" no-lines *ngIf="posts">
+        <ion-item>
+            <ion-icon name="md-compass" item-start></ion-icon>
+            {{posts.Lieu}}
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-calendar" item-start></ion-icon>
+            Le {{posts.DateDebut}}
+        </ion-item>
+        <ion-item>
+            <ion-icon name="logo-euro" item-start></ion-icon>
+            15€ la soirée
+        </ion-item>
+    </ion-list>
 </ion-content>
