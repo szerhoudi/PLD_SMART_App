@@ -8,13 +8,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>activitiesDetail</ion-title>
+    <ion-title *ngIf="posts">{{posts.activitesBalise[0].nom}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding class="activities-detail">
-  Those are the details !
+<ion-content padding class="card-background-page">
+  <ion-card *ngIf="posts">
+        <img [src]="posts.image"/>
+        <div class="card-title" >{{posts.activitesBalise[0].nom}}</div>
+        <div class="card-subtitle"> De {{posts.activitesBalise[0].heureDebut}} à {{posts.activitesBalise[0].heureFin}}</div>
+    </ion-card>
 
+    <div class="description" *ngIf="posts">
+        <div class="title">DESCRIPTION</div>
+        <div class="paragraphe">{{posts.description}}</div>
+    </div>
+    <ion-list *ngIf="posts">
+        <ion-item *ngFor = "let item of posts.activitesBalise[0].intervenants;">
+            {{item.nom}}
+        </ion-item>
+    </ion-list>
+
+    <ion-list class="event-details" no-lines *ngIf="posts">
+        <ion-item>
+            <ion-icon name="md-compass" item-start></ion-icon>
+            {{posts.activitesBalise[0].lieu}}
+        </ion-item>
+        <ion-item>
+            <ion-icon name="md-calendar" item-start></ion-icon>
+            Next activity:  {{posts.activitesBalise[0].nextActivity}}
+        </ion-item>
+    </ion-list>
+    
 </ion-content>
