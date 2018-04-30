@@ -24,25 +24,25 @@
       Organiser : {{posts.Organisateur}}
   </p>-->
 
-    <ion-card>
-        <img src="assets/img/24h.png"/>
-        <div class="card-title">24h de l'INSA</div>
-        <div class="card-subtitle">du 29 au 31 mai</div>
+    <ion-card *ngIf="posts">
+        <img [src]="posts.image"/>
+        <div class="card-title" >{{posts.title}}</div>
+        <div class="card-subtitle"> Le {{posts.DateDebut}}</div>
     </ion-card>
 
-    <div class="description">
+    <div class="description" *ngIf="posts">
         <div class="title">DESCRIPTION</div>
-        <div class="paragraphe">Les 24 heures sont  la plus grande manifestation étudiante en Rhône Alpes et l’une des plus grandes de France : 50 000 spectateurs attendus sur le week-end ! Un rendez-vous exceptionnel avec plus de 80 animations culturelles et sportives (courses, concerts, démonstrations, initiations).</div>
+        <div class="paragraphe">{{posts.description}}</div>
     </div>
 
-    <ion-list class="event-details" no-lines>
+    <ion-list class="event-details" no-lines *ngIf="posts">
         <ion-item>
             <ion-icon name="md-compass" item-start></ion-icon>
-            Campus de La Doua
+            {{posts.Lieu}}
         </ion-item>
         <ion-item>
             <ion-icon name="md-calendar" item-start></ion-icon>
-            Du 29 au 31 mai
+            Le {{posts.DateDebut}}
         </ion-item>
         <ion-item>
             <ion-icon name="logo-euro" item-start></ion-icon>
