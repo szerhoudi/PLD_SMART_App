@@ -18,13 +18,13 @@
             </ion-segment-button>
         </ion-segment>
     </div>
-
+    <div *ngIf="posts">
     <div [ngSwitch]="list">
         <ion-list *ngSwitchCase="'all'">
-            <ion-item *ngFor="let activity of activities" >
+            <ion-item *ngFor="let activity of posts.activitesBalise" >
               <button class ="detailButton" [navPush]="activitiesDetailPage">
                   <ion-icon name="briefcase" item-start></ion-icon>
-                  {{activity.title}}</button>              
+                  {{activity.nom}}</button>              
                 <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>
                 <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
             </ion-item>
@@ -33,15 +33,16 @@
 
     <div [ngSwitch]="list">
         <ion-list *ngSwitchCase="'favorite'">
-            <div *ngFor="let activity of activities">
+            <div *ngFor="let activity of posts.activitesBalise">
                 <ion-item class="buttonList" detail-push *ngIf="activity.favorite" [navPush]="activitiesDetailPage">
                     <ion-icon name="briefcase" item-start></ion-icon>
-                    {{activity.title}}
+                    {{activity.nom}}
                     <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>
                     <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
                 </ion-item>
             </div>
         </ion-list>
+    </div>
     </div>
 
 </ion-content>
