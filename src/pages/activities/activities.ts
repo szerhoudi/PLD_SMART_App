@@ -14,12 +14,12 @@ import { ActivitiesDetailPage} from '../activities-detail/activities-detail';
 @Component({
   selector: 'page-activities',
   templateUrl: 'activities.html',
-  template: '<button ion-button [navPush]="activitiesDetailPage" [navParams]="params">Go</button>'
+  //template: '<button ion-button [navPush]="activitiesDetailPage" [navParams]="params">Go</button>'
 })
 export class ActivitiesPage {
   params: Object;
   activitiesDetailPage = ActivitiesDetailPage;
-  activitiesDetailPage: any;
+  //activitiesDetailPage: any;
 
   //localisation = Localisation;
 

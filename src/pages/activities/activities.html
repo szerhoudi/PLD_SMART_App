@@ -10,90 +10,12 @@
 <ion-content padding>
 
   <ion-card>
-      <ion-card-header>
-        Your RIF's favorite activities
-      </ion-card-header>
+    <ion-card-content>
+      <button ion-button [navPush]="activitiesDetailPage">Go To About</button>
 
-      <ion-card-content>
-        <button ion-button [navPush]="activitiesDetailPage">Go To About</button>
-      </ion-card-content>
-
-
-
-      <ion-list>
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          AEDI's openning remarks
-        </button>
-
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          FIDUCIAL stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          SOPRA STERIA stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="star" item-start></ion-icon>
-          Lunch Break
-        </button>
-
-      </ion-list>
+    </ion-card-content>
     </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        All RIF's Activities
-      </ion-card-header>
-
-      <ion-list>
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          CGI stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          WAVESTONE stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          INFORMATIONS
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          JP Morgan stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          ESKER stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          WORLDLINE stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          AVANADE stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          AMARIS stand
-        </button>
-
-        <button ion-item>
-          <ion-icon name="briefcase" item-start></ion-icon>
-          AMADEUS stand
-        </button>
 
     <div padding>
         <ion-segment [(ngModel)]="list">
