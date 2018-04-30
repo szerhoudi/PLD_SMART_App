@@ -31,24 +31,24 @@
         </button>
       </ion-list> -->
 
-     <ion-list>
-        <ion-list-header>
+     <ion-list no-lines>
+        <ion-list-header class="event-title">
           RIF
         </ion-list-header>
         <button ion-item menuClose (click)="openAccueil()">
-          <ion-icon item-start name="md-home"></ion-icon>
+          <ion-icon class="menu-icon" onclick="this.style.color='#e02e34'" item-start name="md-home"></ion-icon>
           Home
         </button>
         <button ion-item menuClose (click)="openLocalisation()">
-          <ion-icon item-start name="md-navigate"></ion-icon>
+          <ion-icon class="menu-icon" item-start name="md-navigate"></ion-icon>
           Localisation
         </button>
         <button ion-item menuClose (click)="openActivities()">
-          <ion-icon item-start name="md-list-box"></ion-icon>
+          <ion-icon class="menu-icon" item-start name="md-list-box"></ion-icon>
           Activities
         </button>
         <button ion-item menuClose (click)="openRealMap()">
-          <ion-icon item-start name="md-map"></ion-icon>
+          <ion-icon class="menu-icon" item-start name="md-map"></ion-icon>
           Map
         </button>
       </ion-list>
@@ -58,7 +58,7 @@
           Others Events
         </ion-list-header>
         <button ion-item menuClose (click)="openChangeEvent()">
-          <ion-icon item-start name="swap"></ion-icon>
+          <ion-icon class="menu-icon" item-start name="swap"></ion-icon>
           Change Event
         </button>
       </ion-list>
@@ -68,7 +68,7 @@
           Settings
         </ion-list-header>
         <button ion-item menuClose (click)="openSettings()">
-          <ion-icon item-start name="construct"></ion-icon>
+          <ion-icon class="menu-icon" item-start name="construct"></ion-icon>
           Settings
         </button>
       </ion-list>

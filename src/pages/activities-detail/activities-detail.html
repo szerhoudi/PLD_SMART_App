@@ -33,13 +33,13 @@
 
     <ion-list class="event-details" no-lines *ngIf="posts">
         <ion-item>
-            <ion-icon name="md-compass" item-start></ion-icon>
+            <ion-icon class="logo" name="md-compass" item-start></ion-icon>
             {{posts.activitesBalise[0].lieu}}
         </ion-item>
         <ion-item>
-            <ion-icon name="md-calendar" item-start></ion-icon>
+            <ion-icon class="logo" name="md-calendar" item-start></ion-icon>
             Next activity:  {{posts.activitesBalise[0].nextActivity}}
         </ion-item>
     </ion-list>
-    
+
 </ion-content>

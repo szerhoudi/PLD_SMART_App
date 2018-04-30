@@ -18,14 +18,11 @@ export class ActivitiesDetailPage {
 
   public posts: any = null;
   public id: any =null;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
   this.http.get('https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json').map(res => res.json()).subscribe(data => {
         this.posts = data;
-        console.log(this.posts);
-        console.log(this.posts.title);
         this.id = this.navParams.get("id");
-        console.log(this.id);
         this.posts.activitesBalise[0].nom = this.posts.activitesBalise[this.id].nom;
         this.posts.activitesBalise[0].lieu = this.posts.activitesBalise[this.id].lieu;
         this.posts.activitesBalise[0].heureDebut = this.posts.activitesBalise[this.id].heureDebut;

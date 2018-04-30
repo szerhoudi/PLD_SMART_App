@@ -31,7 +31,7 @@ page-activities-detail {
     }
 
     .description .title {
-        color: #565656;
+        color: #e02e34;
         margin-bottom: 8px;
     }
 
@@ -44,7 +44,8 @@ page-activities-detail {
         height: 20px;
     }
 
-    .icon-md {
+    .icon-md.logo {
+        color: #e02e34;
         font-size: 22px;
     }
 
@@ -52,4 +53,5 @@ page-activities-detail {
         position: absolute;
         bottom: 0px;
     }
+
 }

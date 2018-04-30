@@ -4,7 +4,7 @@ page-activities {
     color: black;
 
     &.segment-activated {
-      border-color: blue;
+      border-color: #e33333;
     }
   }
   .detailButton {
@@ -12,5 +12,9 @@ page-activities {
     width: 260px;
     background-color: white;
     text-align: left;
+  }
+
+  .star-icon {
+      color: #ffe100;
   }
 }

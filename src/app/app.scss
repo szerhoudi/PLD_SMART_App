@@ -67,3 +67,33 @@
     }
   }
 }
+
+.event-title .label {
+    font-size: 30px;
+    border-left-width: 3px;
+    border-left-style: solid;
+    padding-left: 10px;
+    border-left-color: #e02e34;
+    color: #424141;
+    margin-top: 20px;
+
+
+}
+
+.event-title {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #ddd;
+}
+
+.menu-icon {
+    color: #333;
+}
+
+.menu-icon:hover {
+    color: #e02e34;
+}
+
+.ion-item {
+    border: none;
+}
