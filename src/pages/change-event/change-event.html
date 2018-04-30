@@ -9,14 +9,14 @@
 
 
 <ion-content padding>
-  <ion-list>
+  <ion-list *ngIf="posts">
 
-    <ion-item>
+    <ion-item *ngFor="let item of posts.Event">
       <ion-thumbnail item-start>
-        <img src="assets/img/appicon.png">
+        <img [src]="item.image">
       </ion-thumbnail>
-      <h2>Nom Event</h2>
-      <p>Date Event</p>
+      <h2>{{item.nom}}</h2>
+      <p>{{item.date}}</p>
       <button ion-button color="primary" block (click)="doConfirm()">Change</button>
     </ion-item>
   </ion-list>
