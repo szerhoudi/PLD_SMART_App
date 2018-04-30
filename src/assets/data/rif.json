@@ -15,6 +15,7 @@
         "heureFin":"15h30",
         "nextActivity":"Aucune",
         "description":"Stand du parrain de promo 4IF",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"},
@@ -28,6 +29,7 @@
         "heureFin":"16h30",
         "nextActivity":"Aucune",
         "description":"Stand du parrain de promo 5IF",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
@@ -40,6 +42,7 @@
         "heureFin":"16h30",
         "nextActivity":"Aucune",
         "description":"Stand de la CGI",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
@@ -52,6 +55,7 @@
         "heureFin":"16h30",
         "nextActivity":"Aucune",
         "description":"Stand dde WAVESTONE",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
@@ -64,6 +68,7 @@
         "heureFin":"16h30",
         "nextActivity":"Aucune",
         "description":"Stand de JP MORGAN",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
@@ -76,6 +81,7 @@
         "heureFin":"16h30",
         "nextActivity":"Aucune",
         "description":"Stand de ESKER",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
@@ -88,6 +94,7 @@
         "heureFin":"16h30",
         "nextActivity":"Aucune",
         "description":"Stand de WORLDLINE",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
@@ -100,6 +107,7 @@
         "heureFin":"11h",
         "nextActivity":"Lunch Break",
         "description":"AEDI ...",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
@@ -112,6 +120,7 @@
         "heureFin":"14h",
         "nextActivity":"Aucune",
         "description":"Lunch Break with students",
+        "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActivitiesDetailPage} from '../activities-detail/activities-detail';
+import { Http } from '@angular/http';
 //import { Localisation} from '../localisation/localisation';
 
 /**
@@ -68,11 +69,18 @@ export class ActivitiesPage {
          favorite: false
      }
  ];
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+  public posts: any = null;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     //this.pushPage = LoginPage;
     this.params = { id: 42 };
       this.list = "all";
+      this.http.get('https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json').map(res => res.json()).subscribe(data => {
+        this.posts = data;
+        console.log(this.posts);
+        console.log(this.posts.title);
+    })
   }
 
 
