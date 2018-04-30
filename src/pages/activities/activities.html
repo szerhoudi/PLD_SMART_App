@@ -22,9 +22,9 @@
     <div [ngSwitch]="list">
         <ion-list *ngSwitchCase="'all'">
             <ion-item *ngFor="let activity of activities" >
-              <button class ="detailButton" [navPush]="activitiesDetailPage">
+              <button class ="detailButton" (click)="showDetailPage(activity)">
                   <ion-icon name="briefcase" item-start></ion-icon>
-                  {{activity.title}}</button>              
+                  {{activity.title}}</button>
                 <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>
                 <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
             </ion-item>
@@ -34,7 +34,7 @@
     <div [ngSwitch]="list">
         <ion-list *ngSwitchCase="'favorite'">
             <div *ngFor="let activity of activities">
-                <ion-item class="buttonList" detail-push *ngIf="activity.favorite" [navPush]="activitiesDetailPage">
+                <ion-item class="buttonList" detail-push *ngIf="activity.favorite" (click)="showDetailPage(activity)">
                     <ion-icon name="briefcase" item-start></ion-icon>
                     {{activity.title}}
                     <ion-icon *ngIf="activity.favorite" name="md-star" item-end (click)="changeFavorite(activity)"></ion-icon>

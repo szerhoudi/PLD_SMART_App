@@ -84,4 +84,10 @@ export class ActivitiesPage {
       activity.favorite = !activity.favorite;
   }
 
+  showDetailPage(activity) {
+      this.navCtrl.push(ActivitiesDetailPage, {
+          //id: activity.id
+      });
+  }
+
 }
