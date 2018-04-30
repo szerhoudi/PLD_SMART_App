@@ -16,6 +16,7 @@ import { PopoverPage } from '../pages/about-popover/about-popover';
 import { AccueilPage } from '../pages/accueil/accueil';
 import { LocalisationPage } from '../pages/localisation/localisation';
 import { ActivitiesPage } from '../pages/activities/activities';
+import { ActivitiesDetailPage} from '../pages/activities-detail/activities-detail';
 import { RealMapPage } from '../pages/real-map/real-map';
 import { ChangeEventPage } from '../pages/change-event/change-event';
 import { SettingsPage } from '../pages/settings/settings';
@@ -43,6 +44,7 @@ import { UserData } from '../providers/user-data';
     AccueilPage,
     LocalisationPage,
     ActivitiesPage,
+    ActivitiesDetailPage,
     RealMapPage,
     ChangeEventPage,
     SettingsPage,
@@ -75,6 +77,7 @@ import { UserData } from '../providers/user-data';
         { component: AccueilPage, name: 'Accueil', segment: 'accueil' },
         { component: LocalisationPage, name: 'Localisation', segment: 'localisation' },
         { component: ActivitiesPage, name: 'Activities', segment: 'activities' },
+        { component: ActivitiesDetailPage, name: 'ActivitiesDetail', segment: 'activitiesDetail' },
         { component: RealMapPage, name: 'RealMap', segment: 'realMap' },
         { component: ChangeEventPage, name: 'ChangeEvent', segment: 'changeEvent' },
         { component: SettingsPage, name: 'Settings', segment: 'settings' },
@@ -95,6 +98,7 @@ import { UserData } from '../providers/user-data';
     AccueilPage,
     LocalisationPage,
     ActivitiesPage,
+    ActivitiesDetailPage,
     RealMapPage,
     ChangeEventPage,
     SettingsPage,

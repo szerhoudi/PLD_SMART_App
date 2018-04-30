@@ -131,23 +131,23 @@ rootPage: any;
   openAccueil() {
     this.nav.setRoot(AccueilPage);
   }
-  
+
   openLocalisation() {
     this.nav.setRoot(LocalisationPage);
   }
-  
+
   openActivities() {
     this.nav.setRoot(ActivitiesPage);
   }
-  
+
   openRealMap() {
     this.nav.setRoot(RealMapPage);
   }
-  
+
   openChangeEvent() {
     this.nav.setRoot(ChangeEventPage);
   }
-  
+
   openSettings() {
     this.nav.setRoot(SettingsPage);
   }

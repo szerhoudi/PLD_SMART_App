@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LocalisationPage} from '../localisation/localisation';
 
 /**
  * Generated class for the AccueilPage page.
@@ -15,6 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AccueilPage {
 
+  localisationPage = LocalisationPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
