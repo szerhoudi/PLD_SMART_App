@@ -69,9 +69,9 @@ export class ActivitiesPage {
          favorite: false
      }
  ];
-    
+
   public posts: any = null;
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     //this.pushPage = LoginPage;
     this.params = { id: 42 };
