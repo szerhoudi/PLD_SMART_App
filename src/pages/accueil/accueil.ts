@@ -40,8 +40,6 @@ export class AccueilPage {
   
  toggleMenu() {
   console.log('here');
-  this.menuCtrl.url = this.url;
-  this.menuCtrl.posts = this.posts;
   this.menuCtrl.toggle();
  }
 

@@ -17,7 +17,8 @@ import { Storage } from '@ionic/storage';
 export class SettingsPage {
   
   public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
-
+  public config: any = null;
+  public isToggled = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
       var defaultConfig = {
