@@ -29,8 +29,6 @@ export class ChangeEventPage {
     });
   this.http.get('https://s3.eu-west-3.amazonaws.com/pldsmart/Event.json').map(res => res.json()).subscribe(data => {
         this.posts = data;
-        console.log(this.posts);
-        console.log(this.posts.title);
     })
   }
 

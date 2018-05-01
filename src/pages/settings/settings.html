@@ -16,39 +16,33 @@
 
         <ion-item>
           <ion-label>Notifications</ion-label>
-          <ion-toggle value="foo"></ion-toggle>
+          <ion-toggle checked="config.notifications" [(ngModel)]="config.notifications"></ion-toggle>
         </ion-item>
 
         <ion-item>
           <ion-label>Sound</ion-label>
-          <ion-toggle color="foo"></ion-toggle>
+          <ion-toggle color="foo" checked="config.sounds" [(ngModel)]="config.sounds"></ion-toggle>
         </ion-item>
       <ion-item>
-          <ion-label>Distance of notification</ion-label>
-          <ion-select [(ngModel)]="distance" submitText="Change" cancelText="Cancel">
-            <ion-option value="1m">1m</ion-option>
-            <ion-option value="2m">2m</ion-option>
-            <ion-option value="5m">5m</ion-option>
-            <ion-option value="10m">10m</ion-option>
-            <ion-option value="15m">15m</ion-option>
-            <ion-option value="20m">20m</ion-option>
+          <ion-label class="option-name">Distance of notification</ion-label>
+          <ion-select [(ngModel)]="config.distance" interface="action-sheet" submitText="Change" cancelText="Cancel">
+            <ion-option value="1">1m</ion-option>
+            <ion-option value="2">2m</ion-option>
+            <ion-option value="5">5m</ion-option>
+            <ion-option value="10">10m</ion-option>
+            <ion-option value="15">15m</ion-option>
+            <ion-option value="20">20m</ion-option>
           </ion-select>
         </ion-item>
-    </ion-list>
-
-
-
-    <ion-list>
-        <ion-list-header>
-          Adjust Text
-        </ion-list-header>
         <ion-item>
-          <ion-range min="-100" step="10" snaps="true" [(ngModel)]="text">
+            <ion-label>Adjust Text</ion-label>
+          <ion-range min="8" step="2" max="20" snaps="true" [(ngModel)]="config.text">
             <ion-label range-left class="small-text">A</ion-label>
             <ion-label range-right>A</ion-label>
           </ion-range>
         </ion-item>
-  </ion-list>
+    </ion-list>
 
-    <button ion-button block>Default Settings</button>
+
+    <button ion-button block (click)="defaultSettings()">Default Settings</button>
 </ion-content>

@@ -18,16 +18,45 @@ export class SettingsPage {
   
   public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
-    this.storage.get('url').then((val) => {
-    if(val!=null){
-        this.url = val;
-     }
-    });
+      var defaultConfig = {
+          notifications: true,
+          sounds: true,
+          distance: 5,
+          text: 14
+      };
+      this.config = defaultConfig;
+      this.storage = storage;
+      this.isToggled = true;
+      this.storage.get('url').then((val) => {
+        if(val!=null){
+            this.url = val;
+         }
+        });
+      this.storage.get('config').then((config) => {
+          if (config !== null) {
+              this.config = config;
+          }
+      });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
+  }
+
+  ionViewWillLeave() {
+      this.storage.set('config', this.config);
+  }
+
+  defaultSettings() {
+      console.log(this.config);
+      this.config = {
+          notifications: true,
+          sounds: true,
+          distance: 5,
+          text: 14
+      };
   }
 
 }
