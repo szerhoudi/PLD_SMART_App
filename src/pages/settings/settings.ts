@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the SettingsPage page.
@@ -15,11 +16,41 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+      var defaultConfig = {
+          notifications: true,
+          sounds: true,
+          distance: 5,
+          text: 14
+      };
+      this.config = defaultConfig;
+      this.storage = storage;
+      this.isToggled = true;
+      this.storage.get('config').then((config) => {
+          if (config !== null) {
+              this.config = config;
+          }
+      });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
+  }
+
+  ionViewWillLeave() {
+      this.storage.set('config', this.config);
+  }
+
+  defaultSettings() {
+      console.log(this.config);
+      this.config = {
+          notifications: true,
+          sounds: true,
+          distance: 5,
+          text: 14
+      };
   }
 
 }

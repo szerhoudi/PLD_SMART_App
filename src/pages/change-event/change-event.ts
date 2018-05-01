@@ -20,15 +20,13 @@ export class ChangeEventPage {
   constructor(public alerCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,  public http: Http) {
   this.http.get('https://s3.eu-west-3.amazonaws.com/pldsmart/Event.json').map(res => res.json()).subscribe(data => {
         this.posts = data;
-        console.log(this.posts);
-        console.log(this.posts.title);
     })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChangeEventPage');
   }
-  
+
   doConfirm() {
     let confirm = this.alerCtrl.create({
       title: 'Choose this event ?',
