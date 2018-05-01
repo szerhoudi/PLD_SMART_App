@@ -7,9 +7,9 @@
         "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
     },{
         "id":"1",
-        "nom":"Forum rhone alpes",
+        "nom":"RIF Version 2",
         "date":"Salle 202",
-        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
+        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rifv2.json",
         "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
     },{
         "id":"2",

@@ -32,8 +32,8 @@
       </ion-list> -->
 
      <ion-list no-lines>
-        <ion-list-header class="event-title">
-          RIF
+        <ion-list-header class="event-title" *ngIf=posts>
+          {{posts.title}}
         </ion-list-header>
         <button ion-item menuClose (click)="openAccueil()">
           <ion-icon class="menu-icon" onclick="this.style.color='#e02e34'" item-start name="md-home"></ion-icon>

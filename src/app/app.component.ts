@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 
 import { Events, MenuController, Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 import { Storage } from '@ionic/storage';
 
@@ -65,6 +67,8 @@ export class ConferenceApp {
     { title: 'Signup', name: 'SignupPage', component: SignupPage, icon: 'person-add' }
   ];
 rootPage: any;
+  public posts: any = null;
+  public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
 
   constructor(
     public events: Events,
@@ -73,7 +77,8 @@ rootPage: any;
     public platform: Platform,
     public confData: ConferenceData,
     public storage: Storage,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    public http: Http
   ) {
 
     // Check if the user has already seen the tutorial
@@ -98,6 +103,18 @@ rootPage: any;
     this.enableMenu(true);
 
     this.listenToLoginEvents();
+    
+    this.storage.get('url').then((val) => {
+    if(val!=null){
+        this.url = val;
+     }
+        this.http.get(this.url).map(res => res.json()).subscribe(data => {
+            this.posts = data;
+            console.log(this.posts);
+            console.log(this.posts.title);
+        })
+    });
+    
   }
 
   openPage(page: PageInterface) {
@@ -155,6 +172,7 @@ rootPage: any;
   openTutorial() {
     this.nav.setRoot(TutorialPage);
   }
+
 
   listenToLoginEvents() {
     this.events.subscribe('user:login', () => {

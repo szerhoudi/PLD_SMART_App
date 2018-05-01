@@ -21,6 +21,7 @@ import { Storage } from '@ionic/storage';
 export class ActivitiesPage {
     params: Object;
     activitiesDetailPage = ActivitiesDetailPage;
+    public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
     //activitiesDetailPage: any;
 
     //localisation = Localisation;
@@ -79,17 +80,24 @@ export class ActivitiesPage {
         this.storage = storage;
         this.params = { id: 42 };
         this.list = "all";
-        this.http.get('https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json').map(res => res.json()).subscribe(data => {
+        this.storage.get('url').then((val) => {
+            if(val!=null){
+                this.url = val;
+             }
+             this.http.get(this.url).map(res => res.json()).subscribe(data => {
             this.posts = data;
             if(this.posts != null) {
                 this.storage.get('favorites').then((favorites) => {
-                    console.log("opsts : ", this.posts);
+                    console.log("posts : ", this.posts);
                     favorites.forEach((id) => {
                         this.posts.activitesBalise[id].favorite = true;
                     });
                 });
             }
         });
+
+    });
+        
 
         console.log("posts load : ", this.posts);
     }
