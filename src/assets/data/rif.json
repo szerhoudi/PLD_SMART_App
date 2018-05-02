@@ -9,35 +9,57 @@
     "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg",
     "activitesBalise": [{
         "id":"0",
+        "minor": "3001",
         "nom":"FIDUCIAL",
         "lieu":"Salle 202",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/fiducial.jpg",
         "heureDebut":"9h30",
         "heureFin":"15h30",
         "nextActivity":"Aucune",
-        "description":"Stand du parrain de promo 4IF",
+        "description": [{
+        "p":"Parrain de la promotion 4IF"},
+        {"p":"\n"},
+        {"p":"Le groupe FIDUCIAL en quelques chiffres : "},
+        {"p":"- CA 980 millions euros en France (2016)"},
+        {"p":"- 11 040 personnes en Europe"},
+        {"p":"- 17340 personnes dans le monde"},
+        {"p":""},
+        {"p":"FIDUCIAL, c'est une culture informatique triple :"},
+        {"p":"Grand compte avec une DSI Groupe de + 100 personnes basée à Lyon"},
+        {"p":"Editeur avec FIDUCIAL Informatique, 500 personnes, partenaire Gold Microsoft, qui met en œuvre des solutions métiers innovantes pour ses clients"},
+        {"p":""},
+        {"p":"Start-up avec Fiducial Cloud, Y-Proximité, Véoprint... des entreprises à valeur ajoutée IT qui permettent à FIDUCIAL de maîtriser des nouveaux savoir-faire informatiques : un opérateur cloud, une agence web digitale..."},
+        {"p":""},
+        {"p":"FIDUCIAL regroupe ainsi l'ensemble des métiers de l'informatique, investissant des ressources significatives en R&D ce qui permet aux équipes de mener des projets ambitieux et innovants pour accompagner le développement des clients et des différentes activités du Groupe (expertise comptable, banque, société d'avocats, société de sécurité privée & télésurveillance, société de négoce en fournitures de bureau, des start-up comme Véoprint, Y-Promité, Fiducial Cloud...)."
+        }],
         "favorite":"",
         "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"},
-            {"nom":"Intervenant3"
+            "nom":"Mylène ORTIZ"},
+            {"nom":"Alicia BATTO"},
+            {"nom":"Minh HOANG TRAN"
         }]
     },{
         "id":"1",
+        "minor": "3002",
         "nom":"SOPRA STERIA",
         "lieu":"Salle 208",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/sopra+steria.jpg",
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
         "description":"Stand du parrain de promo 5IF",
         "favorite":"",
         "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
+            "nom":"Sophie REVILLARD"},
+            {"nom":"Cyril NAVARRO"},
+            {"nom":"Améli JAN"
         }]    
     },{
         "id":"2",
+        "minor": "3007",
         "nom":"CGI",
         "lieu":"Salle 208",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/cgi.jpg",
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
@@ -49,8 +71,10 @@
         }]    
     },{
         "id":"3",
+        "minor": "3005",
         "nom":"WAVESTONE",
         "lieu":"Salle 212",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/wavestone.jpg",
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
@@ -62,21 +86,10 @@
         }]    
     },{
         "id":"4",
-        "nom":"JP MORGAN",
-        "lieu":"Salle 204",
-        "heureDebut":"10h",
-        "heureFin":"16h30",
-        "nextActivity":"Aucune",
-        "description":"Stand de JP MORGAN",
-        "favorite":"",
-        "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
-        }]    
-    },{
-        "id":"5",
+        "minor": "3004",
         "nom":"ESKER",
         "lieu":"Salle 212",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/esker.jpg",
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
@@ -87,9 +100,11 @@
             {"nom":"Intervenant2"
         }]    
     },{
-        "id":"6",
+        "id":"5",
+        "minor": "3008",
         "nom":"WORLDLINE",
         "lieu":"Salle 214",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/worldline.jpg",
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
@@ -100,12 +115,14 @@
             {"nom":"Intervenant2"
         }]    
     },{
-        "id":"7",
-        "nom":"AEDI's openinning remarks",
+        "id":"6",
+        "minor": "3009",
+        "nom":"Discours d'ouverture",
         "lieu":"Hall",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/aedi.png",
         "heureDebut":"9h",
         "heureFin":"11h",
-        "nextActivity":"Lunch Break",
+        "nextActivity":"Pause déjeuner",
         "description":"AEDI ...",
         "favorite":"",
         "intervenants": [{
@@ -113,13 +130,15 @@
             {"nom":"Intervenant2"
         }]    
     },{
-        "id":"8",
-        "nom":"Lunch Break",
+        "id":"7",
+        "minor": "104",
+        "nom": "Pause déjeuner",
         "lieu":"Hall",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/pause+d%C3%A9jeuner.jpg",
         "heureDebut":"12h",
         "heureFin":"14h",
         "nextActivity":"Aucune",
-        "description":"Lunch Break with students",
+        "description":"///TODO",
         "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},

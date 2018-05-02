@@ -36,6 +36,9 @@ export class ActivitiesDetailPage {
         this.posts.activitesBalise[0].nextActivity = this.posts.activitesBalise[this.id].nextActivity;
         this.posts.activitesBalise[0].description = this.posts.activitesBalise[this.id].description;
         this.posts.activitesBalise[0].intervenants = this.posts.activitesBalise[this.id].intervenants;
+        this.posts.activitesBalise[0].image = this.posts.activitesBalise[this.id].image;
+        this.posts.activitesBalise[0].minor = this.posts.activitesBalise[this.id].minor;
+        console.log(this.posts.activitesBalise[0].image);
     })
     });
 
