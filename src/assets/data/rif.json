@@ -73,16 +73,10 @@
         }],
         "favorite":"",
         "intervenants": [{
-<<<<<<< HEAD
             "nom":"Damien Tuduri"},
             {"nom":"Jason Tresfield"},
             {"nom":"Thomas Bazin"}
         }]    
-=======
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
-        }]
->>>>>>> fe8efb1334b983f610eab207f91ef180f8e5969e
     },{
         "id":"3",
         "minor": "3005",
@@ -98,16 +92,10 @@
         }],
         "favorite":"",
         "intervenants": [{
-<<<<<<< HEAD
             "nom":"FAUGOUIN Marion"},
             {"nom":"CHERIF Riadh"},
             {"nom":"Viatge Bastien"
         }]    
-=======
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
-        }]
->>>>>>> fe8efb1334b983f610eab207f91ef180f8e5969e
     },{
         "id":"4",
         "minor": "3004",
@@ -119,15 +107,9 @@
         "nextActivity":"Aucune",
         "description": [{
         "p":"ESKER"},
-        {"p":"3ème éditeur de logiciel de la région Rhône-Alpes, nos solutions en mode SaaS permettent de
-dématérialiser et d’automatiser la gestion des flux documentaires des entreprises : factures, bons de
-commandes, demandes d’achat… Près de 11 000 clients à travers le monde nous font déjà confiance,parmi lesquels Samsung, Starbucks, Hollister, Sanofi, Ford, McDonald’s ou HSBC."},
-        {"p":"Fondée il y a 30 ans, nous employons aujourd’hui près de 400 Eskériens à travers 12 filiales (Europe,
-Asie, Australie et USA), dont plus de 200 personnes dans notre siège social, à Lyon. En croissance à 2
-chiffres sur les 3 dernières années (+27% en 2015), notre chiffre d’affaires s’élève à 58,5 millions
-d’euros."},
-        {"p":"Nous avons choisi l’agilité pour mettre le client au centre de notre travail mais aussi favoriser la
-communication et la collaboration entre les équipes. Au sein de nos équipes Scrum, nous encourageons l’autonomie, la prise d’initiative, le partage d’idées et travaillons dans un souci constant d’amélioration continue."},
+        {"p":"3ème éditeur de logiciel de la région Rhône-Alpes, nos solutions en mode SaaS permettent de dématérialiser et d’automatiser la gestion des flux documentaires des entreprises : factures, bons de commandes, demandes d’achat… Près de 11 000 clients à travers le monde nous font déjà confiance,parmi lesquels Samsung, Starbucks, Hollister, Sanofi, Ford, McDonald’s ou HSBC."},
+        {"p":"Fondée il y a 30 ans, nous employons aujourd’hui près de 400 Eskériens à travers 12 filiales (Europe, Asie, Australie et USA), dont plus de 200 personnes dans notre siège social, à Lyon. En croissance à 2 chiffres sur les 3 dernières années (+27% en 2015), notre chiffre d’affaires s’élève à 58,5 millions d’euros."},
+        {"p":"Nous avons choisi l’agilité pour mettre le client au centre de notre travail mais aussi favoriser la communication et la collaboration entre les équipes. Au sein de nos équipes Scrum, nous encourageons l’autonomie, la prise d’initiative, le partage d’idées et travaillons dans un souci constant d’amélioration continue."},
         {"p":"Après au moins 3 ans passés au sein d’une même fonction, vous pourrez :"},
         {"p":"-évoluer en transversal pour apprendre de nouveaux métiers au sein d’autres services,"},
         {"p":"-partir dans l’une de nos filiales dans le cadre d’un VIE ou d’un contrat local."},
@@ -171,15 +153,10 @@ communication et la collaboration entre les équipes. Au sein de nos équipes Sc
         }],
         "favorite":"",
         "intervenants": [{
-<<<<<<< HEAD
             "nom":"Regis GOUBIN"},
             {"nom":"Tristan Bourvon"
         }]    
-=======
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
-        }]
->>>>>>> fe8efb1334b983f610eab207f91ef180f8e5969e
+
     },{
         "id":"7",
         "minor": "104",
