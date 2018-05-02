@@ -74,7 +74,6 @@ export class ActivitiesPage {
     public posts: any = null;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage) {
-        console.log("construct");
         //this.pushPage = LoginPage;
         this.storage = storage;
         this.params = { id: 42 };
