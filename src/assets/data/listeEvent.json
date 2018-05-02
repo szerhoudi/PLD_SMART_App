@@ -7,25 +7,25 @@
         "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
     },{
         "id":"1",
-        "nom":"RIF Version 2",
+        "nom":"Présentation SMART",
         "date":"Salle 202",
-        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rifv2.json",
-        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
+        "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/presentationSMART.json",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/Event.PNG"
     },{
         "id":"2",
-        "nom":"24h de l'INSA",
+        "nom":"Evenement factice 1",
         "date":"INSA",
         "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
         "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
     },{
         "id":"3",
-        "nom":"Test",
+        "nom":"Evenement factice 2",
         "date":"Salle 213",
         "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
         "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
     },{
        "id":"4",
-        "nom":"Test",
+        "nom":"Evenement factice 3",
         "date":"Salle 202",
         "url":"https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json",
         "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg"
