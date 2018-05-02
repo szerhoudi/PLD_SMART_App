@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the ActivitiesDetailPage page.
  *
@@ -18,9 +19,14 @@ export class ActivitiesDetailPage {
 
   public posts: any = null;
   public id: any =null;
+  public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-  this.http.get('https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json').map(res => res.json()).subscribe(data => {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage) {
+   this.storage.get('url').then((val) => {
+    if(val!=null){
+        this.url = val;
+     }
+       this.http.get(this.url).map(res => res.json()).subscribe(data => {
         this.posts = data;
         this.id = this.navParams.get("id");
         this.posts.activitesBalise[0].nom = this.posts.activitesBalise[this.id].nom;
@@ -30,7 +36,12 @@ export class ActivitiesDetailPage {
         this.posts.activitesBalise[0].nextActivity = this.posts.activitesBalise[this.id].nextActivity;
         this.posts.activitesBalise[0].description = this.posts.activitesBalise[this.id].description;
         this.posts.activitesBalise[0].intervenants = this.posts.activitesBalise[this.id].intervenants;
+        this.posts.activitesBalise[0].image = this.posts.activitesBalise[this.id].image;
+        this.posts.activitesBalise[0].minor = this.posts.activitesBalise[this.id].minor;
+        console.log(this.posts.activitesBalise[0].image);
     })
+    });
+
   }
 
   ionViewDidLoad() {

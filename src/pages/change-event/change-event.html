@@ -11,13 +11,13 @@
 <ion-content padding>
   <ion-list *ngIf="posts">
 
-    <ion-item *ngFor="let item of posts.Event">
+    <ion-item *ngFor="let item of posts.Event; let i=index">
       <ion-thumbnail item-start>
         <img [src]="item.image">
       </ion-thumbnail>
       <h2>{{item.nom}}</h2>
       <p>{{item.date}}</p>
-      <button ion-button color="primary" block (click)="doConfirm()">Change</button>
+      <button ion-button color="primary" block (click)="doConfirm(i)">Change</button>
     </ion-item>
   </ion-list>
 

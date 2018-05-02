@@ -1,0 +1,38 @@
+{
+    "title":"RIF Version 2",
+    "Organisateur":"AEDI",
+    "Lieu":"Batiment Blaise Pascal",
+    "DateDebut":"Jeudi 9 novembre",
+    "HeureDebut":"9h",
+    "HeureFin":"17h",
+    "description":"Rencontre avec des entreprises pour les étudiants du département informatique de l'INSA de Lyon",
+    "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg",
+    "activitesBalise": [{
+        "id":"0",
+        "nom":"Test",
+        "lieu":"Salle 202",
+        "heureDebut":"9h30",
+        "heureFin":"15h30",
+        "nextActivity":"Aucune",
+        "description":"Stand SMART",
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Intervenant1"},
+            {"nom":"Intervenant2"},
+            {"nom":"Intervenant3"
+        }]
+    },{
+        "id":"1",
+        "nom":"Lunch Break",
+        "lieu":"Hall",
+        "heureDebut":"12h",
+        "heureFin":"14h",
+        "nextActivity":"Aucune",
+        "description":"Lunch Break with students",
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Intervenant1"},
+            {"nom":"Intervenant2"
+        }]    
+    }]
+}

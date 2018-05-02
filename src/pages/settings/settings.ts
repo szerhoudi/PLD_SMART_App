@@ -15,8 +15,10 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'settings.html',
 })
 export class SettingsPage {
-
-
+  
+  public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
+  public config: any = null;
+  public isToggled = null;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
       var defaultConfig = {
@@ -28,6 +30,11 @@ export class SettingsPage {
       this.config = defaultConfig;
       this.storage = storage;
       this.isToggled = true;
+      this.storage.get('url').then((val) => {
+        if(val!=null){
+            this.url = val;
+         }
+        });
       this.storage.get('config').then((config) => {
           if (config !== null) {
               this.config = config;
