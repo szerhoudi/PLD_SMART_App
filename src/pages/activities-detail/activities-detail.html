@@ -16,16 +16,19 @@
 
 <ion-content padding class="card-background-page">
   <ion-card *ngIf="posts">
-        <img [src]="posts.image"/>
-        <div class="card-title" >{{posts.activitesBalise[0].nom}}</div>
-        <div class="card-subtitle"> De {{posts.activitesBalise[0].heureDebut}} à {{posts.activitesBalise[0].heureFin}}</div>
+        <img [src]="posts.activitesBalise[0].image"/>
     </ion-card>
 
     <div class="description" *ngIf="posts">
         <div class="title">DESCRIPTION</div>
-        <div class="paragraphe">{{posts.activitesBalise[0].description}}</div>
+        <ion-list>
+            <div *ngFor = "let item of posts.activitesBalise[0].description;">
+                {{item.p}}
+            </div>
+        </ion-list>
     </div>
     <ion-list *ngIf="posts">
+        <div class="title">INTERVENANTS</div>
         <ion-item *ngFor = "let item of posts.activitesBalise[0].intervenants;">
             {{item.nom}}
         </ion-item>
@@ -37,8 +40,12 @@
             {{posts.activitesBalise[0].lieu}}
         </ion-item>
         <ion-item>
+            <ion-icon class="logo" name="clock" item-start></ion-icon>
+        De {{posts.activitesBalise[0].heureDebut}} à {{posts.activitesBalise[0].heureFin}}
+        </ion-item>
+        <ion-item>
             <ion-icon class="logo" name="md-calendar" item-start></ion-icon>
-            Next activity:  {{posts.activitesBalise[0].nextActivity}}
+            Prochaine activité:  {{posts.activitesBalise[0].nextActivity}}
         </ion-item>
     </ion-list>
 

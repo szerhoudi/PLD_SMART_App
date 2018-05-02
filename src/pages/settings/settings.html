@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Settings</ion-title>
+    <ion-title>Paramètres</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -20,11 +20,11 @@
         </ion-item>
 
         <ion-item>
-          <ion-label>Sound</ion-label>
+          <ion-label>Son</ion-label>
           <ion-toggle color="foo" checked="config.sounds" [(ngModel)]="config.sounds"></ion-toggle>
         </ion-item>
       <ion-item>
-          <ion-label class="option-name">Distance of notification</ion-label>
+          <ion-label class="option-name">Distance de notification</ion-label>
           <ion-select [(ngModel)]="config.distance" interface="action-sheet" submitText="Change" cancelText="Cancel">
             <ion-option value="1">1m</ion-option>
             <ion-option value="2">2m</ion-option>
@@ -35,7 +35,7 @@
           </ion-select>
         </ion-item>
         <ion-item>
-            <ion-label>Adjust Text</ion-label>
+            <ion-label>Taille du texte</ion-label>
           <ion-range min="8" step="2" max="20" snaps="true" [(ngModel)]="config.text">
             <ion-label range-left class="small-text">A</ion-label>
             <ion-label range-right>A</ion-label>
@@ -44,5 +44,5 @@
     </ion-list>
 
 
-    <button ion-button block (click)="defaultSettings()">Default Settings</button>
+    <button ion-button block (click)="defaultSettings()">Paramètres par défaut</button>
 </ion-content>
