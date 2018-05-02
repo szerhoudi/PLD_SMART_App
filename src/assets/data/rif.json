@@ -18,18 +18,14 @@
         "nextActivity":"Aucune",
         "description": [{
         "p":"Parrain de la promotion 4IF"},
-        {"p":"\n"},
         {"p":"Le groupe FIDUCIAL en quelques chiffres : "},
         {"p":"- CA 980 millions euros en France (2016)"},
         {"p":"- 11 040 personnes en Europe"},
         {"p":"- 17340 personnes dans le monde"},
-        {"p":""},
         {"p":"FIDUCIAL, c'est une culture informatique triple :"},
         {"p":"Grand compte avec une DSI Groupe de + 100 personnes basée à Lyon"},
         {"p":"Editeur avec FIDUCIAL Informatique, 500 personnes, partenaire Gold Microsoft, qui met en œuvre des solutions métiers innovantes pour ses clients"},
-        {"p":""},
         {"p":"Start-up avec Fiducial Cloud, Y-Proximité, Véoprint... des entreprises à valeur ajoutée IT qui permettent à FIDUCIAL de maîtriser des nouveaux savoir-faire informatiques : un opérateur cloud, une agence web digitale..."},
-        {"p":""},
         {"p":"FIDUCIAL regroupe ainsi l'ensemble des métiers de l'informatique, investissant des ressources significatives en R&D ce qui permet aux équipes de mener des projets ambitieux et innovants pour accompagner le développement des clients et des différentes activités du Groupe (expertise comptable, banque, société d'avocats, société de sécurité privée & télésurveillance, société de négoce en fournitures de bureau, des start-up comme Véoprint, Y-Promité, Fiducial Cloud...)."
         }],
         "favorite":"",
@@ -47,7 +43,13 @@
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
-        "description":"Stand du parrain de promo 5IF",
+        "description": [{
+        "p":"Parrain de la promotion 5IF"},
+        {"p":"Sopra Steria, leader européen de la transformation numérique, propose l’un des portefeuilles d’offres les plus complets du marché : conseil, intégration de systèmes, édition de solutions métier, infrastructure management et business process services. "},
+        {"p":"Il apporte ainsi une réponse globale aux enjeux de développement et de compétitivité des grandes entreprises et organisations. Combinant valeur ajoutée, innovation et performance des services délivrés, Sopra Steria accompagne ses clients dans leur transformation et les aide à faire le meilleur usage du numérique."},
+        {"p":"Fort de 40 000 collaborateurs dans plus de 20 pays, Sopra Steria affiche un chiffre d’affaires de 3,7 milliards d’euros en 2016."},
+        {"p":"Pour plus d’informations, retrouvez-nous sur www.soprasteria.com "
+        }],
         "favorite":"",
         "intervenants": [{
             "nom":"Sophie REVILLARD"},
@@ -63,11 +65,17 @@
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
-        "description":"Stand de la CGI",
+        "description": [{
+        "p":"Fondée en 1976, Groupe CGI inc. est la 5ème plus importante entreprise indépendante de conseil et services en technologies de l’information au monde. Grâce à ses quelques 70 000 professionnels, CGI offre un portefeuille complet de services, y compris des services-conseils stratégiques en numérique et en management, des services d'intégration de systèmes, de développement et de maintenance d'applications numériques, de gestion d'infrastructures technologiques ainsi qu'une vaste gamme de solutions exclusives à des milliers de clients à l'échelle mondiale à partir de ses bureaux et centres mondiaux de prestation de services dans les Amériques, en Europe et en Asie-Pacifique."},
+        {"p":"En France, CGI réunit 10 000 professionnels répartis dans 21 villes"},
+        {"p":"En 2017-2018, nous accueillons plus de 750 stagiaires de fin d’études et 150 contrats en alternance issus d’écoles d’ingénieurs, de commerce ou d’universités scientifiques pour des postes de consultant ou d’ingénieur en technologies de l’information."},
+        {"p":"Rejoindre CGI, ce n'est pas simplement trouver un emploi, c'est rejoindre des équipes passionnées et solidaires qui bâtissent ensemble leur entreprise. Notre culture entrepreneuriale vous procure la liberté qu'il vous faut pour faire une différence."
+        }],
         "favorite":"",
         "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
+            "nom":"Damien Tuduri"},
+            {"nom":"Jason Tresfield"},
+            {"nom":"Thomas Bazin"}
         }]    
     },{
         "id":"3",
@@ -78,11 +86,15 @@
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
-        "description":"Stand dde WAVESTONE",
+        "description": [{
+        "p":"Wavestone, nouveau cabinet de conseil, est issu du rapprochement début 2016 de Solucom et des activités européennes de Kurt Salmon (à l'exclusion de consumer goods & retail en dehors de France). Wavestone compte parmi les leaders du conseil indépendant en Europe, n°1 en France. L’entreprise comptabilise 2500 collaborateurs sur 4 continents. Wavestone travaille dans de nombreux secteurs (Banque & assurance, Télécoms & média, Biens de consommation & distribution, Industrie, Énergie & utilities, Transport & Voyages, Immobilier et Secteur public & institutions internationales) sur des technologies variées (Stratégie digitale & SI, Technologies digitales & émergentes, Architecture SI & data, Cybersécurité & confiance numérique). "},
+        {"p":"En tant que consultant(e), rejoignez un de nos domaines d’expertise (voir ci-dessous). Des opportunités sont également ouvertes pour des postes d’account manager et fonctions transverses (direction financière, DSI, RH). Nous vous garantissons un processus de recrutement transparent et personnalisé en trois entretiens, qui pourront être complétés par des rencontres informelles avec des collaborateurs du cabinet. Tous nos stages et apprentissages sont dans une logique de pré-embauche. Nous recrutons des talents aux parcours diversifiés, de tous niveaux d’expérience. Des personnalités engagées, reconnues pour leur goût d’entreprendre et leur esprit d’équipe. "
+        }],
         "favorite":"",
         "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
+            "nom":"FAUGOUIN Marion"},
+            {"nom":"CHERIF Riadh"},
+            {"nom":"Viatge Bastien"
         }]    
     },{
         "id":"4",
@@ -123,11 +135,15 @@
         "heureDebut":"9h",
         "heureFin":"11h",
         "nextActivity":"Pause déjeuner",
-        "description":"AEDI ...",
+        "description": [{
+        "p":"L'Association des Etudiants du Département Informatique occupe une position centrale dans la vie des élèves-ingénieurs. Elle accompagne leurs 3 ultimes années de formation à travers l'organisation de nombreux évènements qui rythment l'année : intégration, soirées, simulations d'entretien, forum de recrutement ... Elle est présente pour tous les moments, des plus sérieux aux plus festifs !"},
+        {"p":"Tous les étudiants du département sont automatiquement et gratuitement membres adhérents de l'association et peuvent profiter des différents services qu'elle est en mesure de leur proposer grâce aux actions menées en partenariat avec les entreprises, et notamment les parrains des promotions. L'AEDI est une association à but non lucratif, l'ensemble de ses bénéfices servent à l'organisation d'évènements et de services pour les étudiants ainsi qu'au fonctionnement de l'association."},
+        {"p":"Chaque année, une équipe d'étudiants volontaires est élue pour reprendre sa tête et contribuer à son développement."
+        }],
         "favorite":"",
         "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
+            "nom":"Regis GOUBIN"},
+            {"nom":"Tristan Bourvon"
         }]    
     },{
         "id":"7",
@@ -138,7 +154,9 @@
         "heureDebut":"12h",
         "heureFin":"14h",
         "nextActivity":"Aucune",
-        "description":"///TODO",
+        "description": [{
+        "p":"La pause déjeuner commence à midi. Rendez-vous au RI ! La reprise des RIF se fera à partir de 14h !"
+        }],
         "favorite":"",
         "intervenants": [{
             "nom":"Intervenant1"},
