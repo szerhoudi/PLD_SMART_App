@@ -39,7 +39,7 @@ export class ChangeEventPage {
   doConfirm(id) {
     let confirm = this.alerCtrl.create({
       title: 'Choose this event ?',
-      message: 'Do you really change to this event ?',
+      message: 'Do you really change to this event ? You will loose your favorites',
       buttons: [
         {
           text: 'No',

@@ -22,6 +22,7 @@ export class ActivitiesPage {
     params: Object;
     activitiesDetailPage = ActivitiesDetailPage;
     public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
+    public oldUrl : any;
     //activitiesDetailPage: any;
 
     //localisation = Localisation;
@@ -80,11 +81,21 @@ export class ActivitiesPage {
         this.storage = storage;
         this.params = { id: 42 };
         this.list = "all";
+        this.storage.get('oldUrl').then((val) => {
+            this.oldUrl= val;
+        });
         this.storage.get('url').then((val) => {
             if(val!=null){
                 this.url = val;
              }
-             this.http.get(this.url).map(res => res.json()).subscribe(data => {
+             if(this.url!=this.oldUrl)
+             {
+                var favorites = [];
+                this.storage.set('favorites', favorites);
+                this.oldUrl = this.url;
+                this.storage.set('oldUrl', this.oldUrl);
+             }
+            this.http.get(this.url).map(res => res.json()).subscribe(data => {
             this.posts = data;
             if(this.posts != null) {
                 this.storage.get('favorites').then((favorites) => {
