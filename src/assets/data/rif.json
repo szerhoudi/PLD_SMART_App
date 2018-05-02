@@ -55,7 +55,7 @@
             "nom":"Sophie REVILLARD"},
             {"nom":"Cyril NAVARRO"},
             {"nom":"Améli JAN"
-        }]    
+        }]
     },{
         "id":"2",
         "minor": "3007",
@@ -73,10 +73,16 @@
         }],
         "favorite":"",
         "intervenants": [{
+<<<<<<< HEAD
             "nom":"Damien Tuduri"},
             {"nom":"Jason Tresfield"},
             {"nom":"Thomas Bazin"}
         }]    
+=======
+            "nom":"Intervenant1"},
+            {"nom":"Intervenant2"
+        }]
+>>>>>>> fe8efb1334b983f610eab207f91ef180f8e5969e
     },{
         "id":"3",
         "minor": "3005",
@@ -92,10 +98,16 @@
         }],
         "favorite":"",
         "intervenants": [{
+<<<<<<< HEAD
             "nom":"FAUGOUIN Marion"},
             {"nom":"CHERIF Riadh"},
             {"nom":"Viatge Bastien"
         }]    
+=======
+            "nom":"Intervenant1"},
+            {"nom":"Intervenant2"
+        }]
+>>>>>>> fe8efb1334b983f610eab207f91ef180f8e5969e
     },{
         "id":"4",
         "minor": "3004",
@@ -105,11 +117,25 @@
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
-        "description":"Stand de ESKER",
+        "description": [{
+        "p":"ESKER"},
+        {"p":"3ème éditeur de logiciel de la région Rhône-Alpes, nos solutions en mode SaaS permettent de
+dématérialiser et d’automatiser la gestion des flux documentaires des entreprises : factures, bons de
+commandes, demandes d’achat… Près de 11 000 clients à travers le monde nous font déjà confiance,parmi lesquels Samsung, Starbucks, Hollister, Sanofi, Ford, McDonald’s ou HSBC."},
+        {"p":"Fondée il y a 30 ans, nous employons aujourd’hui près de 400 Eskériens à travers 12 filiales (Europe,
+Asie, Australie et USA), dont plus de 200 personnes dans notre siège social, à Lyon. En croissance à 2
+chiffres sur les 3 dernières années (+27% en 2015), notre chiffre d’affaires s’élève à 58,5 millions
+d’euros."},
+        {"p":"Nous avons choisi l’agilité pour mettre le client au centre de notre travail mais aussi favoriser la
+communication et la collaboration entre les équipes. Au sein de nos équipes Scrum, nous encourageons l’autonomie, la prise d’initiative, le partage d’idées et travaillons dans un souci constant d’amélioration continue."},
+        {"p":"Après au moins 3 ans passés au sein d’une même fonction, vous pourrez :"},
+        {"p":"-évoluer en transversal pour apprendre de nouveaux métiers au sein d’autres services,"},
+        {"p":"-partir dans l’une de nos filiales dans le cadre d’un VIE ou d’un contrat local."},
+        ],
         "favorite":"",
         "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
+            "nom":"Michael Piffret"},
+            {"nom":"Julien Plantier"
         }]    
     },{
         "id":"5",
@@ -120,12 +146,15 @@
         "heureDebut":"10h",
         "heureFin":"16h30",
         "nextActivity":"Aucune",
-        "description":"Stand de WORLDLINE",
+        "description": [{
+        "p":"WORLDLINE"},
+        {"p":"Worldline est leader européen dans les paiements électroniques et les services transactionnels positionnant notre expertise technologique sur toute la chaine de valeur des paiements. Nos activités sont organisées autour de trois pôles de compétences : Merchant Services & Terminals, Mobility & eTransactional Services et Financial Processing & Software Licensing. Nous proposons à nos clients de tous les secteurs d’activités des services personnalisés de bout en bout de la conception de la solution à la gestion de l’infrastructure. Worldline est la filiale cotée du Groupe Atos, nous comptons plus de 7 300 collaborateurs dans 17 pays à travers le monde, dont 3 000 en France."},
+        {"p":"Nous cherchons de jeunes talents stagiaires et alternants : plus de 400 en France en 2016, et près de 500 sur l’ensemble des pays où Worldline est présent. Le recrutement de jeunes talents s’inscrit dans la politique RSE de l’entreprise, résolument tournée vers l’accompagnement des jeunes générations. À l’issue de leur période d’apprentissage ou de stage, les profils des candidats les plus prometteurs se voient proposer un CDI (environ 60%). La stratégie de Worldline repose sur un objectif de développement à l’international. Dans ce cadre, nous recherchons des candidats désireux d’évoluer dans un contexte international, motivés par le travail en équipe dans un environnement multiculturel et volontaires pour effectuer des missions à l’étranger."},
+        ],
         "favorite":"",
         "intervenants": [{
-            "nom":"Intervenant1"},
-            {"nom":"Intervenant2"
-        }]    
+            "nom":"Anne-Laure NARSOU"},
+        ]
     },{
         "id":"6",
         "minor": "3009",
@@ -142,9 +171,15 @@
         }],
         "favorite":"",
         "intervenants": [{
+<<<<<<< HEAD
             "nom":"Regis GOUBIN"},
             {"nom":"Tristan Bourvon"
         }]    
+=======
+            "nom":"Intervenant1"},
+            {"nom":"Intervenant2"
+        }]
+>>>>>>> fe8efb1334b983f610eab207f91ef180f8e5969e
     },{
         "id":"7",
         "minor": "104",
@@ -161,6 +196,6 @@
         "intervenants": [{
             "nom":"Intervenant1"},
             {"nom":"Intervenant2"
-        }]    
+        }]
     }]
 }
