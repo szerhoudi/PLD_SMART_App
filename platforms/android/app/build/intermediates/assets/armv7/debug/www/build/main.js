@@ -740,8 +740,8 @@ var LocalisationPage = (function () {
                 }
             }
             console.log(_this.beacons);
-            _this.beacons = displayableBeacons.sort(function (a, b) { return a.minor - b.minor; });
-            // this.changeDetectorRef.detectChanges();
+            _this.beacons = displayableBeacons.sort(function (a, b) { return a.accuracy - b.accuracy; });
+            _this.changeDetectorRef.detectChanges();
         };
         beaconDetector.addBeaconStatusChangedHandler(this.handleBeaconStatusChanged);
         this.fetchData();
@@ -759,8 +759,12 @@ var LocalisationPage = (function () {
             });
         });
     };
+    LocalisationPage.prototype.ngOnDestroy = function () {
+        this.changeDetectorRef.detach();
+    };
     LocalisationPage.prototype.ngOnInit = function () {
         this.standJson = this.dataJson.activitesBalise;
+        this.changeDetectorRef.attach();
         console.log();
     };
     LocalisationPage.prototype.doRefresh = function (refresher) {
@@ -783,15 +787,10 @@ var LocalisationPage = (function () {
             selector: 'page-localisation',template:/*ion-inline-start:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/pages/localisation/localisation.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Activités à proximité</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="cards-bg">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n        <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <div class="radar">\n    <div class="pointer"></div>\n  </div>\n  <ion-card class="adv-map ion-card-event" *ngFor="let beacon of beacons">\n    <div style="position: relative" (click)="showDetailPage(beacon)">\n      <img src="https://s3.eu-west-3.amazonaws.com/pld-smart/default.png" [src]="beacon.image">\n      <ion-fab right top>\n        <button ion-fab class="fab-map">\n          <ion-icon name=\'star\'></ion-icon>\n        </button>\n      </ion-fab>\n    </div>\n    <ion-item>\n      <h2>{{ beacon.nom }}</h2>\n      <h5>{{ beacon.lieu }} <ion-icon color="subtle" small name=\'pin\'></ion-icon></h5>\n      <h5 style="margin-top: 22px;">{{ beacon.heureDebut }} - {{ beacon.heureFin }} <ion-icon color="subtle" small name=\'time\' md=\'md-time\'></ion-icon></h5>\n      <p>{{ beacon.description }}</p>\n    </ion-item>\n    <ion-item actions>\n      <span ion-text item-start color="secondary" class="item-bold">{{beacon.timestamp | date:\'h:mm:ss a\'}}</span>\n      <span ion-text item-start color="subtle" class="item-bold-two">({{beacon.accuracy}}m)</span>\n      <button ion-button color="primary" clear item-end icon-start class="go-button" (click)="showDetailPage(beacon)">\n        <ion-icon name=\'navigate\'></ion-icon> Go to stand\n      </button>\n    </ion-item>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/pages/localisation/localisation.html"*/,
             styles: ['localisation.scss']
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_settings__["a" /* Settings */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_beacon_detector__["a" /* BeaconDetector */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_rest__["a" /* Rest */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_settings__["a" /* Settings */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_settings__["a" /* Settings */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__providers_beacon_detector__["a" /* BeaconDetector */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_beacon_detector__["a" /* BeaconDetector */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__providers_rest__["a" /* Rest */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_rest__["a" /* Rest */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _g || Object])
     ], LocalisationPage);
     return LocalisationPage;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=localisation.js.map
@@ -941,7 +940,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import { Localisation} from '../localisation/localisation';
 /**
 * Generated class for the ActivitiesPage page.
 *
@@ -1011,10 +1009,9 @@ var ActivitiesPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-activities',template:/*ion-inline-start:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/pages/activities/activities.html"*/'<ion-header>\n    <ion-navbar text-center>\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title class="toolbar-txt">Liste des Activités</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div padding>\n        <ion-segment [(ngModel)]="list">\n            <ion-segment-button class="segment-title" value="all">\n                Tout\n            </ion-segment-button>\n            <ion-segment-button class="segment-title" value="favorite">\n                Favoris\n            </ion-segment-button>\n        </ion-segment>\n    </div>\n    <div *ngIf="posts">\n    <div [ngSwitch]="list">\n        <ion-list *ngSwitchCase="\'all\'">\n            <ion-item *ngFor="let activity of posts.activitesBalise" >\n              <button class ="detailButton" (click)="showDetailPage(activity)">\n                  {{activity.nom}}</button>\n                <ion-icon *ngIf="activity.favorite" name="md-star" class="star-icon" item-end (click)="changeFavorite(activity)"></ion-icon>\n                <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>\n            </ion-item>\n        </ion-list>\n    </div>\n\n    <div [ngSwitch]="list">\n        <ion-list *ngSwitchCase="\'favorite\'">\n            <div *ngFor="let activity of posts.activitesBalise">\n                <ion-item class="buttonList" detail-push *ngIf="activity.favorite">\n                    <!-- <ion-icon name="briefcase" item-start></ion-icon> -->\n                    {{activity.nom}}\n                    <ion-icon *ngIf="activity.favorite" name="md-star" class="star-icon" item-end (click)="changeFavorite(activity)"></ion-icon>\n                    <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>\n                </ion-item>\n            </div>\n        </ion-list>\n    </div>\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/pages/activities/activities.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], ActivitiesPage);
     return ActivitiesPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=activities.js.map
@@ -1150,6 +1147,7 @@ var RealMapPage = (function () {
         this.beacons = [];
         this.map = {};
         this.minorb = 0;
+        this.points = {};
         this.showBeaconsBtnTxt = 'eye-off';
         this.pathVisibility = 'hidden';
         this.platform = 'Unknown';
@@ -1168,14 +1166,14 @@ var RealMapPage = (function () {
                 }
             }
             _this.beacons = displayableBeacons.sort(function (a, b) { return a.minor - b.minor; });
-            events.subscribe('coordinates:changed', function (new_x, new_y) {
+            _this.events.subscribe('coordinates:changed', function (new_x, new_y) {
                 _this.x = new_x;
                 _this.y = new_y;
             });
             console.log(_this.beacons);
             console.log(_this.x);
             console.log(_this.y);
-            // this.changeDetectorRef.detectChanges();
+            _this.changeDetectorRef.detectChanges();
         };
         this.clearPath = function () {
             this.pathVisibility = 'hidden';
@@ -1213,10 +1211,12 @@ var RealMapPage = (function () {
         this.x = this.dataJson.entry_point[0].x;
         this.y = this.dataJson.entry_point[0].y;
         this.polygone = this.x + "-8," + this.y + " " + this.x + "+8," + this.y + " " + this.x + "," + this.y + "-16";
+        this.changeDetectorRef.detectChanges();
         console.log(this.dataJson);
     };
     RealMapPage.prototype.ngOnDestroy = function () {
         this.events.unsubscribe('coordinates:changed');
+        this.changeDetectorRef.detach();
     };
     RealMapPage.prototype.drawPath = function () {
         // draw a line path from A to B.
@@ -1263,16 +1263,10 @@ var RealMapPage = (function () {
             selector: 'page-real-map',template:/*ion-inline-start:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/pages/real-map/real-map.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Plan</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding style="position:relative;">\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n        <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n    <!-- <ion-item>\n      <ion-label class="">Path to :</ion-label>\n      <ion-select [(ngModel)]="pointB.tag" (ionChange)="drawPath()" required>\n        <ion-option *ngFor="let destPoint of destPoints" [value]="destPoint.tag">{{ destPoint.name }}</ion-option>\n      </ion-select>\n    </ion-item> -->\n    <ion-fab right top>\n        <button ion-fab class="btn-beacon" (click)="showBeacons()">\n          <ion-icon name=\'eye-off\' [name]=\'showBeaconsBtnTxt\'></ion-icon>\n        </button>\n    </ion-fab>\n    <ion-fab right top style="top: 75px;">\n        <button ion-fab class="btn-path" (click)="clearPath()">\n          <ion-icon name=\'refresh\'></ion-icon>\n        </button>\n    </ion-fab>\n    <div id="mapFloor">\n        <img class="img" [src]="image" style="width: 380px;" #imageCanvas>\n        \n        <svg id="canvas" height="380" [attr.height]="imageHeight" width="380">\n          <defs>\n            <marker id="arrow" markerWidth="10" markerHeight="10" refx="0" refy="2" orient="auto" markerUnits="strokeWidth">\n              <path d="M0,0 L0,4 L6,2 z" fill="#00f" />\n            </marker>\n            <marker id="CircleMark" markerWidth="12" markerHeight="12" refX="4" refY="4" markerUnits="userSpaceOnUse">\n              <circle cx="4" cy="4" r="4" fill="#f0932b"/>\n            </marker>\n          </defs>\n             \n          <circle [attr.cx]="x" [attr.cy]="y" r="8" stroke="#eb4d4b" stroke-width="2" fill="#ff7979">\n          <animate\n                attributeType="XML"\n                attributeName="fill"\n                values="#ff7979;#ff7979;#ff7979;#ff7979"\n                dur="1.0s"\n                repeatCount="indefinite"/>\n          </circle>\n          <circle [attr.cx]="x" [attr.cy]="y" r="12" stroke-width="2" fill="#eb4d4b" fill-opacity="0.6">\n            <animate  attributeName="r" attributeType ="XML"  values = "1;15;1" begin ="0s" dur="2s"  repeatCount="indefinite"/>\n          </circle>\n          <polyline [attr.visibility]="pathVisibility" [attr.points]="pathPoints" stroke-dasharray="5,5" style="fill:none;stroke:#ff7979;stroke-width:3" marker-end="url(#arrow)"  /> \n          <polyline [attr.visibility]="beaconsVisibility" [attr.points]="beaconAllPoints" fill="none" stroke="none" stroke-width="2" marker-start="url(#CircleMark)" marker-mid="url(#CircleMark)" marker-end="url(#CircleMark)"  />\n        </svg>\n\n    </div>  \n\n</ion-content>\n\n'/*ion-inline-end:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/pages/real-map/real-map.html"*/,
             styles: ['real-map.scss']
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_settings__["a" /* Settings */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_beacon_detector__["a" /* BeaconDetector */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_rest__["a" /* Rest */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_settings__["a" /* Settings */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_settings__["a" /* Settings */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__providers_beacon_detector__["a" /* BeaconDetector */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_beacon_detector__["a" /* BeaconDetector */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__providers_rest__["a" /* Rest */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_rest__["a" /* Rest */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */]) === "function" && _h || Object])
     ], RealMapPage);
     return RealMapPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
 }());
 
 //# sourceMappingURL=real-map.js.map
@@ -2365,7 +2359,6 @@ var ConferenceApp = (function () {
             _this.enableMenu(hasLoggedIn === true);
         });
         this.enableMenu(true);
-        this.listenToLoginEvents();
         this.storage.get('url').then(function (val) {
             if (val != null) {
                 _this.url = val;
@@ -2376,6 +2369,7 @@ var ConferenceApp = (function () {
                 console.log(_this.posts.title);
             });
         });
+        this.listenToLoginEvents();
     }
     ConferenceApp.prototype.openPage = function (page) {
         var params = {};
@@ -2465,7 +2459,7 @@ var ConferenceApp = (function () {
         __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Nav */]) === "function" && _a || Object)
     ], ConferenceApp.prototype, "nav", void 0);
     ConferenceApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/app/app.template.html"*/'<ion-split-pane>\n\n  <!-- logged out menu -->\n  <ion-menu id="loggedOutMenu" [content]="content">\n\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content class="outer-content">\n\n     <!-- <ion-list>\n        <ion-list-header>\n          Navigate\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Account\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list> -->\n\n     <ion-list no-lines>\n        <ion-list-header class="event-title" *ngIf=posts>\n          {{posts.title}}\n        </ion-list-header>\n        <button ion-item menuClose (click)="openAccueil()">\n          <ion-icon class="menu-icon" onclick="this.style.color=\'#e02e34\'" item-start name="md-home"></ion-icon>\n          Accueil\n        </button>\n        <button ion-item menuClose (click)="openLocalisation()">\n          <ion-icon class="menu-icon" item-start name="md-navigate"></ion-icon>\n          Activités à proximité\n        </button>\n        <button ion-item menuClose (click)="openActivities()">\n          <ion-icon class="menu-icon" item-start name="md-list-box"></ion-icon>\n          Liste des Activités\n        </button>\n        <button ion-item menuClose (click)="openRealMap()">\n          <ion-icon class="menu-icon" item-start name="md-map"></ion-icon>\n          Plan\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Autres événements\n        </ion-list-header>\n        <button ion-item menuClose (click)="openChangeEvent()">\n          <ion-icon class="menu-icon" item-start name="swap"></ion-icon>\n          Changer d\'événement\n        </button>\n      </ion-list>\n\n    <ion-list>\n        <ion-list-header>\n          Paramètres\n        </ion-list-header>\n        <button ion-item menuClose (click)="openSettings()">\n          <ion-icon class="menu-icon" item-start name="construct"></ion-icon>\n          Paramètres\n        </button>\n      </ion-list>\n\n      <!--<ion-list>\n        <ion-list-header>\n          Tutorial\n        </ion-list-header>\n        <button ion-item menuClose (click)="openTutorial()">\n          <ion-icon item-start name="hammer"></ion-icon>\n          Show Tutorial\n        </button>\n      </ion-list>-->\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- logged in menu -->\n  <ion-menu id="loggedInMenu" [content]="content">\n\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content class="outer-content">\n\n      <ion-list>\n        <ion-list-header>\n          Navigate\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Account\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Tutorial\n        </ion-list-header>\n        <button ion-item menuClose (click)="openTutorial()">\n          <ion-icon item-start name="hammer"></ion-icon>\n          Show Tutorial\n        </button>\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- main navigation -->\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>\n\n</ion-split-pane>\n'/*ion-inline-end:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/app/app.template.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/app/app.template.html"*/'<ion-split-pane>\n\n  <!-- logged out menu -->\n  <ion-menu id="loggedOutMenu" [content]="content">\n\n    <ion-header>\n      <ion-toolbar>\n        <ion-title><img src="assets/img/logo.png" height="40"/></ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content class="outer-content">\n\n     <!-- <ion-list>\n        <ion-list-header>\n          Navigate\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Account\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of loggedOutPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list> -->\n\n     <ion-list no-lines>\n        <ion-list-header class="event-title" *ngIf=posts>\n          {{posts.title}}\n        </ion-list-header>\n        <button ion-item menuClose (click)="openAccueil()">\n          <ion-icon class="menu-icon" onclick="this.style.color=\'#e02e34\'" item-start name="md-home"></ion-icon>\n          Accueil\n        </button>\n        <button ion-item menuClose (click)="openLocalisation()">\n          <ion-icon class="menu-icon" item-start name="md-navigate"></ion-icon>\n          Activités à proximité\n        </button>\n        <button ion-item menuClose (click)="openActivities()">\n          <ion-icon class="menu-icon" item-start name="md-list-box"></ion-icon>\n          Liste des Activités\n        </button>\n        <button ion-item menuClose (click)="openRealMap()">\n          <ion-icon class="menu-icon" item-start name="md-map"></ion-icon>\n          Plan\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Autres événements\n        </ion-list-header>\n        <button ion-item menuClose (click)="openChangeEvent()">\n          <ion-icon class="menu-icon" item-start name="swap"></ion-icon>\n          Changer d\'événement\n        </button>\n      </ion-list>\n\n    <ion-list>\n        <ion-list-header>\n          Paramètres\n        </ion-list-header>\n        <button ion-item menuClose (click)="openSettings()">\n          <ion-icon class="menu-icon" item-start name="construct"></ion-icon>\n          Paramètres\n        </button>\n      </ion-list>\n\n      <!--<ion-list>\n        <ion-list-header>\n          Tutorial\n        </ion-list-header>\n        <button ion-item menuClose (click)="openTutorial()">\n          <ion-icon item-start name="hammer"></ion-icon>\n          Show Tutorial\n        </button>\n      </ion-list>-->\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- logged in menu -->\n  <ion-menu id="loggedInMenu" [content]="content">\n\n    <ion-header>\n      <ion-toolbar>\n        <ion-title><img src="./assets/img/logo.png"/></ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content class="outer-content">\n\n      <ion-list>\n        <ion-list-header>\n          Navigate\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Account\n        </ion-list-header>\n        <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">\n          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n\n      <ion-list>\n        <ion-list-header>\n          Tutorial\n        </ion-list-header>\n        <button ion-item menuClose (click)="openTutorial()">\n          <ion-icon item-start name="hammer"></ion-icon>\n          Show Tutorial\n        </button>\n      </ion-list>\n\n    </ion-content>\n\n  </ion-menu>\n\n  <!-- main navigation -->\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>\n\n</ion-split-pane>\n'/*ion-inline-end:"/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/src/app/app.template.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Events */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_23__providers_user_data__["a" /* UserData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_23__providers_user_data__["a" /* UserData */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Platform */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_22__providers_conference_data__["a" /* ConferenceData */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_22__providers_conference_data__["a" /* ConferenceData */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_24__providers_settings__["a" /* Settings */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_24__providers_settings__["a" /* Settings */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_25__providers_beacon_detector__["a" /* BeaconDetector */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_25__providers_beacon_detector__["a" /* BeaconDetector */]) === "function" && _l || Object])
     ], ConferenceApp);
@@ -2836,7 +2830,7 @@ var BeaconDetector = (function () {
                     });
                 }
             }
-            events.subscribe('navigation:changed', function (new_mode) {
+            _this.events.subscribe('navigation:changed', function (new_mode) {
                 _this.positioningMode = new_mode;
             });
             if (_this.positioningMode == 1 && dominantBeacon != null) {
@@ -2923,7 +2917,6 @@ var BeaconDetector = (function () {
     };
     BeaconDetector.prototype.handleBeaconMsg = function (response) {
         if (response) {
-            var i = void 0;
             var msgList = [];
             if (response['enabled'] == 1) {
                 if (response['template'] == 'text') {
@@ -2986,6 +2979,7 @@ var BeaconDetector = (function () {
         var eventModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_8__pages_event_modal_event_modal__["a" /* EventModalPage */], obj);
         eventModal.onDidDismiss(function (data) {
             //this.userName = data.email;
+            console.log(data);
         });
         eventModal.present();
     };

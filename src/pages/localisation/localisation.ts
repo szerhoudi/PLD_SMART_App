@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 
@@ -18,7 +18,7 @@ import { BeaconDetector } from '../../providers/beacon-detector';
   templateUrl: 'localisation.html',
   styles: ['localisation.scss']
 })
-export class LocalisationPage {
+export class LocalisationPage implements OnInit {
 
   public beacons = [];
   dataJson: any;
@@ -49,8 +49,8 @@ export class LocalisationPage {
       }
     }
     console.log(this.beacons);
-    this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
-    this.changeDetectorRef.detectChanges();
+    this.beacons = displayableBeacons.sort((a, b) => a.accuracy - b.accuracy);
+    // setTimeout(() => { this.changeDetectorRef.detectChanges(); }, 2000);
   }
 
   ionViewCanEnter() {

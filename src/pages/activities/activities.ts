@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { ActivitiesDetailPage} from '../activities-detail/activities-detail';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { BeaconDetector } from '../../providers/beacon-detector';
 
 /**
 * Generated class for the ActivitiesPage page.
@@ -31,7 +32,7 @@ export class ActivitiesPage {
 
     public posts: any = null;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage, public beaconDetector: BeaconDetector, public events: Events) {
         //this.pushPage = LoginPage;
         this.storage = storage;
         this.params = { id: 42 };
@@ -66,6 +67,7 @@ export class ActivitiesPage {
 
     changeFavorite(activity) {
         console.log(this.posts.activitesBalise);
+        // this.events.publish('favorites:changed', this.listFavorites);
         this.posts.activitesBalise[activity.id].favorite = !this.posts.activitesBalise[activity.id].favorite;
     }
 
@@ -82,6 +84,7 @@ export class ActivitiesPage {
                 favorites.push(activity.id);
             }
         }
+        this.events.publish('favorites:changed', favorites);
         this.storage.set('favorites', favorites);
     }
 

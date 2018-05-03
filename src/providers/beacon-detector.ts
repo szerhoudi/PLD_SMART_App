@@ -20,7 +20,7 @@ export class BeaconDetector {
   allRssiHistory:any = {};
   rssiHistory:any = {};
   dominatHistory:any = [];
-  minorb: number = 0;
+  minorb: number = 104;
   settings:any = { notifications: true };
   firstVisit: any = {};
   dataJson: any;
@@ -180,11 +180,13 @@ export class BeaconDetector {
       this.listFavorites = [];
       this.storage.get('favorites').then((favorites) => {
           this.dataEvent.activitesBalise.forEach((event) => {
-              favorites.forEach((favorite) => {  
-                  if (favorite == event.id) {
-                    this.listFavorites.push(event.minor);
-                  }
-              });
+              if(favorites!=null){
+                  favorites.forEach((favorite) => {  
+                    if (favorite == event.id) {
+                      this.listFavorites.push(event.minor);
+                    }
+                  });
+              }  
           });
       });
 
@@ -384,7 +386,9 @@ export class BeaconDetector {
               this.points[this.dataJson.beacons[i].minor] = this.dataJson.beacons[i];
               this.firstVisit[this.dataJson.beacons[i].minor] = 1;
           }
-          console.log(data);
+          for (let i=0, l=Object.keys(this.dataJson.connectors).length; i<l; i++) {
+              this.points[this.dataJson.connectors[i].id] = this.dataJson.connectors[i];
+          }
       });
   }
 

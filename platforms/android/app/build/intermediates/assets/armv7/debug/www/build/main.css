@@ -39906,6 +39906,7 @@ ion-navbar.toolbar {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #ddd;
+  font-size: 25px;
 }
 
 .menu-icon {
@@ -39914,6 +39915,10 @@ ion-navbar.toolbar {
 
 .ion-item {
   border: none;
+}
+
+.ifollow-logo {
+  height: 40px;
 }
 
 .about-header {

@@ -12,12 +12,12 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
-    <!-- <ion-item>
+    <ion-item>
       <ion-label class="">Path to :</ion-label>
       <ion-select [(ngModel)]="pointB.tag" (ionChange)="drawPath()" required>
         <ion-option *ngFor="let destPoint of destPoints" [value]="destPoint.tag">{{ destPoint.name }}</ion-option>
       </ion-select>
-    </ion-item> -->
+    </ion-item>
     <ion-fab right top>
         <button ion-fab class="btn-beacon" (click)="showBeacons()">
           <ion-icon name='eye-off' [name]='showBeaconsBtnTxt'></ion-icon>

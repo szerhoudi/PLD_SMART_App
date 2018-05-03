@@ -33,7 +33,7 @@ export class RealMapPage implements OnInit, OnDestroy {
   dataJson: any;
   map: any = {};
   destPoints: any;
-  minorb: number = 0;
+  minorb: number;
   pointB: any;
   graph: any;
   polygone: any;
@@ -66,13 +66,13 @@ export class RealMapPage implements OnInit, OnDestroy {
     }
     this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
     this.events.subscribe('coordinates:changed', (new_x, new_y) => {
-      this.x = new_x;
-      this.y = new_y;
-  });
-    console.log(this.beacons);
-    console.log(this.x);
-    console.log(this.y);
-    this.changeDetectorRef.detectChanges();
+        this.x = new_x;
+        this.y = new_y;
+    });
+    // console.log(this.beacons);
+    // console.log(this.x);
+    // console.log(this.y);
+    // this.changeDetectorRef.markForCheck();
   }
 
   ionViewCanEnter() {
@@ -120,12 +120,14 @@ export class RealMapPage implements OnInit, OnDestroy {
 
   drawPath() {
     // draw a line path from A to B.
+    this.minorb = this.beaconDetector.minorb;
     let pointA = this.minorb;
     let beaconsPoints = this.graph.findShortestPath(pointA, this.pointB.tag);
     this.pathPoints = "";
     let i;
     for(i = 0; i < beaconsPoints.length; i++){
       let b = beaconsPoints[i];
+      console.log(this.points[104]);
       let y = this.points[b]['y'];
       let x = this.points[b]['x'];
       let p = x + ',' + y + ' ';
@@ -163,6 +165,12 @@ export class RealMapPage implements OnInit, OnDestroy {
       this.restProvider.fetchData()
       .then(data => {
           this.dataJson = data;
+          for (let i=0, l=Object.keys(this.dataJson.beacons).length; i<l; i++) {
+              this.points[this.dataJson.beacons[i].minor] = this.dataJson.beacons[i];
+          }
+          for (let i=0, l=Object.keys(this.dataJson.connectors).length; i<l; i++) {
+              this.points[this.dataJson.connectors[i].id] = this.dataJson.connectors[i];
+          }
           console.log(data);
       });
   }
@@ -179,6 +187,7 @@ export class RealMapPage implements OnInit, OnDestroy {
   ) {
     beaconDetector.addBeaconStatusChangedHandler(this.handleBeaconStatusChanged);
     this.fetchData();
+    this.minorb = beaconDetector.minorb;
   }
 
 
