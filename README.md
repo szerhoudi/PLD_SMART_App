@@ -21,16 +21,18 @@ _Note: You may need to add “sudo” in front of any global commands to install
 
 ## Deploying
 
-* PWA - Un-comment [this](https://github.com/ionic-team/ionic2-app-base/blob/master/src/index.html#L21), run `npm run ionic:build --prod` and then push the `www` folder to your favorite hosting service
-* Android - Run `ionic cordova run android --prod`
+The App is deployable on ios and android :
+* Android - Run `ionic cordova add platform android` `ionic cordova build android` `ionic cordova run android --prod`
   - If you are deploying to Android 4.4 or below we recommend adding crosswalk: `cordova plugin add cordova-plugin-crosswalk-webview`
-* iOS - Run `ionic cordova run ios --prod`
+* iOS - Run `ionic cordova add platform ios` `ionic cordova build ios` `ionic cordova run ios --prod`
 
 ## Overview
 
 * Read the `Document de Synthèse IFollow.pdf` document for all the informations.
 * Our presentation support is `Présentation IFollow.pdf`.
 * Our teaser is available here : https://youtu.be/Ikx-ZIy-mJM
+
+_Note: Our App need beacons to works, or you to simulate beacons with other devices. They also need some configuration (be in adequation with JSON's data)._
 
 ## File Structure of App
 

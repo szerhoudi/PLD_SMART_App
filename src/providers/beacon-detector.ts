@@ -86,7 +86,9 @@ export class BeaconDetector {
 
     this.minorb = dominantBeacon;
 
-
+    this.events.subscribe('favorites:changed', (favorites) => {
+        this.listFavorites = favorites;
+    });
 
     if(this.settings.notifications && dominantBeacon!= null){
       // check the beacon has not been visited and its rssi is big enough.

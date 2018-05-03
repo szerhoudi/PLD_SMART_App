@@ -1,9 +1,10 @@
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ActivitiesDetailPage } from '../activities-detail/activities-detail';
 import { RealMapPage } from '../real-map/real-map';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { Events } from 'ionic-angular';
 
 import { Settings } from '../../providers/settings';
 import { Rest } from '../../providers/rest';
@@ -21,10 +22,10 @@ import { BeaconDetector } from '../../providers/beacon-detector';
     templateUrl: 'localisation.html',
     styles: ['localisation.scss']
 })
-export class LocalisationPage implements OnInit {
-
+export class LocalisationPage {
     public beacons = [];
     dataJson: any;
+    dataFav: any;
     standJson: any;
     listFavoris: any = [];
     public url = "https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json";
@@ -57,11 +58,10 @@ export class LocalisationPage implements OnInit {
                 displayableBeacons.push(beacon);
             }
         }
-        console.log(this.beacons);
+        // console.log(this.beacons);
         this.beacons = displayableBeacons.sort((a, b) => a.accuracy - b.accuracy);
-        // setTimeout(() => { this.changeDetectorRef.detectChanges(); }, 2000);
+        // setTimeout(() => { this.changeDetectorRef.detectChanges(); }, 250);
     }
-
 
     ionViewCanEnter() {
         return new Promise((resolve, reject) => {
@@ -90,10 +90,21 @@ export class LocalisationPage implements OnInit {
             minor: beaconParam.minor
         });
     }
+
+    ionViewDidEnter(){
+      this.changeDetectorRef.detectChanges();
+      console.log("didenter");
+    }
+
+    ionViewDidLeave(){
+      this.changeDetectorRef.detach();
+      console.log("didleave");
+    }
     
     changeFavorite(beacon){
         let ajouterFav = true;
         var favorites = [];
+        var listMinors = [];
         this.storage.get('favorites').then((val) => {
             favorites = val;
             console.log('val :', val);
@@ -109,12 +120,25 @@ export class LocalisationPage implements OnInit {
                 this.listFavoris.splice(beacon.id,1,true);
             }
             this.storage.set('favorites', favorites);
+
+            this.dataFav.activitesBalise.forEach((event) => {
+                if(favorites!=null){
+                    favorites.forEach((favorite) => {  
+                      if (favorite == event.id) {
+                        listMinors.push(event.minor);
+                      }
+                    });
+                }  
+            });
+            console.log(listMinors);
+            this.events.publish('favorites:created', listMinors);
         });
         
     }
 
     ngOnInit() {
         this.standJson = this.dataJson.activitesBalise;
+
     }
 
     doRefresh(refresher) {
@@ -131,10 +155,12 @@ export class LocalisationPage implements OnInit {
         public beaconDetector: BeaconDetector,
         public restProvider: Rest,
         public http: Http,
+        public events: Events,
         public storage: Storage
     ) {
         beaconDetector.addBeaconStatusChangedHandler(this.handleBeaconStatusChanged);
         this.fetchData();
+        this.fetchEvent();
         
         this.storage.get('oldUrl').then((val) => {
             this.oldUrl = val;
@@ -167,9 +193,16 @@ export class LocalisationPage implements OnInit {
     }
 
     fetchData() {
-        this.restProvider.fetchEvent()
+        this.restProvider.fetchData()
         .then(data => {
             this.dataJson = data;
+        });
+    }
+
+    fetchEvent() {
+        this.restProvider.fetchEvent()
+        .then(data => {
+            this.dataFav = data;
         });
     }
 

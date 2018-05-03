@@ -63,6 +63,7 @@ export class ActivitiesPage {
 
     changeFavorite(activity) {
         this.posts.activitesBalise[activity.id].favorite = !this.posts.activitesBalise[activity.id].favorite;
+        console.log(activity);
     }
 
     showDetailPage(activity) {

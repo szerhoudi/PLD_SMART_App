@@ -12,21 +12,20 @@ import { BeaconDetector } from '../../providers/beacon-detector';
 
 
 /**
-* Generated class for the RealMapPage page.
-*
-* See https://ionicframework.com/docs/components/#navigation for more info on
-* Ionic pages and navigation.
-*/
+ * Generated class for the RealMapPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @Component({
-    selector: 'page-real-map',
-    templateUrl: 'real-map.html',
-    styles: ['real-map.scss']
+  selector: 'page-real-map',
+  templateUrl: 'real-map.html',
+  styles: ['real-map.scss']
 })
 export class RealMapPage implements OnInit, OnDestroy {
 
-  alive: boolean = true;
-  public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
+  public url = "https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json";
   
   public beacons = [];
 
@@ -66,30 +65,28 @@ export class RealMapPage implements OnInit, OnDestroy {
     }
     this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
     this.events.subscribe('coordinates:changed', (new_x, new_y) => {
-        this.x = new_x;
-        this.y = new_y;
-    });
+      this.x = new_x;
+      this.y = new_y;
+  });
     // console.log(this.beacons);
     // console.log(this.x);
     // console.log(this.y);
-    // this.changeDetectorRef.markForCheck();
+    setTimeout(() => { this.changeDetectorRef.markForCheck(); }, 250);
   }
-
 
   ionViewCanEnter() {
       return new Promise((resolve, reject) => {    
           this.http.get(this.restProvider.apiUrl)
             .map(res => res.json())
             .subscribe(
-                (res)=> {
-                    this.dataJson = res;
-                    resolve(res);
-                },
-                (err)=>{
-                    reject(err);
-                }
+              (res)=> {
+                this.dataJson = res;
+                resolve(res);
+              },
+              (err)=>{
+                reject(err);
+              }
             );
-
       });
   }
 
@@ -134,30 +131,55 @@ export class RealMapPage implements OnInit, OnDestroy {
       let x = this.points[b]['x'];
       let p = x + ',' + y + ' ';
       this.pathPoints += p;
-
     }
+
+    this.pathVisibility = 'visible';
+
   }
 
-    showBeacons() {
-        if(this.beaconsVisibility == 'visible'){
-            this.beaconsVisibility = 'hidden';
-            this.showBeaconsBtnTxt = "eye-off";
-        } else {
-            this.beaconsVisibility = 'visible';
-            this.showBeaconsBtnTxt = "eye";
-        }
-
-        this.beaconAllPoints = "";
-        let points = this.dataJson.beacons;
-        for(let i in points){
-            let b = points[i];
-            this.beaconAllPoints += b['x'] +',' + b['y'] + ' ';
-        }
+  drawPathMinor(minorValue) {
+    // draw a line path from A to B.
+    this.minorb = this.beaconDetector.minorb;
+    let pointA = this.minorb;
+    console.log(pointA + "  " + minorValue);
+    let beaconsPoints = this.graph.findShortestPath(pointA, minorValue);
+    this.pathPoints = "";
+    let i;
+    for(i = 0; i < beaconsPoints.length; i++){
+      let b = beaconsPoints[i];
+      console.log(this.points[104]);
+      let y = this.points[b]['y'];
+      let x = this.points[b]['x'];
+      let p = x + ',' + y + ' ';
+      this.pathPoints += p;
     }
 
-    clearPath = function(){
-        this.pathVisibility = 'hidden';
+    this.pathVisibility = 'visible';
+
+  }
+
+  showBeacons() {
+    if(this.beaconsVisibility == 'visible'){
+      this.beaconsVisibility = 'hidden';
+      this.showBeaconsBtnTxt = "eye-off";
+    } else {
+      this.beaconsVisibility = 'visible';
+      this.showBeaconsBtnTxt = "eye";
     }
+
+    this.beaconAllPoints = "";
+    let points = this.dataJson.beacons;
+    console.log(points);
+    for(let i in points){
+      let b = points[i];
+      this.beaconAllPoints += b['x'] +',' + b['y'] + ' ';   
+    }
+    
+  }
+
+  clearPath = function(){
+      this.pathVisibility = 'hidden';
+  }
 
   fetchData() {
       this.restProvider.fetchData()
@@ -186,6 +208,13 @@ export class RealMapPage implements OnInit, OnDestroy {
     beaconDetector.addBeaconStatusChangedHandler(this.handleBeaconStatusChanged);
     this.fetchData();
     this.minorb = beaconDetector.minorb;
+    
+    // let valData: number = this.navParams.get("minor");
+    // console.log("bbbb"+valData);
+    // if(valData != null){
+    //    this.drawPathMinor(valData);
+    //  }
   }
+
 
 }

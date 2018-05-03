@@ -4,7 +4,7 @@
             "outputFile": "/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/incremental/mergeArm64DebugResources/merged.dir/values-fr/values-fr.xml",
             "map": [
                 {
-                    "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/913bc31e604306db678f1daeb1a7baa3/res/values-fr/values-fr.xml",
+                    "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha1.aar/fad999dfcbe05e044706d1025a321ee2/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
