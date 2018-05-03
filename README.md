@@ -29,17 +29,19 @@ _Note: You may need to add “sudo” in front of any global commands to install
 
 ## Overview
 
-//TODO complter NomDoc
-* Read the //NomDoc document for all the informations
+//TODO compléter vidéo
+* Read the `Document de Synthèse IFollow.pdf` document for all the informations. 
+* Our presentation support is `IFollow.pdf`.
+* Our teaser is //TODO link
 
 ## File Structure of App
 
-//TODO ajuster après intégration
+Others pages are in the application but its have no use for now.
 ```
 ionic-conference-app/
-├-- .github/                            * GitHub files
-│   ├── CONTRIBUTING.md                 * Documentation on contributing to this repo
-│   └── ISSUE_TEMPLATE.md               * Template used to populate issues in this repo
+├-- .github/                             * GitHub files
+│   ├── CONTRIBUTING.md                  * Documentation on contributing to this repo
+│   └── ISSUE_TEMPLATE.md                * Template used to populate issues in this repo
 |
 |-- resources/
 |
@@ -49,88 +51,63 @@ ionic-conference-app/
 |    |    └── app.module.ts
 |    |    └── app.template.html
 |    |    └── main.ts
+|    |    └── app.scss
 |    |
 |    |-- assets/
 |    |    ├── data/
 |    |    |    └── data.json
 |    |    |
 |    |    ├── fonts/
-|    |    |     ├── ionicons.eot
-|    |    |     └── ionicons.svg
-|    |    |     └── ionicons.ttf
-|    |    |     └── ionicons.woff
-|    |    |     └── ionicons.woff2
+|    |    |     └── nunito.woff2
 |    |    |
 |    |    ├── img/
 |    |
-|    |-- pages/                          * Contains all of our pages
-│    │    ├── about/                     * About tab page
-│    │    │    ├── about.html            * AboutPage template
-│    │    │    └── about.ts              * AboutPage code
-│    │    │    └── about.scss            * AboutPage stylesheet
+|    |-- pages/                           * Contains all of our pages
+│    │    ├── accueil/			  * Accueil page
+│    │    │    ├── accueil.html           * AccueilPage template
+│    │    │    └── accueil.ts             * AccueilPage code
+│    │    │    └── accueil.scss           * AccueilPage stylesheet
 │    │    │
-│    │    ├── account/                   * Account page
-│    │    │    ├── account.html          * AccountPage template
-│    │    │    └── account.ts            * AccountPage code
-│    │    │    └── account.scss          * AccountPage stylesheet
+│    │    ├── activities/                 * Activities page
+│    │    │    ├── activities.html        * ActivitiesPage template
+│    │    │    └── activities.ts          * ActivitiesPage code
+│    │    │    └── activities.scss        * ActivitiesPage stylesheet
 │    │    │
-│    │    │── login/                     * Login page
-│    │    │    ├── login.html            * LoginPage template
-│    │    │    └── login.ts              * LoginPage code
-│    │    │    └── login.scss            * LoginPage stylesheet
+│    │    │── activities-detail/          * Activities Detail page
+│    │    │    ├── activities-detail.html * ActivitiesDetailPage template
+│    │    │    └── activities-detail.ts   * ActivitiesDetailPage code
+│    │    │    └── activities-detail.scss * ActivitiesDetailPage stylesheet
 │    │    │
-│    │    │── map/                       * Map tab page
-│    │    │    ├── map.html              * MapPage template
-│    │    │    └── map.ts                * MapPage code
-│    │    │    └── map.scss              * MapPage stylesheet
+│    │    │── change-event/               * Change Event page
+│    │    │    ├── change-event.html      * ChangeEventPage template
+│    │    │    └── change-event.ts        * ChangeEventPage code
+│    │    │    └── change-event.scss      * ChangeEventPage stylesheet
 │    │    │
-│    │    │── schedule/                  * Schedule tab page
-│    │    │    ├── schedule.html         * SchedulePage template
-│    │    │    └── schedule.ts           * SchedulePage code
-│    │    │    └── schedule.scss         * SchedulePage stylesheet
+│    │    │── localisation/               * Localisation page
+│    │    │    ├── localisation.html      * LocalisationPage template
+│    │    │    └── localisation.ts        * LocalisationPage code
+│    │    │    └── localisation.scss      * LocalisationPage stylesheet
 │    │    │
-│    │    │── schedule-filter/            * Schedule Filter page
-│    │    │    ├── schedule-filter.html   * ScheduleFilterPage template
-│    │    │    └── schedule-filter.ts     * ScheduleFilterPage code
-│    │    │    └── schedule-filter.scss   * ScheduleFilterPage stylesheet
+│    │    │── real-map/            	  * Real Map page
+│    │    │    ├── real-map.html   	  * RealMapPage template
+│    │    │    └── real-map.ts     	  * RealMapPage code
+│    │    │    └── real-map.scss   	  * RealMapPage stylesheet
 │    │    │
-│    │    │── session-detail/            * Session Detail page
-│    │    │    ├── session-detail.html   * SessionDetailPage template
-│    │    │    └── session-detail.ts     * SessionDetailPage code
-│    │    │
-│    │    │── signup/                    * Signup page
-│    │    │    ├── signup.html           * SignupPage template
-│    │    │    └── signup.ts             * SignupPage code
-│    │    │
-│    │    │── speaker-detail/            * Speaker Detail page
-│    │    │    ├── speaker-detail.html   * SpeakerDetailPage template
-│    │    │    └── speaker-detail.ts     * SpeakerDetailPage code
-│    │    │    └── speaker-detail.scss   * SpeakerDetailPage stylesheet
-│    │    │
-│    │    │── speaker-list/              * Speakers tab page
-│    │    │    ├── speaker-list.html     * SpeakerListPage template
-│    │    │    └── speaker-list.ts       * SpeakerListPage code
-│    │    │    └── speaker-list.scss     * SpeakerListPage stylesheet
-|    |    |
-│    │    │── support/                   * Support page
-│    │    │    ├── support.html          * SupportPage template
-│    │    │    └── support.ts            * SupportPage code
-│    │    │    └── support.scss          * SupportPage stylesheet
-│    │    │
-│    │    │── tabs/                      * Tabs page
-│    │    │    ├── tabs.html             * TabsPage template
-│    │    │    └── tabs.ts               * TabsPage code
-│    │    │
-│    │    └── tutorial/                  * Tutorial Intro page
-│    │         ├── tutorial.html         * TutorialPage template
-│    │         └── tutorial.ts           * TutorialPage code
-│    │         └── tutorial.scss         * TutorialPage stylesheet
+│    │    └── settings/            	  * Settings page
+│    │         ├── settings.html   	  * SettingsPage template
+│    │         └── settings.ts     	  * SettingsPage code
+│    │         └── settings.scss   	  * SettingsPage stylesheet
+│    │    
 |    |
-│    ├── providers/                      * Contains all Injectables
-│    │     ├── conference-data.ts        * ConferenceData code
-│    │     └── user-data.ts              * UserData code
-│    ├── theme/                          * App theme files
-|    |     ├── variables.scss            * App Shared Sass Variables
+│    ├── providers/                       * Contains all Injectables
+|    |     ├── beacon-detector.ts	  * Beacon detector code
+│    │     ├── conference-data.ts         * ConferenceData code
+|    |     ├── location-manager.ts	  * Location Manager code
+|    |     ├── rest.ts	 		  * Rest code
+|    |     ├── settings.ts		  * Settings code
+│    │     └── user-data.ts               * UserData code
+│    ├── theme/                           * App theme files
+|    |     ├── variables.scss             * App Shared Sass Variables
 |    |
 |    |-- index.html
 |
@@ -151,13 +128,13 @@ ionic-conference-app/
 |    └── build/
 |    └── index.html
 |
-├── .editorconfig                       * Defines coding styles between editors
-├── .gitignore                          * Example git ignore file
-├── LICENSE                             * Apache License
-├── README.md                           * This file
-├── config.xml                          * Cordova configuration file
-├── ionic.config.json                   * Ionic configuration file
-├── package.json                        * Defines our JavaScript dependencies
-├── tsconfig.json                       * Defines the root files and the compiler options
-├── tslint.json                         * Defines the rules for the TypeScript linter
+├── .editorconfig                        * Defines coding styles between editors
+├── .gitignore                           * Example git ignore file
+├── LICENSE                              * Apache License
+├── README.md                            * This file
+├── config.xml                           * Cordova configuration file
+├── ionic.config.json                    * Ionic configuration file
+├── package.json                         * Defines our JavaScript dependencies
+├── tsconfig.json                        * Defines the root files and the compiler options
+├── tslint.json                          * Defines the rules for the TypeScript linter
 ```
