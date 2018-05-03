@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Events } from 'ionic-angular';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 import { ModalController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
@@ -102,7 +102,7 @@ export class BeaconDetector {
       }
     }
 
-    events.subscribe('navigation:changed', (new_mode) => {
+    this.events.subscribe('navigation:changed', (new_mode) => {
         this.positioningMode = new_mode;
     });
 
@@ -201,7 +201,6 @@ export class BeaconDetector {
 
     handleBeaconMsg(response){
     if(response){
-      let i;
       let msgList = [];
       if(response['enabled']==1){
         if(response['template']=='text'){
@@ -266,6 +265,7 @@ export class BeaconDetector {
     let eventModal = this.modalCtrl.create(EventModalPage, obj);
     eventModal.onDidDismiss(data => {
         //this.userName = data.email;
+        console.log(data);
     });
     eventModal.present();
 

@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 
 import { Settings } from '../../providers/settings';
 import { Rest } from '../../providers/rest';
@@ -50,7 +50,7 @@ export class LocalisationPage {
     }
     console.log(this.beacons);
     this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
-    // this.changeDetectorRef.detectChanges();
+    this.changeDetectorRef.detectChanges();
   }
 
   ionViewCanEnter() {
