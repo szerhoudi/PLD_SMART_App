@@ -34,41 +34,36 @@ export class ActivitiesPage {
     public posts: any = null;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage) {
-        console.log("construct");
         //this.pushPage = LoginPage;
         this.storage = storage;
         this.params = { id: 42 };
         this.list = "all";
         this.storage.get('oldUrl').then((val) => {
-            this.oldUrl= val;
-        });
-        this.storage.get('url').then((val) => {
-            if(val!=null){
-                this.url = val;
-             }
-             if(this.url!=this.oldUrl)
-             {
-                var favorites = [];
-                this.storage.set('favorites', favorites);
-                this.oldUrl = this.url;
-                this.storage.set('oldUrl', this.oldUrl);
-             }
-            this.http.get(this.url).map(res => res.json()).subscribe(data => {
-            this.posts = data;
-            if(this.posts != null) {
-                this.storage.get('favorites').then((favorites) => {
-                    console.log("posts : ", this.posts);
-                    favorites.forEach((id) => {
-                        this.posts.activitesBalise[id].favorite = true;
-                    });
+            this.oldUrl = val;
+            this.storage.get('url').then((val) => {
+                if(val!=null){
+                    this.url = val;
+                }
+                if(this.url!=this.oldUrl)
+                {
+                    var favorites = [];
+                    this.storage.set('favorites', favorites);
+                    this.oldUrl = this.url;
+                    this.storage.set('oldUrl', this.oldUrl);
+                }
+                this.http.get(this.url).map(res => res.json()).subscribe(data => {
+                    this.posts = data;
+                    if(this.posts != null) {
+                        this.storage.get('favorites').then((favorites) => {
+                            console.log("posts : ", this.posts);
+                            favorites.forEach((id) => {
+                                this.posts.activitesBalise[id].favorite = true;
+                            });
+                        });
+                    }
                 });
-            }
+            });
         });
-
-    });
-        
-
-        console.log("posts load : ", this.posts);
     }
 
     changeFavorite(activity) {
@@ -85,16 +80,11 @@ export class ActivitiesPage {
     ionViewWillLeave() {
         var favorites = [];
         for (let activity of this.posts.activitesBalise) {
-          if (activity.favorite == true) {
-              favorites.push(activity.id);
-          }
-      }
-        console.log("favorites : ", favorites);
-        //console.log("posts : ", this.posts);
+            if (activity.favorite == true) {
+                favorites.push(activity.id);
+            }
+        }
         this.storage.set('favorites', favorites);
-        this.storage.get('posts').then((val) => {
-            console.log("val : ", val);
-        });
     }
 
 }
