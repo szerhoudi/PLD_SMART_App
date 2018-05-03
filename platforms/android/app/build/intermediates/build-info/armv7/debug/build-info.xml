@@ -1,105 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="armeabi-v7a,armeabi"
-    api-level="23"
+    api-level="22"
     build-mode="FULL"
-    density="hdpi"
+    density="xhdpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1525335203526"
+    timestamp="1525336623311"
     token="6647654528286588196"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="2968" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="695" />
+        duration="765" />
     <task
         name="verifier"
-        duration="624" />
+        duration="0" />
 
     <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/dep/dependencies.apk"
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_8.apk"
         type="SPLIT" />
     <artifact
         location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_1.apk"
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_7.apk"
         type="SPLIT" />
     <artifact
         location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_0.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_5.apk"
-        type="SPLIT" />
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/outputs/apk/armv7/debug/app-armv7-debug.apk"
+        type="SPLIT_MAIN" />
     <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_4.apk"
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_1.apk"
         type="SPLIT" />
     <artifact
         location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_8.apk"
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_5.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_7.apk"
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/dep/dependencies.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/outputs/apk/armv7/debug/app-armv7-debug.apk"
-        type="SPLIT_MAIN" />
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_4.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1525335203526"
+        timestamp="1525336623311"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/dep/dependencies.apk"
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_1.apk"
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_5.apk"
-            type="SPLIT" />
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/outputs/apk/armv7/debug/app-armv7-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_4.apk"
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
             location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_8.apk"
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_7.apk"
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/outputs/apk/armv7/debug/app-armv7-debug.apk"
-            type="SPLIT_MAIN" />
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/split-apk/armv7/debug/slices/slice_4.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

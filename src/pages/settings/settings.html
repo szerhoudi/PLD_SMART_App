@@ -1,33 +1,33 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Paramètres</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Paramètres</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-list-header>
-      Distance de notification (m)
-      <ion-badge item-right>{{settings.accuracyThreshold}}</ion-badge>
-    </ion-list-header>
-    <ion-item>
-      <ion-range min="0" max="80" [(ngModel)]="4*settings.accuracyThreshold" (ngModelChange)="settings.accuracyThreshold=$event/4">>
-        <ion-label range-left>OFF</ion-label>
-        <ion-label range-right>20.0</ion-label>
-      </ion-range>
-    </ion-item>    
-  </ion-list>
-  <ion-list>
-    <ion-list-header>
-      Mode de navigation
-    </ion-list-header>
-    <ion-item>
-      <ion-label>Trilateration</ion-label>
-      <ion-toggle [(ngModel)]="isToggled" (ionChange)="updateMode()"></ion-toggle>
-    </ion-item>   
-  </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Distance de notification (m)
+            <ion-badge item-right>{{settings.accuracyThreshold}}</ion-badge>
+        </ion-list-header>
+        <ion-item>
+            <ion-range min="0" max="80" [(ngModel)]="4*settings.accuracyThreshold" (ngModelChange)="settings.accuracyThreshold=$event/4">>
+                <ion-label range-left>OFF</ion-label>
+                <ion-label range-right>20.0</ion-label>
+            </ion-range>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Mode de navigation
+        </ion-list-header>
+        <ion-item>
+            <ion-label>Trilateration</ion-label>
+            <ion-toggle [(ngModel)]="isToggled" (ionChange)="updateMode()"></ion-toggle>
+        </ion-item>
+    </ion-list>
 </ion-content>

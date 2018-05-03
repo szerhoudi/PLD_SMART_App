@@ -1,24 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Change Event</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Changer d'évènement</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list *ngIf="posts">
-
-    <ion-item *ngFor="let item of posts.Event; let i=index">
-      <ion-thumbnail item-start>
-        <img [src]="item.image">
-      </ion-thumbnail>
-      <h2>{{item.nom}}</h2>
-      <p>{{item.date}}</p>
-      <button ion-button color="primary" block (click)="doConfirm(i)">Change</button>
-    </ion-item>
-  </ion-list>
+    <ion-list *ngIf="posts">
+        
+        <ion-item *ngFor="let item of posts.Event; let i=index">
+            <ion-thumbnail item-start>
+                <img [src]="item.image">
+            </ion-thumbnail>
+            <h2>{{item.nom}}</h2>
+            <p>{{item.date}}</p>
+            <button ion-button color="primary" block (click)="doConfirm(i)">Change</button>
+        </ion-item>
+    </ion-list>
 
 </ion-content>
