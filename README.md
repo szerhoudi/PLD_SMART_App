@@ -1,4 +1,4 @@
-﻿# IFollow Application
+# IFollow Application
 
 This is the official IFollow application, made by H4214.
 
@@ -28,10 +28,9 @@ The App is deployable on ios and android :
 
 ## Overview
 
-//TODO compléter vidéo
-* Read the `Document de Synthèse IFollow.pdf` document for all the informations. 
-* Our presentation support is `IFollow.pdf`.
-* Our teaser is //TODO link
+* Read the `Document de Synthèse IFollow.pdf` document for all the informations.
+* Our presentation support is `Présentation IFollow.pdf`.
+* Our teaser is available here : https://youtu.be/Ikx-ZIy-mJM
 
 _Note: Our App need beacons to works, or you to simulate beacons with other devices. They also need some configuration (be in adequation with JSON's data)._
 
