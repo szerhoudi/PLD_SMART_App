@@ -1,4 +1,4 @@
-﻿# IFollow Application
+# IFollow Application
 
 This is the official IFollow application, made by H4214.
 
@@ -21,7 +21,6 @@ _Note: You may need to add “sudo” in front of any global commands to install
 
 ## Deploying
 
-//TODO A voir avec Saber
 * PWA - Un-comment [this](https://github.com/ionic-team/ionic2-app-base/blob/master/src/index.html#L21), run `npm run ionic:build --prod` and then push the `www` folder to your favorite hosting service
 * Android - Run `ionic cordova run android --prod`
   - If you are deploying to Android 4.4 or below we recommend adding crosswalk: `cordova plugin add cordova-plugin-crosswalk-webview`
@@ -29,10 +28,9 @@ _Note: You may need to add “sudo” in front of any global commands to install
 
 ## Overview
 
-//TODO compléter vidéo
-* Read the `Document de Synthèse IFollow.pdf` document for all the informations. 
-* Our presentation support is `IFollow.pdf`.
-* Our teaser is //TODO link
+* Read the `Document de Synthèse IFollow.pdf` document for all the informations.
+* Our presentation support is `Présentation IFollow.pdf`.
+* Our teaser is available here : https://youtu.be/Ikx-ZIy-mJM
 
 ## File Structure of App
 
