@@ -46,8 +46,6 @@ export class ChangeEventPage {
                     text: 'Yes',
                     handler: () => {
                         this.storage.set('url', this.posts.Event[id].url);
-                        this.storage.get('url').then((val) => {
-                        });
                         this.navCtrl.setRoot(AccueilPage);
                     }
                 }
