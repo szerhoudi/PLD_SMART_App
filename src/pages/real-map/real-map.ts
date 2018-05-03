@@ -75,7 +75,7 @@ export class RealMapPage implements OnInit, OnDestroy {
     // this.changeDetectorRef.markForCheck();
   }
 
-}
+
   ionViewCanEnter() {
       return new Promise((resolve, reject) => {    
           this.http.get(this.restProvider.apiUrl)
@@ -138,26 +138,6 @@ export class RealMapPage implements OnInit, OnDestroy {
     }
   }
 
-    ngOnDestroy(){
-        this.events.unsubscribe('coordinates:changed');
-    }
-
-    drawPath() {
-        // draw a line path from A to B.
-        let pointA = this.minorb;
-        let beaconsPoints = this.graph.findShortestPath(pointA, this.pointB.tag);
-        this.pathPoints = "";
-        let i;
-        for(i = 0; i < beaconsPoints.length; i++){
-            let b = beaconsPoints[i];
-            let y = this.points[b]['y'];
-            let x = this.points[b]['x'];
-            let p = x + ',' + y + ' ';
-            this.pathPoints += p;
-        }
-        this.pathVisibility = 'visible';
-    }
-
     showBeacons() {
         if(this.beaconsVisibility == 'visible'){
             this.beaconsVisibility = 'hidden';
@@ -178,12 +158,6 @@ export class RealMapPage implements OnInit, OnDestroy {
     clearPath = function(){
         this.pathVisibility = 'hidden';
     }
-    
-  }
-
-  clearPath = function(){
-      this.pathVisibility = 'hidden';
-  }
 
   fetchData() {
       this.restProvider.fetchData()
