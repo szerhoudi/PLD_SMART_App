@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActivitiesDetailPage} from '../activities-detail/activities-detail';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
-import { BeaconDetector } from '../../providers/beacon-detector';
 
 /**
 * Generated class for the ActivitiesPage page.
@@ -32,7 +31,7 @@ export class ActivitiesPage {
 
     public posts: any = null;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage, public beaconDetector: BeaconDetector, public events: Events) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage) {
         this.storage = storage;
         this.list = "all";
         this.storage.get('oldUrl').then((val) => {
@@ -79,7 +78,6 @@ export class ActivitiesPage {
                 favorites.push(activity.id);
             }
         }
-        this.events.publish('favorites:changed', favorites);
         this.storage.set('favorites', favorites);
     }
 }
