@@ -94,6 +94,6 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <plugin name="cordova-plugin-file" spec="^4.3.3" />
     <engine name="ios" spec="^4.5.2" />
-    <engine name="browser" spec="5.0.3" />
+    <plugin name="com.unarin.cordova.beacon" spec="https://github.com/petermetz/cordova-plugin-ibeacon.git" />
     <engine name="android" spec="~7.0.0" />
 </widget>

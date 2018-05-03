@@ -7,6 +7,12 @@
     "files": {}
   },
   "installed_plugins": {
+    "com.unarin.cordova.beacon": {
+      "PACKAGE_NAME": "io.ionic.conferenceapp"
+    },
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "io.ionic.conferenceapp"
+    },
     "cordova-plugin-crosswalk-webview": {
       "XWALK_VERSION": "22+",
       "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
