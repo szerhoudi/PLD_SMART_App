@@ -25,6 +25,7 @@ import { BeaconDetector } from '../../providers/beacon-detector';
 })
 export class RealMapPage implements OnInit, OnDestroy {
 
+<<<<<<< HEAD
     alive: boolean = true;
     public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
 
@@ -73,6 +74,61 @@ export class RealMapPage implements OnInit, OnDestroy {
     ionViewCanEnter() {
         return new Promise((resolve, reject) => {
             this.http.get(this.restProvider.apiUrl)
+=======
+  alive: boolean = true;
+  public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
+  
+  public beacons = [];
+
+  dataJson: any;
+  map: any = {};
+  destPoints: any;
+  minorb: number = 0;
+  pointB: any;
+  graph: any;
+  polygone: any;
+  image: string;
+  x: number;
+  y: number;
+  imageHeight: number;
+  points: any = {};
+
+  beaconsVisibility: string;
+  showBeaconsBtnTxt: string = 'eye-off';
+  pathVisibility: string = 'hidden';
+  platform: string = 'Unknown';
+  deviceId: string = 'NA';
+  pathPoints: string;
+  beaconAllPoints: string;
+
+  private handleBeaconStatusChanged = (beacons) => {
+    const maxAge = 10000;
+    let displayableBeacons: Array<any> = [];
+    let currentTimestamp = (new Date()).getTime();
+    for (let key in beacons) {
+      let beacon = beacons[key];
+      let isWithinRange = this.settings.accuracyThreshold === 0 || beacon.accuracy <= this.settings.accuracyThreshold;
+      let age = (currentTimestamp - beacon.timestamp);
+      let isWithinAgeLimit = age <= maxAge;
+      if (isWithinRange && isWithinAgeLimit) {
+        displayableBeacons.push(beacon);
+      }
+    }
+    this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
+    this.events.subscribe('coordinates:changed', (new_x, new_y) => {
+      this.x = new_x;
+      this.y = new_y;
+  });
+    console.log(this.beacons);
+    console.log(this.x);
+    console.log(this.y);
+    this.changeDetectorRef.detectChanges();
+  }
+
+  ionViewCanEnter() {
+      return new Promise((resolve, reject) => {    
+          this.http.get(this.restProvider.apiUrl)
+>>>>>>> 3c35e760fbef907b34efa2711b97f279d6a1a95c
             .map(res => res.json())
             .subscribe(
                 (res)=> {
