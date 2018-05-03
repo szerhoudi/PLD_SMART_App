@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+#mapFloor .img{position:absolute;z-index:1;}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+}
+
+.toolbar-txt .toolbar-title {
+  margin-left: -25px;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+
+#mapFloor{
+    display:inline-block;
+    width:480px; 
+    height:400px;
+    margin: 0 auto; 
+   // background: black; 
+    position:relative; 
+   // border:5px solid black; 
+    border-radius: 10px; 
+   // box-shadow: 0 5px 50px #333
+   }
+
+#canvas{
+    position:relative;
+    z-index:20;
+}

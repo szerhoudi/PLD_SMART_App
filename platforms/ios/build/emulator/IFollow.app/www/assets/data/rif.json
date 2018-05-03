@@ -1,0 +1,178 @@
+{
+    "title":"RIF",
+    "Organisateur":"AEDI",
+    "Lieu":"Batiment Blaise Pascal",
+    "DateDebut":"Jeudi 9 novembre",
+    "HeureDebut":"9h",
+    "HeureFin":"17h",
+    "description":"À la recherche du stage de tes rêves ? Du premier emploi idéal ? Les Rencontres IF c'est l'évènement annuel qu'il ne faut pas manquer ! Plus grand forum de recrutement dédié aux IF, la journée est banalisée pour l'occasion. Plus de 35 grandes entreprises seront là pour te proposer stages, PFE et premier contrat. Que tu sois en 3, 4 ou 5 IF, les RIFs sont l'occasion inégalable d'enrichir ton réseau professionnel. Alors prépare ton CV, repasse ton costume et viens te faire recruter",
+    "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/RIF.jpg",
+    "prix":"Gratuit!",
+    "activitesBalise": [{
+        "id":"0",
+        "minor": "3001",
+        "nom":"FIDUCIAL",
+        "lieu":"Salle 202",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/fiducial.jpg",
+        "heureDebut":"9h30",
+        "heureFin":"15h30",
+        "nextActivity":"Aucune",
+        "description": [{
+        "p":"Parrain de la promotion 4IF"},
+        {"p":"Le groupe FIDUCIAL en quelques chiffres : "},
+        {"p":"- CA 980 millions euros en France (2016)"},
+        {"p":"- 11 040 personnes en Europe"},
+        {"p":"- 17340 personnes dans le monde"},
+        {"p":"FIDUCIAL, c'est une culture informatique triple :"},
+        {"p":"Grand compte avec une DSI Groupe de + 100 personnes basée à Lyon"},
+        {"p":"Editeur avec FIDUCIAL Informatique, 500 personnes, partenaire Gold Microsoft, qui met en œuvre des solutions métiers innovantes pour ses clients"},
+        {"p":"Start-up avec Fiducial Cloud, Y-Proximité, Véoprint... des entreprises à valeur ajoutée IT qui permettent à FIDUCIAL de maîtriser des nouveaux savoir-faire informatiques : un opérateur cloud, une agence web digitale..."},
+        {"p":"FIDUCIAL regroupe ainsi l'ensemble des métiers de l'informatique, investissant des ressources significatives en R&D ce qui permet aux équipes de mener des projets ambitieux et innovants pour accompagner le développement des clients et des différentes activités du Groupe (expertise comptable, banque, société d'avocats, société de sécurité privée & télésurveillance, société de négoce en fournitures de bureau, des start-up comme Véoprint, Y-Promité, Fiducial Cloud...)."
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Mylène ORTIZ"},
+            {"nom":"Alicia BATTO"},
+            {"nom":"Minh HOANG TRAN"
+        }]
+    },{
+        "id":"1",
+        "minor": "3002",
+        "nom":"SOPRA STERIA",
+        "lieu":"Salle 208",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/sopra+steria.jpg",
+        "heureDebut":"10h",
+        "heureFin":"16h30",
+        "nextActivity":"Aucune",
+        "description": [{
+        "p":"Parrain de la promotion 5IF"},
+        {"p":"Sopra Steria, leader européen de la transformation numérique, propose l’un des portefeuilles d’offres les plus complets du marché : conseil, intégration de systèmes, édition de solutions métier, infrastructure management et business process services. "},
+        {"p":"Il apporte ainsi une réponse globale aux enjeux de développement et de compétitivité des grandes entreprises et organisations. Combinant valeur ajoutée, innovation et performance des services délivrés, Sopra Steria accompagne ses clients dans leur transformation et les aide à faire le meilleur usage du numérique."},
+        {"p":"Fort de 40 000 collaborateurs dans plus de 20 pays, Sopra Steria affiche un chiffre d’affaires de 3,7 milliards d’euros en 2016."},
+        {"p":"Pour plus d’informations, retrouvez-nous sur www.soprasteria.com "
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Sophie REVILLARD"},
+            {"nom":"Cyril NAVARRO"},
+            {"nom":"Améli JAN"
+        }]
+    },{
+        "id":"2",
+        "minor": "3007",
+        "nom":"CGI",
+        "lieu":"Salle 208",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/cgi.jpg",
+        "heureDebut":"10h",
+        "heureFin":"16h30",
+        "nextActivity":"Aucune",
+        "description": [{
+        "p":"Fondée en 1976, Groupe CGI inc. est la 5ème plus importante entreprise indépendante de conseil et services en technologies de l’information au monde. Grâce à ses quelques 70 000 professionnels, CGI offre un portefeuille complet de services, y compris des services-conseils stratégiques en numérique et en management, des services d'intégration de systèmes, de développement et de maintenance d'applications numériques, de gestion d'infrastructures technologiques ainsi qu'une vaste gamme de solutions exclusives à des milliers de clients à l'échelle mondiale à partir de ses bureaux et centres mondiaux de prestation de services dans les Amériques, en Europe et en Asie-Pacifique."},
+        {"p":"En France, CGI réunit 10 000 professionnels répartis dans 21 villes"},
+        {"p":"En 2017-2018, nous accueillons plus de 750 stagiaires de fin d’études et 150 contrats en alternance issus d’écoles d’ingénieurs, de commerce ou d’universités scientifiques pour des postes de consultant ou d’ingénieur en technologies de l’information."},
+        {"p":"Rejoindre CGI, ce n'est pas simplement trouver un emploi, c'est rejoindre des équipes passionnées et solidaires qui bâtissent ensemble leur entreprise. Notre culture entrepreneuriale vous procure la liberté qu'il vous faut pour faire une différence."
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Damien Tuduri"},
+            {"nom":"Jason Tresfield"},
+            {"nom":"Thomas Bazin"
+        }]    
+    },{
+        "id":"3",
+        "minor": "3005",
+        "nom":"WAVESTONE",
+        "lieu":"Salle 212",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/wavestone.jpg",
+        "heureDebut":"10h",
+        "heureFin":"16h30",
+        "nextActivity":"Aucune",
+        "description": [{
+        "p":"Wavestone, nouveau cabinet de conseil, est issu du rapprochement début 2016 de Solucom et des activités européennes de Kurt Salmon (à l'exclusion de consumer goods & retail en dehors de France). Wavestone compte parmi les leaders du conseil indépendant en Europe, n°1 en France. L’entreprise comptabilise 2500 collaborateurs sur 4 continents. Wavestone travaille dans de nombreux secteurs (Banque & assurance, Télécoms & média, Biens de consommation & distribution, Industrie, Énergie & utilities, Transport & Voyages, Immobilier et Secteur public & institutions internationales) sur des technologies variées (Stratégie digitale & SI, Technologies digitales & émergentes, Architecture SI & data, Cybersécurité & confiance numérique). "},
+        {"p":"En tant que consultant(e), rejoignez un de nos domaines d’expertise (voir ci-dessous). Des opportunités sont également ouvertes pour des postes d’account manager et fonctions transverses (direction financière, DSI, RH). Nous vous garantissons un processus de recrutement transparent et personnalisé en trois entretiens, qui pourront être complétés par des rencontres informelles avec des collaborateurs du cabinet. Tous nos stages et apprentissages sont dans une logique de pré-embauche. Nous recrutons des talents aux parcours diversifiés, de tous niveaux d’expérience. Des personnalités engagées, reconnues pour leur goût d’entreprendre et leur esprit d’équipe. "
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"FAUGOUIN Marion"},
+            {"nom":"CHERIF Riadh"},
+            {"nom":"Viatge Bastien"
+        }]    
+    },{
+        "id":"4",
+        "minor": "3004",
+        "nom":"ESKER",
+        "lieu":"Salle 212",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/esker.jpg",
+        "heureDebut":"10h",
+        "heureFin":"16h30",
+        "nextActivity":"Aucune",
+        "description": [{
+        "p":"ESKER"},
+        {"p":"3ème éditeur de logiciel de la région Rhône-Alpes, nos solutions en mode SaaS permettent de dématérialiser et d’automatiser la gestion des flux documentaires des entreprises : factures, bons de commandes, demandes d’achat… Près de 11 000 clients à travers le monde nous font déjà confiance,parmi lesquels Samsung, Starbucks, Hollister, Sanofi, Ford, McDonald’s ou HSBC."},
+        {"p":"Fondée il y a 30 ans, nous employons aujourd’hui près de 400 Eskériens à travers 12 filiales (Europe, Asie, Australie et USA), dont plus de 200 personnes dans notre siège social, à Lyon. En croissance à 2 chiffres sur les 3 dernières années (+27% en 2015), notre chiffre d’affaires s’élève à 58,5 millions d’euros."},
+        {"p":"Nous avons choisi l’agilité pour mettre le client au centre de notre travail mais aussi favoriser la communication et la collaboration entre les équipes. Au sein de nos équipes Scrum, nous encourageons l’autonomie, la prise d’initiative, le partage d’idées et travaillons dans un souci constant d’amélioration continue."},
+        {"p":"Après au moins 3 ans passés au sein d’une même fonction, vous pourrez :"},
+        {"p":"-évoluer en transversal pour apprendre de nouveaux métiers au sein d’autres services,"},
+        {"p":"-partir dans l’une de nos filiales dans le cadre d’un VIE ou d’un contrat local."}
+        ],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Michael Piffret"},
+            {"nom":"Julien Plantier"
+        }]    
+    },{
+        "id":"5",
+        "minor": "3008",
+        "nom":"WORLDLINE",
+        "lieu":"Salle 214",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/worldline.jpg",
+        "heureDebut":"10h",
+        "heureFin":"16h30",
+        "nextActivity":"Aucune",
+        "description": [{
+        "p":"WORLDLINE"},
+        {"p":"Worldline est leader européen dans les paiements électroniques et les services transactionnels positionnant notre expertise technologique sur toute la chaine de valeur des paiements. Nos activités sont organisées autour de trois pôles de compétences : Merchant Services & Terminals, Mobility & eTransactional Services et Financial Processing & Software Licensing. Nous proposons à nos clients de tous les secteurs d’activités des services personnalisés de bout en bout de la conception de la solution à la gestion de l’infrastructure. Worldline est la filiale cotée du Groupe Atos, nous comptons plus de 7 300 collaborateurs dans 17 pays à travers le monde, dont 3 000 en France."},
+        {"p":"Nous cherchons de jeunes talents stagiaires et alternants : plus de 400 en France en 2016, et près de 500 sur l’ensemble des pays où Worldline est présent. Le recrutement de jeunes talents s’inscrit dans la politique RSE de l’entreprise, résolument tournée vers l’accompagnement des jeunes générations. À l’issue de leur période d’apprentissage ou de stage, les profils des candidats les plus prometteurs se voient proposer un CDI (environ 60%). La stratégie de Worldline repose sur un objectif de développement à l’international. Dans ce cadre, nous recherchons des candidats désireux d’évoluer dans un contexte international, motivés par le travail en équipe dans un environnement multiculturel et volontaires pour effectuer des missions à l’étranger."
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Anne-Laure NARSOU"}
+        ]
+    },{
+        "id":"6",
+        "minor": "3009",
+        "nom":"Discours d'ouverture",
+        "lieu":"Hall",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/aedi.png",
+        "heureDebut":"9h",
+        "heureFin":"11h",
+        "nextActivity":"Pause déjeuner",
+        "description": [{
+        "p":"L'Association des Etudiants du Département Informatique occupe une position centrale dans la vie des élèves-ingénieurs. Elle accompagne leurs 3 ultimes années de formation à travers l'organisation de nombreux évènements qui rythment l'année : intégration, soirées, simulations d'entretien, forum de recrutement ... Elle est présente pour tous les moments, des plus sérieux aux plus festifs !"},
+        {"p":"Tous les étudiants du département sont automatiquement et gratuitement membres adhérents de l'association et peuvent profiter des différents services qu'elle est en mesure de leur proposer grâce aux actions menées en partenariat avec les entreprises, et notamment les parrains des promotions. L'AEDI est une association à but non lucratif, l'ensemble de ses bénéfices servent à l'organisation d'évènements et de services pour les étudiants ainsi qu'au fonctionnement de l'association."},
+        {"p":"Chaque année, une équipe d'étudiants volontaires est élue pour reprendre sa tête et contribuer à son développement."
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Regis GOUBIN"},
+            {"nom":"Tristan Bourvon"
+        }]    
+
+    },{
+        "id":"7",
+        "minor": "104",
+        "nom": "Pause déjeuner",
+        "lieu":"Hall",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/pause+d%C3%A9jeuner.jpg",
+        "heureDebut":"12h",
+        "heureFin":"14h",
+        "nextActivity":"Aucune",
+        "description": [{
+        "p":"La pause déjeuner commence à midi. Rendez-vous au RI ! La reprise des RIF se fera à partir de 14h !"
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Ouvert à tous"
+        }]
+    }]
+}
