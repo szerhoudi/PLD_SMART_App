@@ -1,0 +1,52 @@
+{
+    "title":"Présentation SMART",
+    "Organisateur":"H4214",
+    "Lieu":"Batiment Blaise Pascal",
+    "DateDebut":"Vendredi 4 mai",
+    "HeureDebut":"10h30",
+    "HeureFin":"11h15",
+    "description":"Présentation du meilleur projet SMART du département informatique de l'INSA de Lyon",
+    "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/Event.PNG",
+    "prix":"Gratuit!",
+    "activitesBalise": [{
+        "id":"0",
+        "nom":"Démo Live",
+        "lieu":"2ème étage",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/Event.PNG",
+        "heureDebut":"10h30",
+        "heureFin":"11h15",
+        "nextActivity":"Aucune",
+         "description": [{
+            "p":"Stand SMART"
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Saber Zerhoudi"},
+            {"nom":"Mohamed Bouzaabia"},
+            {"nom":"Ayoub Rahoui"},
+            {"nom":"Ghita El Ghissassi"},
+            {"nom":"Mathilde Bronnert"},
+            {"nom":"Yohan Gracia"
+        }]
+    },{
+        "id":"1",
+        "nom":"Démo Exemple RIF",
+        "lieu":"2ème étage",
+        "image":"https://s3.eu-west-3.amazonaws.com/pldsmart/Event.PNG",
+        "heureDebut":"10h30",
+        "heureFin":"11h15",
+        "nextActivity":"Aucune",
+        "description": [{
+            "p":"Démo avec simulation d'iBeacons"
+        }],
+        "favorite":"",
+        "intervenants": [{
+            "nom":"Saber Zerhoudi"},
+            {"nom":"Mohamed Bouzaabia"},
+            {"nom":"Ayoub Rahoui"},
+            {"nom":"Ghita El Ghissassi"},
+            {"nom":"Mathilde Bronnert"},
+            {"nom":"Yohan Gracia"
+        }]    
+    }]
+}

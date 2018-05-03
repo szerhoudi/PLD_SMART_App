@@ -33,9 +33,7 @@ export class ActivitiesPage {
     public posts: any = null;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage, public beaconDetector: BeaconDetector, public events: Events) {
-        //this.pushPage = LoginPage;
         this.storage = storage;
-        this.params = { id: 42 };
         this.list = "all";
         this.storage.get('oldUrl').then((val) => {
             this.oldUrl = val;
@@ -54,7 +52,6 @@ export class ActivitiesPage {
                     this.posts = data;
                     if(this.posts != null) {
                         this.storage.get('favorites').then((favorites) => {
-                            console.log("posts : ", this.posts);
                             favorites.forEach((id) => {
                                 this.posts.activitesBalise[id].favorite = true;
                             });
@@ -66,8 +63,6 @@ export class ActivitiesPage {
     }
 
     changeFavorite(activity) {
-        console.log(this.posts.activitesBalise);
-        // this.events.publish('favorites:changed', this.listFavorites);
         this.posts.activitesBalise[activity.id].favorite = !this.posts.activitesBalise[activity.id].favorite;
     }
 
@@ -87,5 +82,4 @@ export class ActivitiesPage {
         this.events.publish('favorites:changed', favorites);
         this.storage.set('favorites', favorites);
     }
-
 }

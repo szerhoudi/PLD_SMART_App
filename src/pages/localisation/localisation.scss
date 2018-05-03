@@ -1,161 +1,165 @@
 ion-card.adv-map p {
-  font-size: 0.7em !important;
+    font-size: 0.7em !important;
 }
 
 button[fab].fab-map {
-  top: calc(100% - 35px);
-  z-index: 50;
+    top: calc(100% - 35px);
+    z-index: 50;
 }
 
 .item-bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .ion-card-event h2 {
-  text-transform: uppercase;
-  font-family: 'Nunito', sans-serif;
-  padding-left: 10px;
-  padding-bottom: 15px;
-  font-size: 18px;
-  padding-top: 15px;
-  font-weight: 600;
-  max-width: 60%;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    padding-top: 15px;
+    font-weight: 600;
+    max-width: 60%;
 }
 
 ion-card.adv-map.ion-card-event p {
-  font-family: 'Nunito', sans-serif;
-  padding-left: 10px;
-  padding-bottom: 5px;
-  font-size: 14px !important;
-  font-weight: 300;
+    font-family: 'Nunito', sans-serif;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 14px !important;
+    font-weight: 300;
 }
 
 .ion-card-event .go-button {
-  float: right;
-  font-family: 'Nunito', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  margin-top: -2px;
+    float: right;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: -2px;
 }
 
 .ion-card-event .go-button ion-icon{
-  padding-right: 4px;
+    padding-right: 4px;
 }
 
 .ion-card-event .item-bold {
-  font-family: 'Nunito', sans-serif;
-  padding-left: 10px;
-  font-size: 14px;
-  font-weight: 300;
+    font-family: 'Nunito', sans-serif;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .ion-card-event .item-bold-two {
-  font-family: 'Nunito', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 ion-card {
-  z-index: 10;
+    z-index: 10;
 }
 
 .ion-card-event .ion-label {
-  position: relative;
+    position: relative;
 }
 
 .ion-card-event h5 {
-  font-family: 'Nunito', sans-serif;
-  padding-left: 10px;
-  font-size: 13px;
-  padding-top: 0px;
-  font-weight: 300;
-  float: right;
-  top: 15px;
-  right: 20px;
-  position: absolute;
+    font-family: 'Nunito', sans-serif;
+    padding-left: 10px;
+    font-size: 13px;
+    padding-top: 0px;
+    font-weight: 300;
+    float: right;
+    top: 15px;
+    right: 20px;
+    position: absolute;
 }
 
 .fab-map {
-  background-color: #f9ca24;
+    background-color: #f9ca24;
+}
+
+.fab-mapv2 {
+    background-color: #c3c3c3;
 }
 
 .title {
-  font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 ion-content.cards-bg {
-  background-color: #f4f4f7;
+    background-color: #f4f4f7;
 }
 
 $size: 100px;
 
 .radar {
-  background: url(../assets/images/radar.png) no-repeat 50% 50%;
-  width: $size;
-  height: $size;
-  background-size: $size $size;
-  position: absolute;
-  left: 50%;
-  z-index: 0;
-  top: 20%;
-  margin-left: -$size / 2;
-  margin-top: -$size / 2;
+    background: url(../assets/images/radar.png) no-repeat 50% 50%;
+    width: $size;
+    height: $size;
+    background-size: $size $size;
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+    top: 20%;
+    margin-left: -$size / 2;
+    margin-top: -$size / 2;
 }
 
 .radar:hover {
-  background: none;
+    background: none;
 }
 
 .radar .pointer {
-  position: absolute;
-  z-index: 1024;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 50%;
-  will-change: transform;
-  transform-origin: 50% 100%;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-image: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.8) 0%, 
+    position: absolute;
+    z-index: 1024;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 50%;
+    will-change: transform;
+    transform-origin: 50% 100%;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background-image: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.8) 0%,
     rgba(0, 0, 0, 0.02) 70%,
     rgba(0, 0, 0, 0) 100%
     );
-  clip-path: polygon(100% 0, 
-    100% 10%, 
+    clip-path: polygon(100% 0,
+    100% 10%,
     50% 100%, 0 100%, 0 0);
-  
-  animation: rotate360 3s infinite linear;
+
+    animation: rotate360 3s infinite linear;
 }
 
 .radar .pointer:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  bottom: -1px;
-  border-top: 2px solid rgba(0, 231, 244, 0.8);
-  box-shadow: 0 0 3px rgba(0, 231, 244, 0.6);
-  border-radius: 9px;
+    content: "";
+    position: absolute;
+    width: 50%;
+    bottom: -1px;
+    border-top: 2px solid rgba(0, 231, 244, 0.8);
+    box-shadow: 0 0 3px rgba(0, 231, 244, 0.6);
+    border-radius: 9px;
 }
 
 
 @keyframes rotate360 {
-  0% {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
 }
 
 @keyframes shadow {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }

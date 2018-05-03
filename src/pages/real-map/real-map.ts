@@ -12,16 +12,16 @@ import { BeaconDetector } from '../../providers/beacon-detector';
 
 
 /**
- * Generated class for the RealMapPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+* Generated class for the RealMapPage page.
+*
+* See https://ionicframework.com/docs/components/#navigation for more info on
+* Ionic pages and navigation.
+*/
 
 @Component({
-  selector: 'page-real-map',
-  templateUrl: 'real-map.html',
-  styles: ['real-map.scss']
+    selector: 'page-real-map',
+    templateUrl: 'real-map.html',
+    styles: ['real-map.scss']
 })
 export class RealMapPage implements OnInit, OnDestroy {
 
@@ -75,19 +75,21 @@ export class RealMapPage implements OnInit, OnDestroy {
     // this.changeDetectorRef.markForCheck();
   }
 
+}
   ionViewCanEnter() {
       return new Promise((resolve, reject) => {    
           this.http.get(this.restProvider.apiUrl)
             .map(res => res.json())
             .subscribe(
-              (res)=> {
-                this.dataJson = res;
-                resolve(res);
-              },
-              (err)=>{
-                reject(err);
-              }
+                (res)=> {
+                    this.dataJson = res;
+                    resolve(res);
+                },
+                (err)=>{
+                    reject(err);
+                }
             );
+
       });
   }
 
@@ -132,27 +134,49 @@ export class RealMapPage implements OnInit, OnDestroy {
       let x = this.points[b]['x'];
       let p = x + ',' + y + ' ';
       this.pathPoints += p;
+
     }
-
-    this.pathVisibility = 'visible';
-
   }
 
-  showBeacons() {
-    if(this.beaconsVisibility == 'visible'){
-      this.beaconsVisibility = 'hidden';
-      this.showBeaconsBtnTxt = "eye-off";
-    } else {
-      this.beaconsVisibility = 'visible';
-      this.showBeaconsBtnTxt = "eye";
+    ngOnDestroy(){
+        this.events.unsubscribe('coordinates:changed');
     }
 
-    this.beaconAllPoints = "";
-    let points = this.dataJson.beacons;
-    console.log(points);
-    for(let i in points){
-      let b = points[i];
-      this.beaconAllPoints += b['x'] +',' + b['y'] + ' ';   
+    drawPath() {
+        // draw a line path from A to B.
+        let pointA = this.minorb;
+        let beaconsPoints = this.graph.findShortestPath(pointA, this.pointB.tag);
+        this.pathPoints = "";
+        let i;
+        for(i = 0; i < beaconsPoints.length; i++){
+            let b = beaconsPoints[i];
+            let y = this.points[b]['y'];
+            let x = this.points[b]['x'];
+            let p = x + ',' + y + ' ';
+            this.pathPoints += p;
+        }
+        this.pathVisibility = 'visible';
+    }
+
+    showBeacons() {
+        if(this.beaconsVisibility == 'visible'){
+            this.beaconsVisibility = 'hidden';
+            this.showBeaconsBtnTxt = "eye-off";
+        } else {
+            this.beaconsVisibility = 'visible';
+            this.showBeaconsBtnTxt = "eye";
+        }
+
+        this.beaconAllPoints = "";
+        let points = this.dataJson.beacons;
+        for(let i in points){
+            let b = points[i];
+            this.beaconAllPoints += b['x'] +',' + b['y'] + ' ';
+        }
+    }
+
+    clearPath = function(){
+        this.pathVisibility = 'hidden';
     }
     
   }
@@ -189,6 +213,5 @@ export class RealMapPage implements OnInit, OnDestroy {
     this.fetchData();
     this.minorb = beaconDetector.minorb;
   }
-
 
 }
