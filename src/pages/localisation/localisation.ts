@@ -1,5 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ActivitiesDetailPage } from '../activities-detail/activities-detail';
+import { RealMapPage } from '../real-map/real-map';
 import { Http } from '@angular/http';
 
 import { Settings } from '../../providers/settings';
@@ -67,6 +69,36 @@ export class LocalisationPage {
                     reject(err);
                 }
             );
+        });
+    }
+    
+    showDetailPage(beacon){
+        let idAct = beacon.minor;
+        if(idAct==3001){
+            idAct = 0;
+        }else if(idAct==3002){
+            idAct = 1;
+        }else if(idAct==3004){
+            idAct = 4;
+        }else if(idAct==3005){
+            idAct = 3;
+        }else if(idAct==3006){
+            idAct = 5;
+        }else if(idAct==3007){
+            idAct = 2;
+        }else if(idAct==3009){
+            idAct = 6;
+        }else if(idAct==104){
+            idAct = 7;
+        }
+        this.navCtrl.push(ActivitiesDetailPage, {
+            id: idAct
+        });
+    }
+    
+    showPath(beaconParam){
+        this.navCtrl.setRoot(RealMapPage, {
+            minor: beaconParam.minor
         });
     }
 
