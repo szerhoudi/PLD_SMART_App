@@ -3,6 +3,7 @@ import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angu
 import { Http } from '@angular/http';
 import { AccueilPage } from '../accueil/accueil';
 import { Storage } from '@ionic/storage';
+import { Events } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 /**
@@ -21,7 +22,8 @@ export class ChangeEventPage {
     public posts: any = null;
     public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
 
-    constructor(public alerCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,  public http: Http, private storage: Storage) {
+    constructor(public alerCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,  public http: Http, private storage: Storage, public events: Events) {
+        this.events = events;
         this.storage.get('url').then((val) => {
             if(val!=null){
                 this.url = val;
@@ -46,6 +48,7 @@ export class ChangeEventPage {
                     text: 'Yes',
                     handler: () => {
                         this.storage.set('url', this.posts.Event[id].url);
+                        this.events.publish('event:changed', this.posts.Event[id].nom);
                         this.navCtrl.setRoot(AccueilPage);
                     }
                 }
