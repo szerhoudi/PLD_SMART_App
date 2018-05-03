@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActivitiesDetailPage} from '../activities-detail/activities-detail';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
-import { Rest } from '../../providers/rest';
-//import { Localisation} from '../localisation/localisation';
 
 /**
 * Generated class for the ActivitiesPage page.
