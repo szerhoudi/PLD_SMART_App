@@ -7,23 +7,7 @@
     </ion-navbar>
 </ion-header>
 
-
 <ion-content class="card-background-page" padding>
-    <!--<h3 *ngIf="posts">{{posts.title}}</h3>
-
-  <p *ngIf="posts">
-      Description of the event : {{posts.description}}
-  </p>
-  <p *ngIf="posts">
-      Date : {{posts.DateDebut}}  Horraire (à traduire, j'ai pas trouvé de trad satisfaisante) : {{posts.HeureDebut}} - {{posts.HeureFin}}
-  </p>
-  <p *ngIf="posts">
-      Place : {{posts.Lieu}}
-  </p>
-  <p *ngIf="posts">
-      Organiser : {{posts.Organisateur}}
-  </p>-->
-
     <ion-card *ngIf="posts">
         <img [src]="posts.image"/>
         <div class="card-title" >{{posts.title}}</div>
@@ -34,7 +18,7 @@
         <div class="title">DESCRIPTION</div>
         <div class="paragraphe">{{posts.description}}</div>
     </div>
-
+    
     <ion-list class="event-details" no-lines *ngIf="posts">
         <ion-item>
             <ion-icon class="logo" name="md-compass" item-start></ion-icon>
