@@ -33,6 +33,12 @@ buildscript {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'com.android.support:support-v4:27.1.0'
+    }
+}
+
 // Allow plugins to declare Maven dependencies via build-extras.gradle.
 allprojects {
     repositories {
@@ -260,6 +266,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
+    compile "com.squareup.okhttp3:okhttp-urlconnection:3.10.0"
     // SUB-PROJECT DEPENDENCIES END
 }
 

@@ -81,7 +81,8 @@ rootPage: any;
     public storage: Storage,
     public splashScreen: SplashScreen,
     public http: Http,
-    settings: Settings, beaconDetector: BeaconDetector
+    public settings: Settings,
+    public beaconDetector: BeaconDetector
   ) {
 
     // Check if the user has already seen the tutorial
@@ -100,9 +101,9 @@ rootPage: any;
     confData.load();
 
     platform.ready().then(() => {
-          settings.load().then(() => {
+        settings.load().then(() => {
             beaconDetector.start('FA95A705-0471-CA87-844D-E33433AD6361');
-          });
+        });
     });
 
     // decide which menu items should be hidden by current login status stored in local storage
