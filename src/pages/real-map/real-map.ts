@@ -50,6 +50,8 @@ export class RealMapPage implements OnInit, OnDestroy {
   pathPoints: string;
   beaconAllPoints: string;
 
+  checkViewStatus: boolean = false;
+
   private handleBeaconStatusChanged = (beacons) => {
     const maxAge = 10000;
     let displayableBeacons: Array<any> = [];
@@ -71,8 +73,36 @@ export class RealMapPage implements OnInit, OnDestroy {
     // console.log(this.beacons);
     // console.log(this.x);
     // console.log(this.y);
-    setTimeout(() => { this.changeDetectorRef.markForCheck(); }, 250);
+    if (this.checkViewStatus) {
+      this.changeDetectorRef.detectChanges();
+      console.log("ok");
+    }
   }
+
+    ionViewDidEnter(){
+      this.changeDetectorRef.reattach();
+      this.changeDetectorRef.detectChanges();
+      this.checkViewStatus = true;
+      console.log("ionViewDidEnter");
+    }
+
+    ionViewWillLeave(){
+      this.changeDetectorRef.detach();
+      this.checkViewStatus = false;
+      console.log("ionViewWillLeave");
+    }
+    
+    ionViewDidLeave(){
+      this.changeDetectorRef.detach();
+      this.checkViewStatus = false;
+      console.log("ionViewDidLeave");
+    }
+
+    ionViewWillUnload(){
+      this.changeDetectorRef.detach();
+      this.checkViewStatus = false;
+      console.log("ionViewWillUnload");
+    }
 
   ionViewCanEnter() {
       return new Promise((resolve, reject) => {    
@@ -88,6 +118,7 @@ export class RealMapPage implements OnInit, OnDestroy {
               }
             );
       });
+      this.checkViewStatus = true;
   }
 
   doRefresh(refresher) {

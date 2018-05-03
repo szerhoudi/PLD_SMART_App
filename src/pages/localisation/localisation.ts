@@ -31,6 +31,8 @@ export class LocalisationPage {
     public url = "https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json";
     public oldUrl : any;
     public posts: any = null;
+
+    checkViewStatus: boolean = false;
     
 
     private handleBeaconStatusChanged = (beacons) => {
@@ -60,7 +62,9 @@ export class LocalisationPage {
         }
         // console.log(this.beacons);
         this.beacons = displayableBeacons.sort((a, b) => a.accuracy - b.accuracy);
-        // setTimeout(() => { this.changeDetectorRef.detectChanges(); }, 250);
+        if (this.checkViewStatus) {
+          setTimeout(() => { this.changeDetectorRef.detectChanges(); }, 2000);
+        }
     }
 
     ionViewCanEnter() {
@@ -92,13 +96,28 @@ export class LocalisationPage {
     }
 
     ionViewDidEnter(){
+      this.changeDetectorRef.reattach();
       this.changeDetectorRef.detectChanges();
-      console.log("didenter");
+      this.checkViewStatus = true;
+      console.log("ionViewDidEnter");
     }
 
+    ionViewWillLeave(){
+      this.changeDetectorRef.detach();
+      this.checkViewStatus = false;
+      console.log("ionViewWillLeave");
+    }
+    
     ionViewDidLeave(){
       this.changeDetectorRef.detach();
-      console.log("didleave");
+      this.checkViewStatus = false;
+      console.log("ionViewDidLeave");
+    }
+
+    ionViewWillUnload(){
+      this.changeDetectorRef.detach();
+      this.checkViewStatus = false;
+      console.log("ionViewWillUnload");
     }
     
     changeFavorite(beacon){
@@ -131,14 +150,14 @@ export class LocalisationPage {
                 }  
             });
             console.log(listMinors);
-            this.events.publish('favorites:created', listMinors);
+            
         });
+        this.events.publish('favorites:created', listMinors);
         
     }
 
     ngOnInit() {
-        this.standJson = this.dataJson.activitesBalise;
-
+        this.standJson = this.dataJson.activitesBalise;      
     }
 
     doRefresh(refresher) {

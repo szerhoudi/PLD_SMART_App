@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu May 03 18:44:14 CEST 2018
+#Fri May 04 01:18:59 CEST 2018
 14.set=ASSET
 180.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable/color_picker_border.xml
 118.set=ANDROID_RESOURCE
@@ -119,7 +119,7 @@
 41.set=ASSET
 55.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/mipmap-ldpi-v4/icon.png
 109.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_
-30.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable/notification_bg.xml
+30.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/xml/config.xml
 145.set=ASSET
 82.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/layout-v17/validation_message_bubble.xml
 136.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug
@@ -173,7 +173,7 @@
 109.set=ANDROID_RESOURCE
 51.set=ASSET
 56.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/build/vendor.js
-31.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/xml/config.xml
+31.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable-hdpi-v4/bubble.9.png
 155.set=ASSET
 62.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug
 83.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/plugins/cordova-plugin-advanced-http/www/umd-tough-cookie.js
@@ -230,7 +230,7 @@
 61.set=ASSET
 3.set=ASSET
 57.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/assets/fonts/roboto-bold.ttf
-32.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable-hdpi-v4/bubble.9.png
+32.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable/notification_bg.xml
 165.set=ASSET
 63.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug
 84.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/assets/fonts/ionicons.eot
@@ -297,7 +297,7 @@
 141.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_
 197.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png
 120.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/layout/notification_action_tombstone.xml
-172.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/menu/select_action_menu.xml
+172.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/mipmap-hdpi-v4/icon.png
 39.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug
 143.set=ANDROID_RESOURCE
 18.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/plugins/cordova-plugin-file/www/android/FileSystem.js
@@ -351,7 +351,7 @@
 198.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/build/vendor.js.map
 121.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/layout/notification_template_big_media_narrow_custom.xml
 0.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_
-173.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/mipmap-hdpi-v4/icon.png
+173.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/menu/select_action_menu.xml
 107.set=ASSET
 153.set=ASSET
 19.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/plugins/cordova-plugin-advanced-http/www/lodash.js
@@ -393,7 +393,7 @@ count=209
 202.set=ASSET
 35.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/xwalk-command-line
 66.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug
-87.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/layout/notification_template_part_chronometer.xml
+87.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable-v21/notification_action_background.xml
 10.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/assets/fonts/noto-sans-regular.ttf
 41.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug
 52.set=ANDROID_RESOURCE
@@ -449,7 +449,7 @@ count=209
 16.set=ASSET
 36.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/index.html
 67.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug
-88.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable-v21/notification_action_background.xml
+88.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/layout/notification_template_part_chronometer.xml
 11.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png
 42.base=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_
 62.set=ASSET

@@ -70,6 +70,7 @@ export class ConferenceApp {
     ];
     rootPage: any;
     public posts: any = null;
+    public title: any = null;
     public url = "https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json";
 
     constructor(

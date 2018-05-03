@@ -86,14 +86,13 @@ export class BeaconDetector {
 
     this.minorb = dominantBeacon;
 
-    this.events.subscribe('favorites:changed', (favorites) => {
+    this.events.subscribe('favorites:created', (favorites) => {
         this.listFavorites = favorites;
     });
-
     if(this.settings.notifications && dominantBeacon!= null){
       // check the beacon has not been visited and its rssi is big enough.
-
-      if(this.firstVisit[dominantBeacon]==1 && rssiValues[dominantBeacon]>-75 && rssiValues[dominantBeacon]<0){
+      // rssiValues[dominantBeacon]>50 TO TEST ON PC rssiValues[dominantBeacon]>-75 && rssiValues[dominantBeacon]<0
+      if(this.firstVisit[dominantBeacon]==1 && rssiValues[dominantBeacon]>-75 && rssiValues[dominantBeacon]<0 ){
         this.listFavorites.forEach((favorite) => {
             if (favorite == dominantBeacon) {
                 this.firstVisit[dominantBeacon] = 0;

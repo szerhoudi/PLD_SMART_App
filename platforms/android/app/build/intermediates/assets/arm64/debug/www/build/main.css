@@ -39893,7 +39893,7 @@ ion-navbar.toolbar {
 }
 
 .event-title .label {
-  font-size: 30px;
+  font-size: 25px;
   border-left-width: 3px;
   border-left-style: solid;
   padding-left: 10px;
@@ -39906,7 +39906,6 @@ ion-navbar.toolbar {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #ddd;
-  font-size: 25px;
 }
 
 .menu-icon {

@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActivitiesDetailPage} from '../activities-detail/activities-detail';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { Events } from 'ionic-angular';
+
+import { Rest } from '../../providers/rest';
 
 /**
 * Generated class for the ActivitiesPage page.
@@ -28,10 +31,13 @@ export class ActivitiesPage {
 
     item;
     list: string;
+    dataFav: any;
+    listFavoris: any = [];
 
     public posts: any = null;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private storage: Storage) {
+    constructor(public navCtrl: NavController, public events: Events, public navParams: NavParams, public http: Http, private storage: Storage, public restProvider: Rest) {
+        this.fetchEvent();
         this.storage = storage;
         this.list = "all";
         this.storage.get('oldUrl').then((val) => {
@@ -63,7 +69,47 @@ export class ActivitiesPage {
 
     changeFavorite(activity) {
         this.posts.activitesBalise[activity.id].favorite = !this.posts.activitesBalise[activity.id].favorite;
+
+        let ajouterFav = true;
+        var favorites = [];
+        var listMinors = [];
+        this.storage.get('favorites').then((val) => {
+            favorites = val;
+            console.log('val :', val);
+            val.forEach((idfav,index) => {
+                if(idfav==activity.id){
+                    ajouterFav = false;
+                    favorites.splice(index,1);
+                    this.listFavoris.splice(activity.id,1,false);
+                }
+            });
+            if(ajouterFav==true){
+                favorites.push(activity.id);
+                this.listFavoris.splice(activity.id,1,true);
+            }
+            this.storage.set('favorites', favorites);
+
+            this.dataFav.activitesBalise.forEach((event) => {
+                if(favorites!=null){
+                    favorites.forEach((favorite) => {  
+                      if (favorite == event.id) {
+                        listMinors.push(event.minor);
+                      }
+                    });
+                }  
+            });
+            console.log(listMinors);
+            
+        });
+        this.events.publish('favorites:created', listMinors);
         console.log(activity);
+    }
+
+    fetchEvent() {
+        this.restProvider.fetchEvent()
+        .then(data => {
+            this.dataFav = data;
+        });
     }
 
     showDetailPage(activity) {
