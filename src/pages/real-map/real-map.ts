@@ -41,6 +41,7 @@ export class RealMapPage implements OnInit, OnDestroy {
     x: number;
     y: number;
     imageHeight: number;
+    points : any = {};
 
     beaconsVisibility: string;
     showBeaconsBtnTxt: string = 'eye-off';
@@ -64,15 +65,19 @@ export class RealMapPage implements OnInit, OnDestroy {
             }
         }
         this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
-        events.subscribe('coordinates:changed', (new_x, new_y) => {
+        this.events.subscribe('coordinates:changed', (new_x, new_y) => {
             this.x = new_x;
             this.y = new_y;
         });
-    }
+    console.log(this.beacons);
+    console.log(this.x);
+    console.log(this.y);
+  //TODO  this.changeDetectorRef.detectChanges();
 
-    ionViewCanEnter() {
-        return new Promise((resolve, reject) => {
-            this.http.get(this.restProvider.apiUrl)
+}
+  ionViewCanEnter() {
+      return new Promise((resolve, reject) => {    
+          this.http.get(this.restProvider.apiUrl)
             .map(res => res.json())
             .subscribe(
                 (res)=> {

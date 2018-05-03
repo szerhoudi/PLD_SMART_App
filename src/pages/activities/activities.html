@@ -29,18 +29,19 @@
                     </ion-item>
                 </ion-list>
             </div>
+    </div>
 
-            <div [ngSwitch]="list">
-                <ion-list *ngSwitchCase="'favorite'">
-                    <div *ngFor="let activity of posts.activitesBalise">
-                        <ion-item class="buttonList" detail-push *ngIf="activity.favorite">
-                            {{activity.nom}}
-                            <ion-icon *ngIf="activity.favorite" name="md-star" class="star-icon" item-end (click)="changeFavorite(activity)"></ion-icon>
-                            <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
-                        </ion-item>
-                    </div>
-                </ion-list>
+    <div [ngSwitch]="list">
+        <ion-list *ngSwitchCase="'favorite'">
+            <div *ngFor="let activity of posts.activitesBalise">
+                <ion-item class="buttonList" detail-push *ngIf="activity.favorite" (click)="showDetailPage(activity)">
+                    <!-- <ion-icon name="briefcase" item-start></ion-icon> -->
+                    {{activity.nom}}
+                    <ion-icon *ngIf="activity.favorite" name="md-star" class="star-icon" item-end (click)="changeFavorite(activity)"></ion-icon>
+                    <ion-icon *ngIf="!activity.favorite" name="md-star-outline" item-end (click)="changeFavorite(activity)"></ion-icon>
+                </ion-item>
             </div>
-        </div>
+        </ion-list>
+    </div>
 
     </ion-content>
