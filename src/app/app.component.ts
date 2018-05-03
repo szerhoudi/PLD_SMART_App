@@ -80,7 +80,7 @@ rootPage: any;
     public confData: ConferenceData,
     public storage: Storage,
     public splashScreen: SplashScreen,
-    public http: Http, 
+    public http: Http,
     settings: Settings, beaconDetector: BeaconDetector
   ) {
 
@@ -111,8 +111,6 @@ rootPage: any;
     });
     this.enableMenu(true);
 
-    this.listenToLoginEvents();
-    
     this.storage.get('url').then((val) => {
     if(val!=null){
         this.url = val;
@@ -123,10 +121,12 @@ rootPage: any;
             console.log(this.posts.title);
         })
     });
-    
+
+    this.listenToLoginEvents();
   }
 
   openPage(page: PageInterface) {
+
     let params = {};
 
     // the nav component was found using @ViewChild(Nav)
