@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ActivitiesDetailPage } from '../activities-detail/activities-detail';
 import { RealMapPage } from '../real-map/real-map';
 import { Http } from '@angular/http';
+import { Storage } from '@ionic/storage';
 
 import { Settings } from '../../providers/settings';
 import { Rest } from '../../providers/rest';
@@ -25,6 +26,11 @@ export class LocalisationPage {
     public beacons = [];
     dataJson: any;
     standJson: any;
+    listFavoris: any = [];
+    public url = "https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json";
+    public oldUrl : any;
+    public posts: any = null;
+    
 
     private handleBeaconStatusChanged = (beacons) => {
         const maxAge = 10000;
@@ -45,6 +51,7 @@ export class LocalisationPage {
                         beacon.heureDebut = this.standJson[i].heureDebut;
                         beacon.heureFin = this.standJson[i].heureFin;
                         beacon.description = this.standJson[i].description;
+                        beacon.id = this.standJson[i].id;
                     }
                 }
                 displayableBeacons.push(beacon);
@@ -73,26 +80,8 @@ export class LocalisationPage {
     }
     
     showDetailPage(beacon){
-        let idAct = beacon.minor;
-        if(idAct==3001){
-            idAct = 0;
-        }else if(idAct==3002){
-            idAct = 1;
-        }else if(idAct==3004){
-            idAct = 4;
-        }else if(idAct==3005){
-            idAct = 3;
-        }else if(idAct==3006){
-            idAct = 5;
-        }else if(idAct==3007){
-            idAct = 2;
-        }else if(idAct==3009){
-            idAct = 6;
-        }else if(idAct==104){
-            idAct = 7;
-        }
         this.navCtrl.push(ActivitiesDetailPage, {
-            id: idAct
+            id: beacon.id
         });
     }
     
@@ -100,6 +89,28 @@ export class LocalisationPage {
         this.navCtrl.setRoot(RealMapPage, {
             minor: beaconParam.minor
         });
+    }
+    
+    changeFavorite(beacon){
+        let ajouterFav = true;
+        var favorites = [];
+        this.storage.get('favorites').then((val) => {
+            favorites = val;
+            console.log('val :', val);
+            val.forEach((idfav,index) => {
+                if(idfav==beacon.id){
+                    ajouterFav = false;
+                    favorites.splice(index,1);
+                    this.listFavoris.splice(beacon.id,1,false);
+                }
+            });
+            if(ajouterFav==true){
+                favorites.push(beacon.id);
+                this.listFavoris.splice(beacon.id,1,true);
+            }
+            this.storage.set('favorites', favorites);
+        });
+        
     }
 
     ngOnInit() {
@@ -119,10 +130,40 @@ export class LocalisationPage {
         public settings: Settings,
         public beaconDetector: BeaconDetector,
         public restProvider: Rest,
-        public http: Http
+        public http: Http,
+        public storage: Storage
     ) {
         beaconDetector.addBeaconStatusChangedHandler(this.handleBeaconStatusChanged);
         this.fetchData();
+        
+        this.storage.get('oldUrl').then((val) => {
+            this.oldUrl = val;
+            this.storage.get('url').then((val) => {
+                if(val!=null){
+                    this.url = val;
+                }
+                if(this.url!=this.oldUrl)
+                {
+                    var favorites = [];
+                    this.storage.set('favorites', favorites);
+                    this.oldUrl = this.url;
+                    this.storage.set('oldUrl', this.oldUrl);
+                }
+                this.http.get(this.url).map(res => res.json()).subscribe(data => {
+                    this.posts = data;
+                    var taille = this.posts.activitesBalise.length;
+                    this.storage.get('favorites').then((val) => {
+                        for (var i=0; i< taille; i++){
+                            this.listFavoris.push(false);
+                        }
+                        val.forEach((idfav) => {
+                            this.listFavoris.splice(idfav,1,true);
+                        });
+                    });
+                });
+            });
+        });
+        
     }
 
     fetchData() {
