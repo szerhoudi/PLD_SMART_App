@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { Events } from 'ionic-angular';
+import 'rxjs/add/operator/map';
+
+import { Settings } from '../../providers/settings';
 
 /**
  * Generated class for the SettingsPage page.
@@ -16,48 +20,41 @@ import { Storage } from '@ionic/storage';
 })
 export class SettingsPage {
   
-  public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
-  public config: any = null;
-  public isToggled = null;
+  public isToggled: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
-      var defaultConfig = {
-          notifications: true,
-          sounds: true,
-          distance: 5,
-          text: 14
-      };
-      this.config = defaultConfig;
-      this.storage = storage;
-      this.isToggled = true;
-      this.storage.get('url').then((val) => {
-        if(val!=null){
-            this.url = val;
-         }
-        });
-      this.storage.get('config').then((config) => {
-          if (config !== null) {
-              this.config = config;
-          }
+  ionViewDidLeave() { 
+    return this.settings.save(); 
+  }
+
+  public updateMode() {
+    if (this.isToggled) {
+      this.settings.trilateration = 2;
+    } else {
+      this.settings.trilateration = 1;
+    }
+    this.events.publish('navigation:changed', this.settings.trilateration);
+    this.storage.set("trilateration", this.settings.trilateration);
+  }
+
+  ionViewCanEnter() {
+      this.storage.get('trilateration').then((val) => {
+        this.settings.trilateration = val === null ? this.settings.defaultTrilateration : val;
+        if (this.settings.trilateration == 2) {
+          this.isToggled = true;
+        } else {
+          this.isToggled = false;
+        }
       });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
-  }
-
-  ionViewWillLeave() {
-      this.storage.set('config', this.config);
-  }
-
-  defaultSettings() {
-      console.log(this.config);
-      this.config = {
-          notifications: true,
-          sounds: true,
-          distance: 5,
-          text: 14
-      };
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public settings: Settings,
+    public storage: Storage,
+    public events: Events
+  ) {
+    this.isToggled = false;
   }
 
 }

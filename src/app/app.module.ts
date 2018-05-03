@@ -35,6 +35,12 @@ import { SupportPage } from '../pages/support/support';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { Settings } from '../providers/settings';
+import { Rest } from '../providers/rest';
+import { BeaconDetector } from '../providers/beacon-detector';
+import { LocationManager } from '../providers/location-manager';
+
+import { EventModalPage } from '../pages/event-modal/event-modal';
 
 @NgModule({
   declarations: [
@@ -47,6 +53,7 @@ import { UserData } from '../providers/user-data';
     RealMapPage,
     ChangeEventPage,
     SettingsPage,
+    EventModalPage,
     AccountPage,
     LoginPage,
     MapPage,
@@ -94,6 +101,7 @@ import { UserData } from '../providers/user-data';
   entryComponents: [
     ConferenceApp,
     AboutPage,
+    EventModalPage,
     AccueilPage,
     LocalisationPage,
     ActivitiesPage,
@@ -118,7 +126,11 @@ import { UserData } from '../providers/user-data';
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ConferenceData,
+    Settings,
+    Rest,
     UserData,
+    BeaconDetector,
+    LocationManager,
     InAppBrowser,
     SplashScreen
   ]

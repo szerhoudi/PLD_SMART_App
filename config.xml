@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.conferenceapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>PLDSMART</name>
-    <description>PLD SMART H4214</description>
+    <name>IFollow</name>
+    <description>IFollow - PLD SMART H4214</description>
     <author>H4214</author>
     <content src="index.html" />
     <access origin="*" />
@@ -93,7 +93,7 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.2" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <plugin name="cordova-plugin-file" spec="^4.3.3" />
-    <engine name="android" spec="6.2.3" />
     <engine name="ios" spec="^4.5.2" />
     <engine name="browser" spec="5.0.3" />
+    <engine name="android" spec="~7.0.0" />
 </widget>

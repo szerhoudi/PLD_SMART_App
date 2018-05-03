@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary" text-center>
+    <ion-title>{{ header }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content [ngClass]="{'flyer-content': template == 'flyer'}">
+  <div [ngClass]="{'about-header': (template == 'text' || template == 'form'), 'flyer-header': template == 'flyer'}" [style.background-image]="'url(' + image + ')'">
+  </div>
+  <div padding class="about-info">
+    <h4>{{ title }}</h4>
+    <p>
+      {{ message }}
+    </p>
+    <ion-item [ngClass]="{'hidden': template != 'form'}">
+	    <ion-label color="primary" floating>{{ btn_txt }}</ion-label>
+	    <ion-input [(ngModel)]="email"></ion-input>
+	</ion-item>
+    <a [ngClass]="{'hidden': template == 'form'}" (click)="openLink()" *ngIf="url" class="btn-link-modal">{{ btn_txt }}</a>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block (click)="closeModal()">Close</button>
+  </ion-toolbar>
+</ion-footer>

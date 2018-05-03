@@ -9,33 +9,25 @@
 
 
 <ion-content padding>
-    <ion-list>
-        <!--<ion-list-header>
-          Settings
-      </ion-list-header>-->
-
-        <ion-item>
-          <ion-label>Notifications</ion-label>
-          <ion-toggle checked="config.notifications" [(ngModel)]="config.notifications"></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Son</ion-label>
-          <ion-toggle color="foo" checked="config.sounds" [(ngModel)]="config.sounds"></ion-toggle>
-        </ion-item>
-      <ion-item>
-          <ion-label class="option-name">Distance de notification</ion-label>
-          <ion-select [(ngModel)]="config.distance" interface="action-sheet" submitText="Change" cancelText="Cancel">
-            <ion-option value="1">1m</ion-option>
-            <ion-option value="2">2m</ion-option>
-            <ion-option value="5">5m</ion-option>
-            <ion-option value="10">10m</ion-option>
-            <ion-option value="15">15m</ion-option>
-            <ion-option value="20">20m</ion-option>
-          </ion-select>
-        </ion-item>
-    </ion-list>
-
-
-    <button ion-button block (click)="defaultSettings()">Paramètres par défaut</button>
+  <ion-list>
+    <ion-list-header>
+      Distance de notification (m)
+      <ion-badge item-right>{{settings.accuracyThreshold}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="80" [(ngModel)]="4*settings.accuracyThreshold" (ngModelChange)="settings.accuracyThreshold=$event/4">>
+        <ion-label range-left>OFF</ion-label>
+        <ion-label range-right>20.0</ion-label>
+      </ion-range>
+    </ion-item>    
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Mode de navigation
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Trilateration</ion-label>
+      <ion-toggle [(ngModel)]="isToggled" (ionChange)="updateMode()"></ion-toggle>
+    </ion-item>   
+  </ion-list>
 </ion-content>

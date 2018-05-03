@@ -26,6 +26,8 @@ import { SupportPage } from '../pages/support/support';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { Settings } from '../providers/settings';
+import { BeaconDetector } from '../providers/beacon-detector';
 
 export interface PageInterface {
   title: string;
@@ -68,7 +70,7 @@ export class ConferenceApp {
   ];
 rootPage: any;
   public posts: any = null;
-  public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
+  public url = "https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json";
 
   constructor(
     public events: Events,
@@ -78,7 +80,8 @@ rootPage: any;
     public confData: ConferenceData,
     public storage: Storage,
     public splashScreen: SplashScreen,
-    public http: Http
+    public http: Http, 
+    settings: Settings, beaconDetector: BeaconDetector
   ) {
 
     // Check if the user has already seen the tutorial
@@ -95,6 +98,12 @@ rootPage: any;
 
     // load the conference data
     confData.load();
+
+    platform.ready().then(() => {
+          settings.load().then(() => {
+            beaconDetector.start('FA95A705-0471-CA87-844D-E33433AD6361');
+          });
+    });
 
     // decide which menu items should be hidden by current login status stored in local storage
     this.userData.hasLoggedIn().then((hasLoggedIn) => {

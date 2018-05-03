@@ -8,16 +8,55 @@
 </ion-header>
 
 
-<ion-content padding>
-    <h3>Welcome to your first Ionic app!</h3>
+<ion-content padding style="position:relative;">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <!-- <ion-item>
+      <ion-label class="">Path to :</ion-label>
+      <ion-select [(ngModel)]="pointB.tag" (ionChange)="drawPath()" required>
+        <ion-option *ngFor="let destPoint of destPoints" [value]="destPoint.tag">{{ destPoint.name }}</ion-option>
+      </ion-select>
+    </ion-item> -->
+    <ion-fab right top>
+        <button ion-fab class="btn-beacon" (click)="showBeacons()">
+          <ion-icon name='eye-off' [name]='showBeaconsBtnTxt'></ion-icon>
+        </button>
+    </ion-fab>
+    <ion-fab right top style="top: 75px;">
+        <button ion-fab class="btn-path" (click)="clearPath()">
+          <ion-icon name='refresh'></ion-icon>
+        </button>
+    </ion-fab>
+    <div id="mapFloor">
+        <img class="img" [src]="image" style="width: 380px;" #imageCanvas>
+        
+        <svg id="canvas" height="380" [attr.height]="imageHeight" width="380">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refx="0" refy="2" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,4 L6,2 z" fill="#00f" />
+            </marker>
+            <marker id="CircleMark" markerWidth="12" markerHeight="12" refX="4" refY="4" markerUnits="userSpaceOnUse">
+              <circle cx="4" cy="4" r="4" fill="#f0932b"/>
+            </marker>
+          </defs>
+             
+          <circle [attr.cx]="x" [attr.cy]="y" r="8" stroke="#eb4d4b" stroke-width="2" fill="#ff7979">
+          <animate
+                attributeType="XML"
+                attributeName="fill"
+                values="#ff7979;#ff7979;#ff7979;#ff7979"
+                dur="1.0s"
+                repeatCount="indefinite"/>
+          </circle>
+          <circle [attr.cx]="x" [attr.cy]="y" r="12" stroke-width="2" fill="#eb4d4b" fill-opacity="0.6">
+            <animate  attributeName="r" attributeType ="XML"  values = "1;15;1" begin ="0s" dur="2s"  repeatCount="indefinite"/>
+          </circle>
+          <polyline [attr.visibility]="pathVisibility" [attr.points]="pathPoints" stroke-dasharray="5,5" style="fill:none;stroke:#ff7979;stroke-width:3" marker-end="url(#arrow)"  /> 
+          <polyline [attr.visibility]="beaconsVisibility" [attr.points]="beaconAllPoints" fill="none" stroke="none" stroke-width="2" marker-start="url(#CircleMark)" marker-mid="url(#CircleMark)" marker-end="url(#CircleMark)"  />
+        </svg>
 
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+    </div>  
+
 </ion-content>
+

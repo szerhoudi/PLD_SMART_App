@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActivitiesDetailPage} from '../activities-detail/activities-detail';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { Rest } from '../../providers/rest';
 //import { Localisation} from '../localisation/localisation';
 
 /**
@@ -21,7 +22,7 @@ import { Storage } from '@ionic/storage';
 export class ActivitiesPage {
     params: Object;
     activitiesDetailPage = ActivitiesDetailPage;
-    public url = "https://s3.eu-west-3.amazonaws.com/pldsmart/rif.json";
+    public url = "https://s3.eu-west-3.amazonaws.com/pld-smart/rif.json";
     public oldUrl : any;
     //activitiesDetailPage: any;
 
@@ -29,49 +30,6 @@ export class ActivitiesPage {
 
     item;
     list: string;
-
-    activities = [
-        {
-            title: "AEDI's openning remarks",
-            favorite: false
-        },
-        {
-            title: "FIDUCIAL stand",
-            favorite: false
-        },
-        {
-            title: "SOPRA STERIA stand",
-            favorite: false
-        },
-        {
-            title: "WAVESTONE stand",
-            favorite: false
-        },
-        {
-            title: "CGI stand",
-            favorite: false
-        },
-        {
-            title: "JP Morgan stand",
-            favorite: false
-        },
-        {
-            title: "ESKER stand",
-            favorite: false
-        },
-        {
-            title: "WORLDLINE stand",
-            favorite: false
-        },
-        {
-            title: "INFORMATIONS",
-            favorite: false
-        },
-        {
-            title: "Lunch Break",
-            favorite: false
-        }
-    ];
 
     public posts: any = null;
 
