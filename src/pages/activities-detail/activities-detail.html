@@ -1,21 +1,21 @@
 <!--
-  Generated template for the ActivitiesDetailPage page.
+Generated template for the ActivitiesDetailPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
 -->
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title *ngIf="posts">{{posts.activitesBalise[0].nom}}</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title *ngIf="posts">{{posts.activitesBalise[0].nom}}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="card-background-page">
-  <ion-card *ngIf="posts">
+    <ion-card *ngIf="posts">
         <img [src]="posts.activitesBalise[0].image"/>
     </ion-card>
 
@@ -27,6 +27,7 @@
             </div>
         </ion-list>
     </div>
+    
     <ion-list *ngIf="posts">
         <div class="title">INTERVENANTS</div>
         <ion-item *ngFor = "let item of posts.activitesBalise[0].intervenants;">
@@ -41,7 +42,7 @@
         </ion-item>
         <ion-item>
             <ion-icon class="logo" name="clock" item-start></ion-icon>
-        De {{posts.activitesBalise[0].heureDebut}} à {{posts.activitesBalise[0].heureFin}}
+            De {{posts.activitesBalise[0].heureDebut}} à {{posts.activitesBalise[0].heureFin}}
         </ion-item>
         <ion-item>
             <ion-icon class="logo" name="md-calendar" item-start></ion-icon>

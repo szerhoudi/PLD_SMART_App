@@ -57,7 +57,7 @@ export class BeaconDetector {
           this.addRssiHistory(this.rssiHistory, minor, rssi);
         if(rssi == 0 && !this.areAllRssiZero(minor))
           avgRssi = this.getAvgRssi(minor);
-        
+
         beaconSignals.push( {"minor" : minor, "rssi" : avgRssi, "origRssi": rssi, "tx" : tx, "dist" : distance });
         // console.log(beaconSignals);
         rssiValues[minor] = avgRssi;
@@ -71,7 +71,7 @@ export class BeaconDetector {
         return b.rssi - a.rssi; // Descending order
     });
 
-    if(beaconSignals.length > 0){       
+    if(beaconSignals.length > 0){
       dominantBeacon = beaconSignals[0]['minor'];
       if(this.dominatHistory.length < 3)
         this.dominatHistory.splice(0, 0, dominantBeacon);
@@ -83,22 +83,22 @@ export class BeaconDetector {
 
     if(typeof this.getMajority(this.dominatHistory) !== "undefined")
       dominantBeacon = this.getMajority(this.dominatHistory);
-      
+
     this.minorb = dominantBeacon;
 
-    
+
 
     if(this.settings.notifications && dominantBeacon!= null){
       // check the beacon has not been visited and its rssi is big enough.
-  
+
       if(this.firstVisit[dominantBeacon]==1 && rssiValues[dominantBeacon]>-75 && rssiValues[dominantBeacon]<0){
-        this.listFavorites.forEach((favorite) => {  
+        this.listFavorites.forEach((favorite) => {
             if (favorite == dominantBeacon) {
-                this.firstVisit[dominantBeacon] = 0;          
+                this.firstVisit[dominantBeacon] = 0;
                 this.getBeaconMessage(dominantBeacon);
             }
         });
-        
+
       }
     }
 
@@ -115,44 +115,44 @@ export class BeaconDetector {
         let m1 = beaconSignals[0]['minor'];
         let m2 = beaconSignals[1]['minor'];
         let m3 = beaconSignals[2]['minor'];
-        
+
         this.minorb = m1;
-        
+
         let x1 = this.points[m1]['x'];
         let y1 = this.points[m1]['y'];
-        
+
         let x2 = this.points[m2]['x'];
         let y2 = this.points[m2]['y'];
-        
+
         let x3 = this.points[m3]['x'];
         let y3 = this.points[m3]['y'];
-        
+
         let d1:any = this.calculateAccuracy(beaconSignals[0]['rssi'], beaconSignals[0]['tx']);
         // let d1 = this.getDistance(beaconSignals[0]['rssi']);
         let d2:any = this.calculateAccuracy(beaconSignals[1]['rssi'], beaconSignals[1]['tx']);
         // let d2 = this.getDistance(beaconSignals[1]['rssi']);
         let d3:any = this.calculateAccuracy(beaconSignals[2]['rssi'], beaconSignals[2]['tx']);
         // let d3 = this.getDistance(beaconSignals[2]['rssi']);
-        
+
         if(d1>0 && d2>0 && d3>0){
           let A = (x1*x1) + (y1*y1) - (d1*d1);
           let B = (x2*x2) + (y2*y2) - (d2*d2);
           let C = (x3*x3) + (y3*y3) - (d3*d3);
-          
+
           let X32 = x3 - x2;
           let X13 = x1 - x3;
           let X21 = x2 - x1;
           let Y32 = y3 - y2;
           let Y13 = y1 - y3;
           let Y21 = y2 - y1;
-          
+
           // based on the formula from http://cdn.intechweb.org/pdfs/13525.pdf
           let x = ( (A*Y32) + (B*Y13) + (C*Y21) )/(2*( (x1*Y32) + (x2*Y13) + (x3*Y21) ));
           let y = ( (A*X32) + (B*X13) + (C*X21) )/(2*( (y1*X32) + (y2*X13) + (y3*X21) ));
-          
+
           x = Math.round(x);
-          y = Math.round(y);  
-          
+          y = Math.round(y);
+
           if(x== -Infinity || isNaN(x) || y == -Infinity || isNaN(y)){
             this.x = this.points[dominantBeacon]['x'];
             this.y = this.points[dominantBeacon]['y'];
@@ -164,10 +164,10 @@ export class BeaconDetector {
 
           console.log("x : "+x);
           console.log("y : "+y);
-        } 
-        
-    } 
-    else if(beaconSignals.length > 0){      
+        }
+
+    }
+    else if(beaconSignals.length > 0){
         this.x = this.points[dominantBeacon]['x'];
         this.y = this.points[dominantBeacon]['y'];
     }
@@ -180,7 +180,7 @@ export class BeaconDetector {
       this.listFavorites = [];
       this.storage.get('favorites').then((favorites) => {
           this.dataEvent.activitesBalise.forEach((event) => {
-              favorites.forEach((favorite) => {  
+              favorites.forEach((favorite) => {
                   if (favorite == event.id) {
                     this.listFavorites.push(event.minor);
                   }
@@ -191,11 +191,9 @@ export class BeaconDetector {
   }
 
   getBeaconMessage(minorVal) {
-      // console.log(minorVal);
       for (let i=0, l=Object.keys(this.dataJson.notifications).length; i<l; i++) {
         this.dataBeacon[this.dataJson.notifications[i].minor] = this.dataJson.notifications[i]
     }
-    // console.log(this.dataBeacon[minorVal]);       
     this.handleBeaconMsg(this.dataBeacon[minorVal]);
   }
 
@@ -205,7 +203,7 @@ export class BeaconDetector {
       if(response['enabled']==1){
         if(response['template']=='text'){
           if(response['type']=='URL'){
-            this.showConfirm(response['message'], response['url']);     
+            this.showConfirm(response['message'], response['url']);
           }
           else
             msgList.push(response);
@@ -279,10 +277,10 @@ export class BeaconDetector {
   }
 
   getMajority(items){ // for three items
-      
+
       if(items[0] == items[1] || items[0] == items[2])
         return items[0];
-      else if (items[1] == items[2]) 
+      else if (items[1] == items[2])
         return items[1];
       else //there is no majority; pick the newest one.
         return items[0];
@@ -310,19 +308,19 @@ export class BeaconDetector {
         sum = sum + hist[i];
       if(hist.length != 0)
         return Math.round(sum / hist.length);
-      else 
+      else
         return 0;
     }
-    else 
+    else
       return 0;
   }
 
   addRssiHistory(table, beaconKey, rssi){
     var hist = table[beaconKey];
-    
+
     if(!hist){
       hist = [];
-      hist.push(rssi);        
+      hist.push(rssi);
     }
     else{
       if(hist.length < this.historyCount){
@@ -332,7 +330,7 @@ export class BeaconDetector {
         hist.splice(-1, 1); // remove the old item
         hist.splice(0, 0, rssi); // insert as the first item
       }
-      
+
     }
     table[beaconKey] = hist;
   }
@@ -350,7 +348,7 @@ export class BeaconDetector {
       accuracy = Math.pow(ratio, 10);
     }
     else {
-      accuracy = 0.89976 * Math.pow(ratio, 7.7095) + 0.111;    
+      accuracy = 0.89976 * Math.pow(ratio, 7.7095) + 0.111;
     }
     if (accuracy < 1) {
       accuracy = Math.round(accuracy * 100) / 100;
@@ -372,7 +370,7 @@ export class BeaconDetector {
     return this.beacons;
   };
 
-  public start(uuid): void { 
+  public start(uuid): void {
     this.locationManager.start(uuid, this.didRangeBeaconsInRegionHandler);
   };
 
@@ -396,7 +394,7 @@ export class BeaconDetector {
   }
 
   checkPositioningMode() {
-      if (typeof this.positioningMode !== "undefined") { 
+      if (typeof this.positioningMode !== "undefined") {
         this.positioningMode = this.sets.trilateration;
       } else {
         this.storage.get('trilateration').then((val) => {
@@ -404,16 +402,16 @@ export class BeaconDetector {
             this.positioningMode = this.sets.trilateration;
         });
       }
-      
+
   }
 
   constructor(
     public locationManager: LocationManager,
-    public restProvider: Rest, 
+    public restProvider: Rest,
     public http: Http,
     public modalCtrl: ModalController,
     public events: Events,
-    public sets: Settings, 
+    public sets: Settings,
     public storage: Storage
   ) {
     this.fetchData();
