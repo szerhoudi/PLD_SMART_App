@@ -33,6 +33,8 @@ The App is deployable on ios and android :
 * Our presentation support is `IFollow.pdf`.
 * Our teaser is //TODO link
 
+_Note: Our App need beacons to works, or you to simulate beacons with other devices. They also need some configuration (be in adequation with JSON's data)._
+
 ## File Structure of App
 
 Others pages are in the application but its have no use for now.
