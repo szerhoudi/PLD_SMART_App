@@ -72,7 +72,7 @@ export class RealMapPage implements OnInit, OnDestroy {
     console.log(this.beacons);
     console.log(this.x);
     console.log(this.y);
-    this.changeDetectorRef.detectChanges();
+  //TODO  this.changeDetectorRef.detectChanges();
   }
 
   ionViewCanEnter() {

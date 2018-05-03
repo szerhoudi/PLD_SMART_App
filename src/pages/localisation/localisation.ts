@@ -50,7 +50,8 @@ export class LocalisationPage {
     }
     console.log(this.beacons);
     this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
-    this.changeDetectorRef.detectChanges();
+    console.log(beacons);
+  //TODO  this.changeDetectorRef.detectChanges();
   }
 
   ionViewCanEnter() {
