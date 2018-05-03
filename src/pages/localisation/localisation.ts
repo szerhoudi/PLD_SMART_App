@@ -48,14 +48,11 @@ export class LocalisationPage {
                 displayableBeacons.push(beacon);
             }
         }
+        console.log(this.beacons);
         this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
-        this.changeDetectorRef.detectChanges();
+        console.log(beacons);
+        //TODO  this.changeDetectorRef.detectChanges();
     }
-    console.log(this.beacons);
-    this.beacons = displayableBeacons.sort((a, b) => a.minor - b.minor);
-    console.log(beacons);
-  //TODO  this.changeDetectorRef.detectChanges();
-  }
 
     ionViewCanEnter() {
         return new Promise((resolve, reject) => {
