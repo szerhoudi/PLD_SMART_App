@@ -49,7 +49,7 @@
     <string name="profiler_no_storage_toast">"Impossibile avviare profiler perché la memoria esterna non è pronta"</string>
     <string name="profiler_started_toast">"Profiler avviato"</string>
     <string name="profiler_stopped_toast">"Profiler ha finito. I risultati sono in %1$s."</string>
-    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="time_picker_dialog_am">"AM"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>
     <string name="time_picker_dialog_minute_second_separator">":"</string>

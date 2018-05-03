@@ -88,7 +88,7 @@ var Graph = (function (undefined) {
 		while (nodes.length) {
 			end = nodes.shift();
 			predecessors = findPaths(map, start, end);
-
+			console.log(predecessors);
 			if (predecessors) {
 				shortest = extractShortest(predecessors, end);
 				if (nodes.length) {
