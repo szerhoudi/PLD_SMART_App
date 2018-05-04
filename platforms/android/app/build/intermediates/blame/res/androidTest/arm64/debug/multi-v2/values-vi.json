@@ -4,23 +4,6 @@
             "outputFile": "/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/incremental/mergeArm64DebugAndroidTestResources/merged.dir/values-vi/values-vi.xml",
             "map": [
                 {
-                    "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha1.aar/fad999dfcbe05e044706d1025a321ee2/res/values-vi/values-vi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "51",
-                        "startColumns": "4",
-                        "startOffsets": "3664",
-                        "endColumns": "100",
-                        "endOffsets": "3760"
-                    }
-                },
-                {
                     "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/xwalk_core_library-22.52.561.4.aar/a6d5c4be62baf8cf440bcfebb23a9a0e/res/values-vi/android_content_strings.xml",
                     "from": {
                         "startLines": "2,4,3,8,6,7,5,9,13,12,10,11",
@@ -52,6 +35,23 @@
                         "startOffsets": "55,123,189,254,330,405,472,537,609,677,945,1034,1136,1196,1260,1321,1384,1449,1515,1575,1632,1690,1752,1814,1879,1934,1999,2056,2164,2223,2296,2353,2417,2490,3045,3111,3186,3765,3820,3893,3968,4023,4101,4170,4240",
                         "endColumns": "67,65,64,75,74,66,64,71,67,67,88,101,59,63,60,62,64,65,59,56,57,61,61,64,54,64,56,107,58,72,56,63,72,95,65,74,112,54,72,74,54,77,68,69,63",
                         "endOffsets": "118,184,249,325,400,467,532,604,672,740,1029,1131,1191,1255,1316,1379,1444,1510,1570,1627,1685,1747,1809,1874,1929,1994,2051,2159,2218,2291,2348,2412,2485,2581,3106,3181,3294,3815,3888,3963,4018,4096,4165,4235,4299"
+                    }
+                },
+                {
+                    "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/913bc31e604306db678f1daeb1a7baa3/res/values-vi/values-vi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "51",
+                        "startColumns": "4",
+                        "startOffsets": "3664",
+                        "endColumns": "100",
+                        "endOffsets": "3760"
                     }
                 }
             ]

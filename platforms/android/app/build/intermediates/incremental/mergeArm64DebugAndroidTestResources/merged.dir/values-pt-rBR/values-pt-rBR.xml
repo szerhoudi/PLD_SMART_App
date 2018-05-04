@@ -49,7 +49,7 @@
     <string name="profiler_no_storage_toast">"Não é possível iniciar o profiler porque o armazenamento externo não está pronto"</string>
     <string name="profiler_started_toast">"Profiler iniciado"</string>
     <string name="profiler_stopped_toast">"Profiler terminado. Os resultados estão em %1$s."</string>
-    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="time_picker_dialog_am">"AM"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>
     <string name="time_picker_dialog_minute_second_separator">":"</string>

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 04 01:19:15 CEST 2018
+#Fri May 04 01:36:58 CEST 2018
 210.set=ASSET
 14.set=ANDROID_RESOURCE
 180.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/assets/armv7/debug/www/build/main.css.map

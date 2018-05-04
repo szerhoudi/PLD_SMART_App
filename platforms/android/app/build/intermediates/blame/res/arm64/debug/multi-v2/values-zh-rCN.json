@@ -4,23 +4,6 @@
             "outputFile": "/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/incremental/mergeArm64DebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha1.aar/fad999dfcbe05e044706d1025a321ee2/res/values-zh-rCN/values-zh-rCN.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "51",
-                        "startColumns": "4",
-                        "startOffsets": "3203",
-                        "endColumns": "100",
-                        "endOffsets": "3299"
-                    }
-                },
-                {
                     "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/xwalk_core_library-22.52.561.4.aar/a6d5c4be62baf8cf440bcfebb23a9a0e/res/values-zh-rCN/android_ui_strings.xml",
                     "from": {
                         "startLines": "20,24,21,38,39,33,29,32,30,31,45,43,17,13,9,12,14,15,4,11,8,18,16,10,5,6,7,19,42,40,22,41,37,2,23,3,44,26,34,35,27,36,28,46,25",
@@ -35,6 +18,23 @@
                         "startOffsets": "55,119,182,245,313,381,448,512,577,643,878,964,1045,1104,1162,1222,1280,1339,1401,1459,1516,1573,1632,1692,1753,1803,1861,1912,1985,2043,2114,2170,2230,2298,2717,2778,2836,3304,3359,3432,3507,3562,3640,3700,3759",
                         "endColumns": "63,62,62,67,67,66,63,64,65,64,85,80,58,57,59,57,58,61,57,56,56,58,59,60,49,57,50,72,57,70,55,59,67,60,60,57,91,54,72,74,54,77,59,58,59",
                         "endOffsets": "114,177,240,308,376,443,507,572,638,703,959,1040,1099,1157,1217,1275,1334,1396,1454,1511,1568,1627,1687,1748,1798,1856,1907,1980,2038,2109,2165,2225,2293,2354,2773,2831,2923,3354,3427,3502,3557,3635,3695,3754,3814"
+                    }
+                },
+                {
+                    "source": "/Users/dndesign/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/913bc31e604306db678f1daeb1a7baa3/res/values-zh-rCN/values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "51",
+                        "startColumns": "4",
+                        "startOffsets": "3203",
+                        "endColumns": "100",
+                        "endOffsets": "3299"
                     }
                 },
                 {

@@ -63,7 +63,7 @@ export class LocalisationPage {
         // console.log(this.beacons);
         this.beacons = displayableBeacons.sort((a, b) => a.accuracy - b.accuracy);
         if (this.checkViewStatus) {
-          setTimeout(() => { this.changeDetectorRef.detectChanges(); }, 2000);
+          setTimeout(() => { this.changeDetectorRef.detectChanges(); }, 1000);
         }
     }
 

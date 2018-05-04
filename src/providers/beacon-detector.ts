@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { ModalController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
+import KalmanFilter from 'kalmanjs';
 
 import { LocationManager } from './location-manager';
 import { Rest } from './rest';
@@ -40,16 +41,18 @@ export class BeaconDetector {
     let dominantBeacon;
     let beaconSignals = [];
     let rssiValues = {};
+    const kalmanFilter = new KalmanFilter({R: 0.01, Q: 20});
 
     for (let beacon of result.beacons) {
-      beacon.accuracy = this.calculateAccuracy(beacon.rssi, beacon.tx);
+      beacon.accuracy = this.calculateAccuracy(kalmanFilter.filter(beacon.rssi), beacon.tx);
       beacon.key = beacon.uuid + '.' + beacon.major + '.' + beacon.minor;
       beacon.timestamp = (new Date()).getTime();
 
       minor = beacon.minor;
-      rssi = beacon.rssi;
+      rssi = kalmanFilter.filter(beacon.rssi);
       tx = beacon.tx;
       distance = this.calculateAccuracy(beacon.rssi, beacon.tx);
+      // console.log('RSSI + filter: ' + kalmanFilter.filter(beacon.rssi) + ' RSSI: ' + beacon.rssi);
       // distance = beacon.accuracy;
       let avgRssi = rssi;
         this.addRssiHistory(this.allRssiHistory, minor, rssi);

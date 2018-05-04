@@ -1,4 +1,4 @@
-#Fri May 04 01:19:12 CEST 2018
+#Fri May 04 01:36:54 CEST 2018
 base.0=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/transforms/dexMerger/armv7/debug/4
 renamed.0=classes.dex
 file.0=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/transforms/dexMerger/armv7/debug/4/classes.dex

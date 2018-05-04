@@ -49,7 +49,7 @@
     <string name="profiler_no_storage_toast">"No es pot iniciar el generador de perfils perquè l\'emmagatzematge extern no està preparat."</string>
     <string name="profiler_started_toast">"El generador de perfils s\'ha iniciat."</string>
     <string name="profiler_stopped_toast">"El generador de perfils ha finalitzat. Els resultats són a %1$s."</string>
-    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"+999"</string>
     <string name="time_picker_dialog_am">"a.m."</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>
     <string name="time_picker_dialog_minute_second_separator">":"</string>

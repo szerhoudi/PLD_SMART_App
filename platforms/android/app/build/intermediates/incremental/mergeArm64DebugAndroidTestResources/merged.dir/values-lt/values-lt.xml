@@ -49,7 +49,7 @@
     <string name="profiler_no_storage_toast">"Nepavyksta paleisti profiliavimo priemonės, nes išorinė atmintis neparuošta"</string>
     <string name="profiler_started_toast">"Profiliavimo priemonė paleista"</string>
     <string name="profiler_stopped_toast">"Profiliavimo priemonės veiksmai baigti. Rezultatai išsaugoti „%1$s“."</string>
-    <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="time_picker_dialog_am">"priešpiet"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>
     <string name="time_picker_dialog_minute_second_separator">":"</string>

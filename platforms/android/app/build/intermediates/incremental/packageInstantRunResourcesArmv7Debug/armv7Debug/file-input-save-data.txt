@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 04 01:18:59 CEST 2018
+#Fri May 04 01:36:37 CEST 2018
 14.set=ASSET
 180.file=/Users/dndesign/Websites/evento_frontend/PLD_SMART_App/platforms/android/app/build/intermediates/res/armv7/debug/resources-armv7Debug.ap_/res/drawable/color_picker_border.xml
 118.set=ANDROID_RESOURCE

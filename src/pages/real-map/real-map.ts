@@ -105,6 +105,7 @@ export class RealMapPage implements OnInit, OnDestroy {
     }
 
   ionViewCanEnter() {
+      this.checkViewStatus = true;
       return new Promise((resolve, reject) => {    
           this.http.get(this.restProvider.apiUrl)
             .map(res => res.json())
@@ -117,8 +118,7 @@ export class RealMapPage implements OnInit, OnDestroy {
                 reject(err);
               }
             );
-      });
-      this.checkViewStatus = true;
+      });     
   }
 
   doRefresh(refresher) {
